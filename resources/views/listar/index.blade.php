@@ -25,6 +25,26 @@
 		        	</div>
 		        </div>
 			@endforeach
+
+		</div>
+		<div class="row">
+			@foreach($lista as $lis)
+			@if($lis->escalon==1)
+				<div class="col-md-12">
+					<p class="text-primary">{{$lis->nombre}}</p>
+				</div>
+			@endif
+				@if($lis->escalon==2)
+					<div class="col-md-12">
+					<p class="text-danger">{{$lis->nombre}}</p>
+					</div>
+				@endif
+				@if($lis->escalon>2)
+					<div class="col-md-12">
+					<p class="text-success">{{$lis->nombre}}</p>
+					</div>
+				@endif
+			@endforeach
 		</div>
 	</div>
 </div>

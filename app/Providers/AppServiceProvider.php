@@ -3,7 +3,8 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
-
+use View;
+use Illuminate\Support\Facades\DB;
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -13,7 +14,16 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        View::composer('*', function($view)
+        {
+             $lista=DB::table('tb_rutas as r')
+            ->join('tb_rutas','r.escalon','=','tb_rutas.id')
+            ->select('r.*')
+            ->get();
+            $view->with('lista',$lista);
+        });
+
+
     }
 
     /**

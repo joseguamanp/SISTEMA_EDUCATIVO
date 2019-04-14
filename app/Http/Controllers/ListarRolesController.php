@@ -32,6 +32,10 @@ class ListarRolesController extends Controller
         foreach ($resultado as $value) {
            $request->session()->put($value->nombre, $value->id);
         }
+        $lista=DB::table('tb_rutas as r')
+        ->join('tb_rutas','r.escalon','=','tb_rutas.id')
+        ->select('r.*')
+        ->get();
         return view('listar.index',['rol'=>$resultado]);
 
     }

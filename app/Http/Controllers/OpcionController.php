@@ -26,6 +26,8 @@ class OpcionController extends Controller
         ->join('opciones','rols.id','=','opciones.id_rol')
         ->select('rols.nombre','opciones.id','opciones.nombre_opcion','opciones.fecha_cre','opciones.fecha_mod','opciones.deleted_at')
         ->get();
+
+        
         return view('admin.opcion.create',['rol'=>$rol,'opcion'=>$op]);
     }
 
