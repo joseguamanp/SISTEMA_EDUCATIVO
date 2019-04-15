@@ -77,403 +77,49 @@
     <div id="wrapper">
 
     @if(Session::has('ADMINISTRADOR'))
-
       <div id="dashboard">
-        <nav class="navbar-nav">
-          <ul id="nivel-1" class="nav navbar-nav mt-3">
-
-            <!--************* SENESCYT ************* -->
-            <li class="panel panel-default">
-              <a data-toggle="collapse" href="#senescyt"><i class="fas fa-fw fa-folder"></i>
-                <span>Mantenimiento Senescyt</span><i id="caret" class="fas fa-caret-down"></i>
-              </a>
-
-              <div id="senescyt" class="panel-collapse collapse">
-                <div class="panel-body">
-                  <ul class="nav navbar-nav" id="nivel-2">
-
-                    <!--************* GENERALES ************* -->
-                    <li class="panel panel-default" id="nivel-2">
-                      <a data-toggle="collapse" href="#op-generales">Generales
-                        <i id="caret" class="fas fa-caret-down text-right"></i>
-                      </a>
-                      <div id="op-generales" class="panel-collapse collapse">
+            <nav class="navbar-nav">
+              <ul id="nivel-1" class="nav navbar-nav mt-3">
+                @foreach($lista as $lis)
+                <li class="panel panel-default">
+                  @if($lis->escalon>0)
+                    @if($lis->escalon==$lis->id)
+                    <?php $valor=$lis->id ?>
+                     <a data-toggle="collapse" href="#senescyt{{$valor}}"><i class="fas fa-fw fa-folder"></i>
+                        <span>{{$lis->nombre}}</span><i id="caret" class="fas fa-caret-down"></i>
+                     </a>          
+                    @else
+                    <div id="senescyt{{$valor}}" class="panel-collapse collapse">
                         <div class="panel-body">
-                          <ul class="nav navbar-nav" id="nivel-3">
-                            <li>
-                              <a tabindex="-1" href="{!!URL::to('/admin/sexo');!!}">Sexo</a>
-                            </li>
-                            <li>
-                              <a tabindex="-1" href="{!!URL::to('/admin/genero');!!}">Genero</a>
-                            </li>
-                            <li>
-                              <a tabindex="-1" href="{!!URL::to('/admin/estadocivil');!!}">Estado Civil</a>
-                            </li>
-                            <li>
-                              <a tabindex="-1" href="{!!URL::to('/admin/datosetnia');!!}">Etnia</a>
-                            </li>
-                            <li>
-                              <a tabindex="-1" href="{!!URL::to('/admin/datostipodoc');!!}">Tipo documento</a>
-                            </li>
-                            <li>
-                              <a tabindex="-1" href="{!!URL::to('admin/tipoSangre');!!}">Tipo de Sangre</a>
-                            </li>
-                            <li>
-                              <a tabindex="-1" href="#">Nacionalidad</a>
-                            </li>
-                            <li>
-                              <a tabindex="-1" href="#">Pueblo</a>
-                            </li>
-                            <li>
-                              <a tabindex="-1" href="#">Fecha de Nacimiento</a>
-                            </li>
-                          </ul>
-                        </div>
+                          <ul class="nav navbar-nav" id="nivel-2">
+                        <li class="panel panel-default" id="nivel-2">
+                          @if($lis->escalon==$valor && $lis->escalon!=$lis->id)
+                          <?php $etiqueta=$lis->nombre ?>
+                          <a data-toggle="collapse" href="#op-{{$etiqueta}}">{{$lis->nombre}}
+                            <i id="caret" class="fas fa-caret-down text-right"></i>
+                          </a>
+                          @else
+                          <div id="op-{{$etiqueta}}" class="panel-collapse collapse">
+                              <div class="panel-body">
+                                <ul class="nav navbar-nav" id="nivel-3">
+                                  <li>
+                                    <a tabindex="-1" href="{{$lis->rutas}}">{{$lis->nombre}}</a>
+                                  </li>
+                                </ul>
+                              </div>
+                          </div>
+                          @endif
+                        </li>
+                         </ul>
                       </div>
-                    </li>
-
-                    <!--************* DISCAPACIDAD ************* -->
-                    <li class="panel panel-default" id="nivel-2">
-                      <a data-toggle="collapse" href="#op-discapacidad">Discapacidad
-                        <i id="caret" class="fas fa-caret-down text-right"></i>
-                      </a>
-                      <div id="op-discapacidad" class="panel-collapse collapse">
-                        <div class="panel-body">
-                          <ul class="nav navbar-nav" id="nivel-3">
-                            <li><a href="#">Tipo de discapacidad</a></li>
-                          </ul>
-                        </div>
-                      </div>
-                    </li>
-
-                    <!--************* UBICACION ************* -->
-                    <li class="panel panel-default" id="nivel-2">
-                      <a data-toggle="collapse" href="#op-ubicacion">Ubicación
-                        <i id="caret" class="fas fa-caret-down text-right"></i>
-                      </a>
-                      <div id="op-ubicacion" class="panel-collapse collapse">
-                        <div class="panel-body">
-                          <ul class="nav navbar-nav" id="nivel-3">
-                            <li><a tabindex="-1" href="{!!URL::to('/admin/paises');!!}">Paises</a></li>
-                            <li><a tabindex="-1" href="{!!URL::to('/admin/provincias');!!}">Provincia</a></li>
-                            <li><a tabindex="-1" href="{!!URL::to('/admin/cantones');!!}">Cantones</a></li>
-                          </ul>
-                        </div>
-                      </div>
-                    </li>
-
-                    <!--************* COLEGIATURA ************* -->
-                    <li class="panel panel-default" id="nivel-2">
-                      <a data-toggle="collapse" href="#op-colegiatura">Colegiatura
-                        <i id="caret" class="fas fa-caret-down text-right"></i>
-                      </a>
-                      <div id="op-colegiatura" class="panel-collapse collapse">
-                        <div class="panel-body">
-                          <ul class="nav navbar-nav" id="nivel-3">
-                            <li><a href="{!!URL::to('/admin/tipoColegio');!!}">Tipo de Colegio</a></li>
-                            <li><a href="{!!URL::to('/admin/modCarrera');!!}">Modalidad de Carrera</a></li>
-                            <li><a href="#">Fecha de Carrera</a></li>
-                            <li><a href="{!!URL::to('/admin/tipoMatricula');!!}">Tipo de matricula</a></li>
-                          </ul>
-                        </div>
-                      </div>
-                    </li>
-
-                    <!--************* OCUPACION ************* -->
-                    <li class="panel panel-default" id="nivel-2">
-                      <a data-toggle="collapse" href="#op-ocupacion">Ocupación
-                        <i id="caret" class="fas fa-caret-down text-right"></i>
-                      </a>
-                      <div id="op-ocupacion" class="panel-collapse collapse">
-                        <div class="panel-body">
-                          <ul class="nav navbar-nav" id="nivel-3">
-                            <li>
-                              <a href="{!!URL::to('/admin/estuOcup');!!}">Estudiante Ocupación</a>
-                            </li>
-                            <li>
-                              <a href="#">Empleo de ingreso</a>
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                    </li>
-
-                    <!--************* ESTUDIANTE ************* -->
-                    <li class="panel panel-default" id="nivel-2">
-                      <a data-toggle="collapse" href="#op-estudiante">Estudiante
-                        <i id="caret" class="fas fa-caret-down text-right"></i>
-                      </a>
-                      <div id="op-estudiante" class="panel-collapse collapse">
-                        <div class="panel-body">
-                          <ul class="nav navbar-nav" id="nivel-3">
-                            <li>
-                              <a href="{!!URL::to('/admin/perdidaGra');!!}">Perdio Gratuidad</a>
-                            </li>
-                            <li>
-                              <a href="">Recibe bono de desarrollo</a>
-                            </li>
-                            <li>
-                              <a href="{!!URL::to('/admin/EstudianteIngreso');!!}">Estudiante Ingreso</a>
-                            </li>
-                            <li>
-                              <a tabindex="-1" href="#">Ocupación Id</a>
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                    </li>
-
-                    <!--************* PRACTICAS ************* -->
-                    <li class="panel panel-default" id="nivel-2">
-                      <a data-toggle="collapse" href="#op-practicas">Prácticas
-                        <i id="caret" class="fas fa-caret-down text-right"></i>
-                      </a>
-                      <div id="op-practicas" class="panel-collapse collapse">
-                        <div class="panel-body">
-                          <ul class="nav navbar-nav" id="nivel-3">
-                            <li>
-                              <a tabindex="-1" href="#">Realizado Practicas</a>
-                            </li>
-                            <li>
-                              <a tabindex="-1" href="#">Tipo de Institución</a>
-                            </li>
-                            <li>
-                              <a tabindex="-1" href="{!!URL::to('/admin/sectorEcon');!!}">Sector Económico</a>
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                    </li>
-
-                    <!--************* PROYECTO VINCULACION ************* -->
-                    <li class="panel panel-default" id="nivel-2">
-                      <a data-toggle="collapse" href="#op-proyecto-vin">Proyecto Vinculación
-                        <i id="caret" class="fas fa-caret-down text-right"></i>
-                      </a>
-                      <div id="op-proyecto-vin" class="panel-collapse collapse">
-                        <div class="panel-body">
-                          <ul class="nav navbar-nav" id="nivel-3">
-                            <li><a tabindex="-1" href="{!!URL::to('/admin/alcanceproyecto');!!}">Tipo de Alcance</a></li>
-                            <li><a tabindex="-1" href="{!!URL::to('/admin/vinculacionsociedad');!!}">Participa en Proyecto</a></li>
-                          </ul>
-                        </div>
-                      </div>
-                    </li>
-
-                    <!--************* BECAS ************* -->
-                    <li class="panel panel-default" id="nivel-2">
-                      <a data-toggle="collapse" href="#op-becas">Becas
-                        <i id="caret" class="fas fa-caret-down text-right"></i>
-                      </a>
-                      <div id="op-becas" class="panel-collapse collapse">
-                        <div class="panel-body">
-                          <ul class="nav navbar-nav" id="nivel-3">
-                            <li><a tabindex="-1" href="{!!URL::to('/admin/tipobeca');!!}">Tipo de Becas</a></li>
-                            <li><a tabindex="-1" href="#">Tipo financiamiento</a></li>
-                          </ul>
-                        </div>
-                      </div>
-                    </li>
-
-                    <!--************* RAZON ************* -->
-                    <li class="panel panel-default" id="nivel-2">
-                      <a data-toggle="collapse" href="#op-razon">Razón
-                        <i id="caret" class="fas fa-caret-down text-right"></i>
-                      </a>
-                      <div id="op-razon" class="panel-collapse collapse">
-                        <div class="panel-body">
-                          <ul class="nav navbar-nav" id="nivel-3">
-                            <li><a tabindex="-1" href="{!!URL::to('/admin/razon1');!!}">Primera Razón</a></li>
-                            <li><a tabindex="-1" href="{!!URL::to('/admin/razon2');!!}">Segundo Razón</a></li>
-                            <li><a tabindex="-1" href="{!!URL::to('/admin/razon3');!!}">Tercera Razón</a></li>
-                            <li><a tabindex="-1" href="{!!URL::to('/admin/razon4');!!}">Cuarta Razón</a></li>
-                            <li><a tabindex="-1" href="{!!URL::to('/admin/razon5');!!}">Quinta Razón</a></li>
-                            <li><a tabindex="-1" href="{!!URL::to('/admin/razon6');!!}">Sexta Razón</a></li>
-                          </ul>
-                        </div>
-                      </div>
-                    </li>
-
-                    <!--************* FORMACION FAMILIAR ************* -->
-                    <li class="panel panel-default" id="nivel-2">
-                      <a data-toggle="collapse" href="#op-formacion-fam">Formación familiar
-                        <i id="caret" class="fas fa-caret-down text-right"></i>
-                      </a>
-                      <div id="op-formacion-fam" class="panel-collapse collapse">
-                        <div class="panel-body">
-                          <ul class="nav navbar-nav" id="nivel-3">
-                            <li>
-                              <a tabindex="-1" href="{!!URL::to('/admin/formacionpadre');!!}">
-                                Nivel formación Padre
-                              </a>
-                            </li>
-                            <li>
-                              <a tabindex="-1" href="{!!URL::to('/admin/formacionmadre');!!}">
-                                Nivel formación Madre
-                              </a>
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                    </li>
-
-                    <!--************* RAZON ************* -->
-                    <li class="panel panel-default" id="nivel-2">
-                      <a data-toggle="collapse" href="#op-razon">Razón
-                        <i id="caret" class="fas fa-caret-down text-right"></i>
-                      </a>
-                      <div id="op-razon" class="panel-collapse collapse">
-                        <div class="panel-body">
-                          <ul class="nav navbar-nav" id="nivel-3">
-                            <li><a tabindex="-1" href="{!!URL::to('/admin/razon1');!!}">Primera Razón</a></li>
-                            <li><a tabindex="-1" href="{!!URL::to('/admin/razon2');!!}">Segundo Razón</a></li>
-                            <li><a tabindex="-1" href="{!!URL::to('/admin/razon3');!!}">Tercera Razón</a></li>
-                            <li><a tabindex="-1" href="{!!URL::to('/admin/razon4');!!}">Cuarta Razón</a></li>
-                            <li><a tabindex="-1" href="{!!URL::to('/admin/razon5');!!}">Quinta Razón</a></li>
-                            <li><a tabindex="-1" href="{!!URL::to('/admin/razon6');!!}">Sexta Razón</a></li>
-                          </ul>
-                        </div>
-                      </div>
-                    </li>
-
-                  </ul>
-                </div>
-              </div>
-            </li>
-
-<!--*********** MANTENIMIENTO ACADEMICO *********** -->
-            <li>
-              <a data-toggle="collapse" href="#academico"><i class="fas fa-fw fa-folder"></i>
-                <span>Mantenimiento Académico</span><i id="caret" class="fas fa-caret-down"></i>
-              </a>
-              <div id="academico" class="panel-collapse collapse">
-                <div class="panel-body">
-                  <ul class="nav navbar-nav" id="nivel-2">
-
-                    <!--************* CARRERAS ************* -->
-                    <li class="panel panel-default" id="nivel-2">
-                      <a data-toggle="collapse" href="#op-carreras">Carreras
-                        <i id="caret" class="fas fa-caret-down text-right"></i>
-                      </a>
-                      <div id="op-carreras" class="panel-collapse collapse">
-                        <div class="panel-body">
-                          <ul class="nav navbar-nav" id="nivel-3">
-                            <li>
-                              <a tabindex="-1" href="{!!URL::to('/admin/modCarrera');!!}">Modalidad Carrera</a>
-                            </li>
-                            <li>
-                              <a tabindex="-1" href="{!!URL::to('/admin/jornadaCarrera');!!}">
-                                Jornada Carrera
-                              </a>
-                            </li>
-                            <li>
-                              <a tabindex="-1" href="{!!URL::to('/admin/carreras');!!}">Nombre Carrera</a>
-                            </li>
-                            <li>
-                              <a tabindex="-1" href="{!!URL::to('/admin/titulocarrera');!!}">
-                                Titulo de la carrera
-                              </a>
-                            </li>
-                            <li>
-                              <a tabindex="-1" href="{!!URL::to('/admin/mallasCarrera');!!}">Malla Carrera</a>
-                            </li>
-                            <li>
-                              <a tabindex="-1" href="{!!URL::to('/admin/academicoCarreraCoordinador');!!}">
-                                Carrera Coordinador
-                              </a>
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                    </li>
-
-                    <!--************* MATERIAS ************* -->
-                    <li class="panel panel-default" id="nivel-2">
-                      <a data-toggle="collapse" href="#op-materias">Materias
-                        <i id="caret" class="fas fa-caret-down text-right"></i>
-                      </a>
-                      <div id="op-materias" class="panel-collapse collapse">
-                        <div class="panel-body">
-                          <ul class="nav navbar-nav" id="nivel-3">
-                            <li>
-                              <a tabindex="-1" href="{!!URL::to('/admin/materias');!!}">Nombre Materias</a>
-                            </li>
-                            <li>
-                              <a tabindex="-1" href="{!!URL::to('/admin/Areas_Materias');!!}">Areas Materias</a>
-                            </li>
-                            <li>
-                              <a tabindex="-1" href="{!!URL::to('/admin/MallasMaterias');!!}">Mallas Materias</a>
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                    </li>
-
-                    <!--************* AREAS INSTITUCION ************* -->
-                    <li class="panel panel-default" id="nivel-2-select">
-                      <a href="{!!URL::to('/admin/areasInstituto');!!}">
-                        Areas Institución
-                      </a>
-                    </li>
-
-                    <!--************* CICLOS ************* -->
-                    <li class="panel panel-default" id="nivel-2-select">
-                      <a href="{!!URL::to('/admin/ciclos');!!}">Ciclos</a>
-                    </li>
-
-                    <!--************* NIVEL FORMACION ************* -->
-                    <li class="panel panel-default" id="nivel-2-select">
-                      <a href="{!!URL::to('/admin/nivelFormacion');!!}">Nivel Formación</a>
-                    </li>
-
-                    <!--************* MALLAS ************* -->
-                    <li class="panel panel-default" id="nivel-2-select">
-                      <a href="{!!URL::to('/admin/malla');!!}">Malla</a>
-                    </li>
-
-                    <!--************* MIGRATORIA ************* -->
-                    <li class="panel panel-default" id="nivel-2-select">
-                      <a href="{!!URL::to('/admin/categoriaMigratoria');!!}">Migratoria</a>
-                    </li>
-                    <!--************* PARALELO ************* -->
-                    <li class="panel panel-default" id="nivel-2-select">
-                      <a href="{!!URL::to('/admin/paraleloAcad');!!}">Paralelo</a>
-                    </li>
-
-                    <!--************* PERIODO ************* -->
-                    <li class="panel panel-default" id="nivel-2-select">
-                      <a href="{!!URL::to('/admin/AcadPeriodos');!!}">Periodo</a>
-                    </li>
-
-                    <!--************* SEDES ************* -->
-                    <li class="panel panel-default" id="nivel-2-select">
-                      <a href="{!!URL::to('/admin/academicoSedes');!!}">Sedes</a>
-                    </li>
-
-                    <!--************* PARELELO SEDE JORNADA ************* -->
-                    <li class="panel panel-default" id="nivel-2-select">
-                      <a href="{!!URL::to('/admin/asignacion');!!}">Paralelo/Sede/Jornada/Carrera</a>
-                    </li>
-                    
-                    <!--************* PARELELO POR PERIODO ************* -->
-                    <li class="panel panel-default" id="nivel-2-select">
-                      <a href="{!!URL::to('/admin/academicoParaleloPeriodo');!!}">Paralelo por periodo</a>
-                    </li>
-
-                  </ul>
-                </div>
-
-              </div>
-
-            </li>
-
-            <li></li><!-- NIVEL 1 -->
-            <li></li><!-- NIVEL 1 -->
-
-          </ul>
-        </nav>
-
-      </div>
+                    </div>
+                    @endif
+                  @endif
+                </li>
+                @endforeach
+        </ul>
+      </nav>
+    </div>
 
     @endif
 

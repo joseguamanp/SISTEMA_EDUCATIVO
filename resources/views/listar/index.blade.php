@@ -27,34 +27,6 @@
 			@endforeach
 
 		</div>
-		<div class="row">
-			@foreach($lista as $lis)
-				@if($lis->escalon>0)
-					@if($lis->escalon==$lis->id)
-					<div class="col-md-3">
-						<p class="text-primary">{{$lis->nombre}}</p>
-					</div>
-					<?php $valor=$lis->id ?>
-					@else
-						@if($lis->escalon==$valor && $lis->escalon!=$lis->id)
-						<a data-toggle="collapse" href="#op-generales">{{$lis->nombre}}
-                        	<i id="caret" class="fas fa-caret-down text-right"></i>
-                      	</a>
-						@else
-						<div id="op-generales" class="panel-collapse collapse">
-                        	<div class="panel-body">
-                          		<ul class="nav navbar-nav" id="nivel-3">
-                            		<li>
-                              			<a tabindex="-1" href="{!!URL::to('$lis->rutas');!!}">{{$lis->nombre}}</a>
-                            		</li>
-                            	</ul>
-                            </div>
-                        </div>
-						@endif
-					@endif
-				@endif
-			@endforeach
-		</div>
 	</div>
 </div>
 @endsection
