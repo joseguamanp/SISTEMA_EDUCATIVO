@@ -117,9 +117,9 @@
                   @endif
                 </li>
                 @endforeach
-        </ul>
-      </nav>
-    </div>
+            </ul>
+          </nav>
+        </div>
 
     @endif
 
