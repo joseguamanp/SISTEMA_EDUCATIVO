@@ -15,10 +15,12 @@ Route::get('/', function () {
   return view('auth.login');
 });
 
-//hola que hace
+//******************* INICIO ********************
 
 
-//modifico jose guaman
+
+
+
 Auth::routes();
 
 //usuario todos
@@ -121,7 +123,7 @@ Route::group(['middleware' => ['web', 'admin']], function() {
   // ADMIN JORNADA CARRERA
 
 
-  
+
 
   //Sexo
   Route::Resource('admin/sexo','admin\datosidentificacion\sexoController');
@@ -164,7 +166,7 @@ Route::group(['middleware' => ['web', 'admin']], function() {
 
     Route::Resource('/admin/estuOcup','EstuOcupController');
     Route::get('/admin/estuOcup/{id}/restaurar', 'estuOcup@restaurar');
-    
+
     Route::Resource('/admin/docenteMateria', 'DocentesMateriasController');
     Route::get('/admin/docenteMateria/{id}/restaurar','DocentesMateriasController@restaurar');
 
@@ -229,7 +231,7 @@ Route::group(['middleware' => ['web', 'admin']], function() {
   Route::get('/admin/asignacion/{id}/restaurar','ParaleloSeneJornadaCarreraController@restaurar');
   // Route::get('/admin/datos', 'ParaleloSeneJornadaCarreraController@vistatabla');
   // Route::get('/admin/asignacion/{id}/restaurar','ParaleloSeneJornadaCarreraController@restaurar');
-    
+
     //MANTENIMIENTO ACAD PARALELO POR PERIODO
 Route::Resource('admin/academicoParaleloPeriodo','admin\mant_academico\acadParaleloPeriodoController');
 Route::get('admin/academicoParaleloPeriodo/{id}/restaurar','admin\mant_academico\acadParaleloPeriodoController@restaurar');
@@ -240,7 +242,7 @@ Route::post('admin/academicoParaleloPeriodo/nuevo','admin\mant_academico\acadPar
 Route::Resource('admin/academicoNuevoPeriodo','admin\mant_academico\nuevoPeriodoController');
 Route::post('admin/academicoNuevoPeriodo/buscar','admin\mant_academico\nuevoPeriodoController@consultarRegistrosPeriodos');
 Route::post('admin/academicoNuevoPeriodo/mostrar','admin\mant_academico\nuevoPeriodoController@mostrarRegistroPeriodo');
-Route::get('admin/academicoNuevoPeriodo/{id}/restaurar','admin\mant_academico\nuevoPeriodoController@restaurar');        
+Route::get('admin/academicoNuevoPeriodo/{id}/restaurar','admin\mant_academico\nuevoPeriodoController@restaurar');
 
 
   //Paralelo Academico
