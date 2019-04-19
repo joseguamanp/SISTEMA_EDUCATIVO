@@ -4,10 +4,10 @@
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-sb-admin/blob/master/LICENSE)
  */
 
-input[type=number]::-webkit-inner-spin-button, 
-input[type=number]::-webkit-outer-spin-button { 
-  -webkit-appearance: none; 
-  margin: 0; 
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 html {
@@ -25,11 +25,13 @@ body {
   display: flex;
 }
 
+#content-wrapper {
+  padding:100px 10px 40px 10px;
+}
+
 #wrapper #content-wrapper {
   overflow-x: hidden;
   width: 100%;
-  padding-top: 1rem;
-  padding-bottom: 80px;
 }
 
 body.fixed-nav #content-wrapper {
@@ -68,7 +70,7 @@ body.fixed-nav.sidebar-toggled #content-wrapper {
 }
 
 .scroll-to-top:hover {
-  background: #343a40;
+  /*background: #343a40;*/
 }
 
 .scroll-to-top i {

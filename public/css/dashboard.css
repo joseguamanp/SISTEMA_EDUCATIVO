@@ -117,11 +117,9 @@ CONTENT STYLE
 
 #content {
   width: 100%;
-  padding: 30px;
   min-height: 100vh;
   transition: all 0.3s;
   position: absolute;
-  top: 70px;
   right: 0;
 }
 

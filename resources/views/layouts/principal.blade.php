@@ -16,6 +16,7 @@
   <link rel="stylesheet" type="text/css" href="{{ asset('vendor/datatables/dataTables.bootstrap4.css') }}">
   <link rel="stylesheet" type="text/css" href="{{ asset('css/sb-admin.css') }}">
   <link rel="stylesheet" type="text/css" href="{{ asset('css/dashboard.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ asset('css/inicio.css') }}">
 
   <style>
   .dropdown-submenu {
@@ -31,15 +32,14 @@
 
 <body id="page-top" >
 
-  <nav class="navbar navbar-expand navbar-dark bg-dark static-top barra-fija">
+  <nav id="mainNav" class="navbar navbar-expand navbar-dark bg-dark static-top barra-fija">
 
     @if(Session::has('ADMINISTRADOR'))
       <div>
-        <label id="btn-menu" class="mt-2 mr-2"><i class="fas fa-bars fa-lg btn-menu"></i>
-        </label>
+        <label id="btn-menu" class="mt-2 mr-2"><i class="fas fa-bars fa-lg btn-menu"></i></label>
       </div>
     @endif
-    <a class="navbar-brand mr-1" href="{!!URL::to('/roles');!!}">Principal</a>
+    <a class="navbar-brand mr-1" href="{!!URL::to('');!!}">Principal</a>
     <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#"></button>
 
     <!-- Navbar Search -->

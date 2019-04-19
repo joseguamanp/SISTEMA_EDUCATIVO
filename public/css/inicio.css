@@ -1,0 +1,55 @@
+/********************************/
+/*       Fade Bs-carousel       */
+/********************************/
+.fade-carousel {
+    position: relative;
+}
+
+/********************************/
+/*          Hero Headers        */
+/********************************/
+.hero h2,h4{
+  color: #fff;
+  font-weight: bold;
+}
+
+.hero .carousel-caption {
+    position: absolute;
+    top:0;
+    left: 0;
+    padding-top:25%;  
+    color: #fff;
+    width: 100%;
+    z-index: 3;
+}
+.hero .btn{
+  margin-top:30px;
+}
+.fade-carousel .carousel-inner .hero {
+    opacity: 0;
+    -webkit-transition: 1s all ease-in-out .1s;
+       -moz-transition: 1s all ease-in-out .1s;
+        -ms-transition: 1s all ease-in-out .1s;
+         -o-transition: 1s all ease-in-out .1s;
+            transition: 1s all ease-in-out .1s;
+}
+.fade-carousel .carousel-inner .carousel-item.active .hero {
+    opacity: 1;
+    -webkit-transition: 1s all ease-in-out .1s;
+       -moz-transition: 1s all ease-in-out .1s;
+        -ms-transition: 1s all ease-in-out .1s;
+         -o-transition: 1s all ease-in-out .1s;
+            transition: 1s all ease-in-out .1s;
+}
+
+/********************************/
+/*          Media Queries       */
+/********************************/
+@media screen and (min-width: 980px){
+    .hero { width: 980px; }
+}
+@media screen and (max-width: 768px){
+    .hero { top: 65%;}
+    .hero h2 { font-size: 22px; }
+    .hero h4 { font-size: 18px; }
+}
