@@ -12,7 +12,7 @@ class opcione extends Model
     protected $dates = ['deleted_at'];
 
     protected $fillable = [
-        'nombre_opcion', 'estado','id_rol','url'
+        'nombre_opcion', 'estado','id_rol','url','icono'
     ];
  	
 }

@@ -6,11 +6,11 @@
 		<div class="row">
 			@foreach($op as $opcion)
 				<div class="col-xl-3 col-sm-3 col-md-3 mb-4">
-	              	<div class="card text-gray-dark o-hidden h-100 text-center">
-	                
-		                <div class="card-body" style="height: 100px;">
+	              	<div class="card text-gray-dark o-hidden h-100 text-center">                
+		                <div class="card-body" style="height: 150px;">
+		                	<i class="{{$opcion->icono}} fa-3x mt-3"></i>
 			                <div class="card-body-icon">
-			                	<i class="fas fa-fw fa-list"></i>
+			                	<i class="{{$opcion->icono}}"></i>
 			                </div>
 			                <div class="mt-3">{{$opcion->nombre_opcion}}</div>
 		                </div> 
