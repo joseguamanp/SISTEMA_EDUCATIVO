@@ -482,7 +482,7 @@
           <div class="col-md-12 col-sm-12 col-xs-12">
             <div class="wellcome-text">
               <div class="well-text text-center">
-                <h2>Bienvenidos a nuestro web</h2>
+                <h2>Bienvenidos a nuestra web</h2>
                 <p>
                   Busuness Lorem ipsum dolor sit amet, consectetur adipiscing elit.luctus est eget congue.
                 </p>
