@@ -103,9 +103,21 @@
                   <li>
                     <a class="page-scroll" href="#contact">Contáctanos</a>
                   </li>
+                   @guest
                   <li>
                     <a class="page-scroll" href="{{ route('login') }}">Login</a>
                   </li>
+                  @else
+                  <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    Bienvenido:  {!!Auth::user()->nombre!!} {!!Auth::user()->apellido!!}<span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                      <li><a href="#">Restaurar Clave</a></li>
+                      <li><a href="#" data-toggle="modal" data-target="#logoutModal">
+                          <i class="fa fa-window-close" aria-hidden="true"></i>
+                          Salir</a></li>
+                    </ul>
+                  </li>
+                  @endguest
                 </ul>
               </div>
               <!-- navbar-collapse -->
@@ -215,7 +227,29 @@
       </div>
     </div>
   </footer>
-
+  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Esta seguro que desea salir?</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">Esta seguro que desea cerrar session</div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
+            <a class="btn btn-success" href="{{ route('logout') }}"
+            onclick="event.preventDefault();
+            document.getElementById('logout-form').submit();">
+            {{ __('Salir') }}
+          </a>
+          <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+            @csrf
+          </form>
+        </div>
+      </div>
+    </div>
   <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
 
   <!-- JavaScript Libraries -->
