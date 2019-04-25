@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Generales;
+namespace App\Http\Controllers\GeneralController;
 
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\GeneralController;
 use App\Http\Requests\SexoRequest;
-use App\SexoModel;
+use App\Http\Model\GeneralModel\SexoModel;
 use Illuminate\Support\Facades\Auth;
 class SexoController extends Controller
 {
@@ -43,8 +43,8 @@ class SexoController extends Controller
             $next = 1;
         else
             $next = $next + 1;
-        $valor=strtoupper($request->input('etiqueta'));        
-        $this->validar($valor,$next);                
+        $valor=strtoupper($request->input('etiqueta'));
+        $this->validar($valor,$next);
         return $this->index();
     }
     public function validar($valor,$contar)
@@ -54,7 +54,7 @@ class SexoController extends Controller
                 'id'=>$contar,
                 'id_usu_cre' => Auth::user()->id,
                 'etiqueta'=>$valor,
-            ]); 
+            ]);
     }
     /**
      * Display the specified resource.
@@ -92,7 +92,7 @@ class SexoController extends Controller
         $datoset->etiqueta = strtoupper($request->input('etiqueta'));
         $datoset->id_usu_mod = Auth::user()->id;
         $datoset->save();
-        return redirect('/admin/sexo/');  
+        return redirect('/admin/sexo/');
     }
 
     /**

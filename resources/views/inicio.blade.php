@@ -89,7 +89,7 @@
   <!-- End Slider Area -->
 
   <!-- Start About area -->
-  <div id="about" class="about-area area-padding">
+<!--  <div id="about" class="about-area area-padding">
     <div class="container">
       <div class="row">
         <div class="col-md-12 col-sm-12 col-xs-12">
@@ -98,19 +98,19 @@
           </div>
         </div>
       </div>
-      <div class="row">
+      <div class="row"> -->
         <!-- single-well start-->
-        <div class="col-md-6 col-sm-6 col-xs-12">
+<!--        <div class="col-md-6 col-sm-6 col-xs-12">
           <div class="well-left">
             <div class="single-well">
               <a href="#">
-                  <img src="img/about/1.jpg" alt="">
-                </a>
+                <img src="img/about/1.jpg" alt="">
+              </a>
             </div>
           </div>
-        </div>
+        </div> -->
         <!-- single-well end-->
-        <div class="col-md-6 col-sm-6 col-xs-12">
+<!--        <div class="col-md-6 col-sm-6 col-xs-12">
           <div class="well-middle">
             <div class="single-well">
               <a href="#">
@@ -138,11 +138,11 @@
               </ul>
             </div>
           </div>
-        </div>
+        </div> -->
         <!-- End col-->
-      </div>
+<!--      </div>
     </div>
-  </div>
+  </div> -->
   <!-- End About area -->
 
   <!-- Start Service area -->
@@ -163,8 +163,8 @@
               <div class="services-details">
                 <div class="single-services">
                   <a class="services-icon" href="#">
-                      <i class="fa fa-code"></i>
-                    </a>
+                    <i class="fa fa-code"></i>
+                  </a>
                   <h4>Expert Coder</h4>
                   <p>
                     will have to make sure the prototype looks finished by inserting text or photo.make sure the prototype looks finished by.
@@ -179,8 +179,8 @@
               <div class="services-details">
                 <div class="single-services">
                   <a class="services-icon" href="#">
-                      <i class="fa fa-camera-retro"></i>
-                    </a>
+                    <i class="fa fa-camera-retro"></i>
+                  </a>
                   <h4>Creative Designer</h4>
                   <p>
                     will have to make sure the prototype looks finished by inserting text or photo.make sure the prototype looks finished by.
@@ -196,8 +196,8 @@
               <div class="services-details">
                 <div class="single-services">
                   <a class="services-icon" href="#">
-                      <i class="fa fa-wordpress"></i>
-                    </a>
+                    <i class="fa fa-wordpress"></i>
+                  </a>
                   <h4>Wordpress Developer</h4>
                   <p>
                     will have to make sure the prototype looks finished by inserting text or photo.make sure the prototype looks finished by.
@@ -213,8 +213,8 @@
               <div class="services-details">
                 <div class="single-services">
                   <a class="services-icon" href="#">
-                      <i class="fa fa-camera-retro"></i>
-                    </a>
+                    <i class="fa fa-camera-retro"></i>
+                  </a>
                   <h4>Social Marketer </h4>
                   <p>
                     will have to make sure the prototype looks finished by inserting text or photo.make sure the prototype looks finished by.
@@ -231,8 +231,8 @@
               <div class="services-details">
                 <div class="single-services">
                   <a class="services-icon" href="#">
-                      <i class="fa fa-bar-chart"></i>
-                    </a>
+                    <i class="fa fa-bar-chart"></i>
+                  </a>
                   <h4>Seo Expart</h4>
                   <p>
                     will have to make sure the prototype looks finished by inserting text or photo.make sure the prototype looks finished by.
@@ -249,8 +249,8 @@
               <div class="services-details">
                 <div class="single-services">
                   <a class="services-icon" href="#">
-                      <i class="fa fa-ticket"></i>
-                    </a>
+                    <i class="fa fa-ticket"></i>
+                  </a>
                   <h4>24/7 Support</h4>
                   <p>
                     will have to make sure the prototype looks finished by inserting text or photo.make sure the prototype looks finished by.
@@ -266,60 +266,119 @@
   </div>
   <!-- End Service area -->
 
-  <!-- our-skill-area start -->
-  <div class="our-skill-area fix hidden-sm">
-    <div class="test-overly"></div>
-    <div class="skill-bg area-padding-2">
-      <div class="container">
-        <!-- section-heading end -->
+  <!-- Start Blog Area -->
+  <div id="blog" class="blog-area">
+    <div class="blog-inner area-padding">
+      <div class="blog-overly"></div>
+      <div class="container ">
         <div class="row">
-          <div class="skill-text">
-            <!-- single-skill start -->
-            <div class="col-xs-12 col-sm-3 col-md-3 text-center">
-              <div class="single-skill">
-                <div class="progress-circular">
-                  <input type="text" class="knob" value="0" data-rel="95" data-linecap="round" data-width="175" data-bgcolor="#fff" data-fgcolor="#3EC1D5" data-thickness=".20" data-readonly="true" disabled>
-                  <h3 class="progress-h4">Web Design</h3>
-                </div>
-              </div>
+          <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="section-headline text-center">
+              <h2>Últimas Noticias</h2>
             </div>
-            <!-- single-skill end -->
-            <!-- single-skill start -->
-            <div class="col-xs-12 col-sm-3 col-md-3 text-center">
-              <div class="single-skill">
-                <div class="progress-circular">
-                  <input type="text" class="knob" value="0" data-rel="85" data-linecap="round" data-width="175" data-bgcolor="#fff" data-fgcolor="#3EC1D5" data-thickness=".20" data-readonly="true" disabled>
-                  <h3 class="progress-h4">Graphics Design</h3>
-                </div>
-              </div>
-            </div>
-            <!-- single-skill end -->
-            <!-- single-skill start -->
-            <div class="col-xs-12 col-sm-3 col-md-3 text-center">
-              <div class="single-skill">
-                <div class="progress-circular">
-                  <input type="text" class="knob" value="0" data-rel="75" data-linecap="round" data-width="175" data-bgcolor="#fff" data-fgcolor="#3EC1D5" data-thickness=".20" data-readonly="true" disabled>
-                  <h3 class="progress-h4">Php Developer</h3>
-                </div>
-              </div>
-            </div>
-            <!-- single-skill end -->
-            <!-- single-skill start -->
-            <div class="col-xs-12 col-sm-3 col-md-3 text-center">
-              <div class="single-skill">
-                <div class="progress-circular">
-                  <input type="text" class="knob" value="0" data-rel="65" data-linecap="round" data-width="175" data-bgcolor="#fff" data-fgcolor="#3EC1D5" data-thickness=".20" data-readonly="true" disabled>
-                  <h3 class="progress-h4">Java Script</h3>
-                </div>
-              </div>
-            </div>
-            <!-- single-skill end -->
           </div>
+        </div>
+        <div class="row">
+          <!-- Start Left Blog -->
+          <div class="col-md-4 col-sm-4 col-xs-12">
+            <div class="single-blog">
+              <div class="single-blog-img">
+                <a href="blog.html">
+                  <img src="img/blog/1.jpg" alt="">
+                </a>
+              </div>
+              <div class="blog-meta">
+                <span class="comments-type">
+                  <i class="fa fa-comment-o"></i>
+                  <a href="#">13 comments</a>
+                </span>
+                <span class="date-type">
+                  <i class="fa fa-calendar"></i>2016-03-05 / 09:10:16
+                </span>
+              </div>
+              <div class="blog-text">
+                <h4>
+                  <a href="blog.html">Assumenda repud eum veniam</a>
+                </h4>
+                <p>
+                  Lorem ipsum dolor sit amet conse adipis elit Assumenda repud eum veniam optio modi sit explicabo nisi magnam quibusdam.sit amet conse adipis elit Assumenda repud eum veniam optio modi sit explicabo nisi magnam quibusdam.
+                </p>
+              </div>
+              <span>
+                <a href="blog.html" class="ready-btn">Read more</a>
+              </span>
+            </div>
+            <!-- Start single blog -->
+          </div>
+          <!-- End Left Blog-->
+          <!-- Start Left Blog -->
+          <div class="col-md-4 col-sm-4 col-xs-12">
+            <div class="single-blog">
+              <div class="single-blog-img">
+                <a href="blog.html">
+                  <img src="img/blog/2.jpg" alt="">
+                </a>
+              </div>
+              <div class="blog-meta">
+                <span class="comments-type">
+                  <i class="fa fa-comment-o"></i>
+                  <a href="#">130 comments</a>
+                </span>
+                <span class="date-type">
+                  <i class="fa fa-calendar"></i>2016-03-05 / 09:10:16
+                </span>
+              </div>
+              <div class="blog-text">
+                <h4>
+                  <a href="blog.html">Explicabo magnam quibusdam.</a>
+                </h4>
+                <p>
+                  Lorem ipsum dolor sit amet conse adipis elit Assumenda repud eum veniam optio modi sit explicabo nisi magnam quibusdam.sit amet conse adipis elit Assumenda repud eum veniam optio modi sit explicabo nisi magnam quibusdam.
+                </p>
+              </div>
+              <span>
+                <a href="blog.html" class="ready-btn">Read more</a>
+              </span>
+            </div>
+            <!-- Start single blog -->
+          </div>
+          <!-- End Left Blog-->
+          <!-- Start Right Blog-->
+          <div class="col-md-4 col-sm-4 col-xs-12">
+            <div class="single-blog">
+              <div class="single-blog-img">
+                <a href="blog.html">
+                  <img src="img/blog/3.jpg" alt="">
+                </a>
+              </div>
+              <div class="blog-meta">
+                <span class="comments-type">
+                  <i class="fa fa-comment-o"></i>
+                  <a href="#">10 comments</a>
+                </span>
+                <span class="date-type">
+                  <i class="fa fa-calendar"></i>2016-03-05 / 09:10:16
+                </span>
+              </div>
+              <div class="blog-text">
+                <h4>
+                  <a href="blog.html">Lorem ipsum dolor sit amet</a>
+                </h4>
+                <p>
+                  Lorem ipsum dolor sit amet conse adipis elit Assumenda repud eum veniam optio modi sit explicabo nisi magnam quibusdam.sit amet conse adipis elit Assumenda repud eum veniam optio modi sit explicabo nisi magnam quibusdam.
+                </p>
+              </div>
+              <span>
+                <a href="blog.html" class="ready-btn">Read more</a>
+              </span>
+            </div>
+          </div>
+          <!-- End Right Blog-->
         </div>
       </div>
     </div>
   </div>
-  <!-- our-skill-area end -->
+  <!-- End Blog -->
 
   <!-- Faq area start -->
   <div class="faq-area area-padding">
@@ -339,10 +398,10 @@
               <div class="panel panel-default">
                 <div class="panel-heading">
                   <h4 class="check-title">
-                      <a data-toggle="collapse" class="active" data-parent="#accordion" href="#check1">
-                                                <span class="acc-icons"></span>Consectetur adipisicing elit.
-                      </a>
-                    </h4>
+                    <a data-toggle="collapse" class="active" data-parent="#accordion" href="#check1">
+                      <span class="acc-icons"></span>Consectetur adipisicing elit.
+                    </a>
+                  </h4>
                 </div>
                 <div id="check1" class="panel-collapse collapse in">
                   <div class="panel-body">
@@ -357,10 +416,10 @@
               <div class="panel panel-default">
                 <div class="panel-heading">
                   <h4 class="check-title">
-                      <a data-toggle="collapse" data-parent="#accordion" href="#check2">
-                                                <span class="acc-icons"></span> Dolore magnam quidem repellat.
-                      </a>
-                    </h4>
+                    <a data-toggle="collapse" data-parent="#accordion" href="#check2">
+                      <span class="acc-icons"></span> Dolore magnam quidem repellat.
+                    </a>
+                  </h4>
                 </div>
                 <div id="check2" class="panel-collapse collapse">
                   <div class="panel-body">
@@ -375,10 +434,10 @@
               <div class="panel panel-default">
                 <div class="panel-heading">
                   <h4 class="check-title">
-                      <a data-toggle="collapse" data-parent="#accordion" href="#check3">
-                                                <span class="acc-icons"></span>Redug Lefes dolor sit.
-                      </a>
-                    </h4>
+                    <a data-toggle="collapse" data-parent="#accordion" href="#check3">
+                      <span class="acc-icons"></span>Redug Lefes dolor sit.
+                    </a>
+                  </h4>
                 </div>
                 <div id="check3" class="panel-collapse collapse ">
                   <div class="panel-body">
@@ -393,10 +452,10 @@
               <div class="panel panel-default">
                 <div class="panel-heading">
                   <h4 class="check-title">
-                      <a data-toggle="collapse" data-parent="#accordion" href="#check4">
-                                                <span class="acc-icons"></span>Maiores alias accusamus
-                      </a>
-                    </h4>
+                    <a data-toggle="collapse" data-parent="#accordion" href="#check4">
+                      <span class="acc-icons"></span>Maiores alias accusamus
+                    </a>
+                  </h4>
                 </div>
                 <div id="check4" class="panel-collapse collapse">
                   <div class="panel-body">
@@ -473,8 +532,8 @@
   </div>
   <!-- End Faq Area -->
 
-  <!-- Start Wellcome Area -->
-  <div class="wellcome-area">
+  <!-- Inicio del area Suscribirse-->
+  <!--<div class="wellcome-area">
     <div class="well-bg">
       <div class="test-overly"></div>
       <div class="container">
@@ -499,8 +558,8 @@
         </div>
       </div>
     </div>
-  </div>
-  <!-- End Wellcome Area -->
+  </div>-->
+  <!-- Fin del area Suscribirse-->
 
   <!-- Start team Area -->
   <div id="team" class="our-team-area area-padding">
@@ -518,24 +577,24 @@
             <div class="single-team-member">
               <div class="team-img">
                 <a href="#">
-                    <img src="img/team/1.jpg" alt="">
-                  </a>
+                  <img src="img/team/1.jpg" alt="">
+                </a>
                 <div class="team-social-icon text-center">
                   <ul>
                     <li>
                       <a href="#">
-                          <i class="fa fa-facebook"></i>
-                        </a>
+                        <i class="fa fa-facebook"></i>
+                      </a>
                     </li>
                     <li>
                       <a href="#">
-                          <i class="fa fa-twitter"></i>
-                        </a>
+                        <i class="fa fa-twitter"></i>
+                      </a>
                     </li>
                     <li>
                       <a href="#">
-                          <i class="fa fa-instagram"></i>
-                        </a>
+                        <i class="fa fa-instagram"></i>
+                      </a>
                     </li>
                   </ul>
                 </div>
@@ -551,24 +610,24 @@
             <div class="single-team-member">
               <div class="team-img">
                 <a href="#">
-                    <img src="img/team/2.jpg" alt="">
-                  </a>
+                  <img src="img/team/2.jpg" alt="">
+                </a>
                 <div class="team-social-icon text-center">
                   <ul>
                     <li>
                       <a href="#">
-                          <i class="fa fa-facebook"></i>
-                        </a>
+                        <i class="fa fa-facebook"></i>
+                      </a>
                     </li>
                     <li>
                       <a href="#">
-                          <i class="fa fa-twitter"></i>
-                        </a>
+                        <i class="fa fa-twitter"></i>
+                      </a>
                     </li>
                     <li>
                       <a href="#">
-                          <i class="fa fa-instagram"></i>
-                        </a>
+                        <i class="fa fa-instagram"></i>
+                      </a>
                     </li>
                   </ul>
                 </div>
@@ -584,24 +643,24 @@
             <div class="single-team-member">
               <div class="team-img">
                 <a href="#">
-                    <img src="img/team/3.jpg" alt="">
-                  </a>
+                  <img src="img/team/3.jpg" alt="">
+                </a>
                 <div class="team-social-icon text-center">
                   <ul>
                     <li>
                       <a href="#">
-                          <i class="fa fa-facebook"></i>
-                        </a>
+                        <i class="fa fa-facebook"></i>
+                      </a>
                     </li>
                     <li>
                       <a href="#">
-                          <i class="fa fa-twitter"></i>
-                        </a>
+                        <i class="fa fa-twitter"></i>
+                      </a>
                     </li>
                     <li>
                       <a href="#">
-                          <i class="fa fa-instagram"></i>
-                        </a>
+                        <i class="fa fa-instagram"></i>
+                      </a>
                     </li>
                   </ul>
                 </div>
@@ -617,24 +676,24 @@
             <div class="single-team-member">
               <div class="team-img">
                 <a href="#">
-                    <img src="img/team/4.jpg" alt="">
-                  </a>
+                  <img src="img/team/4.jpg" alt="">
+                </a>
                 <div class="team-social-icon text-center">
                   <ul>
                     <li>
                       <a href="#">
-                          <i class="fa fa-facebook"></i>
-                        </a>
+                        <i class="fa fa-facebook"></i>
+                      </a>
                     </li>
                     <li>
                       <a href="#">
-                          <i class="fa fa-twitter"></i>
-                        </a>
+                        <i class="fa fa-twitter"></i>
+                      </a>
                     </li>
                     <li>
                       <a href="#">
-                          <i class="fa fa-instagram"></i>
-                        </a>
+                        <i class="fa fa-instagram"></i>
+                      </a>
                     </li>
                   </ul>
                 </div>
@@ -657,8 +716,8 @@
     <div class="work-us">
       <div class="work-left-text">
         <a href="#">
-            <img src="img/about/2.jpg" alt="">
-          </a>
+          <img src="img/about/2.jpg" alt="">
+        </a>
       </div>
       <div class="work-right-text text-center">
         <h2>Trabaja con nosotros</h2>
@@ -809,6 +868,7 @@
     </div>
   </div>
   <!-- awesome-portfolio end -->
+
   <!-- Start Testimonials -->
   <div class="testimonials-area">
     <div class="testi-inner area-padding">
@@ -858,133 +918,7 @@
     </div>
   </div>
   <!-- End Testimonials -->
-  <!-- Start Blog Area -->
-  <div id="blog" class="blog-area">
-    <div class="blog-inner area-padding">
-      <div class="blog-overly"></div>
-      <div class="container ">
-        <div class="row">
-          <div class="col-md-12 col-sm-12 col-xs-12">
-            <div class="section-headline text-center">
-              <h2>Últimas Noticias</h2>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <!-- Start Left Blog -->
-          <div class="col-md-4 col-sm-4 col-xs-12">
-            <div class="single-blog">
-              <div class="single-blog-img">
-                <a href="blog.html">
-                    <img src="img/blog/1.jpg" alt="">
-                  </a>
-              </div>
-              <div class="blog-meta">
-                <span class="comments-type">
-                    <i class="fa fa-comment-o"></i>
-                    <a href="#">13 comments</a>
-                  </span>
-                <span class="date-type">
-                    <i class="fa fa-calendar"></i>2016-03-05 / 09:10:16
-                  </span>
-              </div>
-              <div class="blog-text">
-                <h4>
-                                        <a href="blog.html">Assumenda repud eum veniam</a>
-                  </h4>
-                <p>
-                  Lorem ipsum dolor sit amet conse adipis elit Assumenda repud eum veniam optio modi sit explicabo nisi magnam quibusdam.sit amet conse adipis elit Assumenda repud eum veniam optio modi sit explicabo nisi magnam quibusdam.
-                </p>
-              </div>
-              <span>
-                  <a href="blog.html" class="ready-btn">Read more</a>
-                </span>
-            </div>
-            <!-- Start single blog -->
-          </div>
-          <!-- End Left Blog-->
-          <!-- Start Left Blog -->
-          <div class="col-md-4 col-sm-4 col-xs-12">
-            <div class="single-blog">
-              <div class="single-blog-img">
-                <a href="blog.html">
-                    <img src="img/blog/2.jpg" alt="">
-                  </a>
-              </div>
-              <div class="blog-meta">
-                <span class="comments-type">
-                    <i class="fa fa-comment-o"></i>
-                    <a href="#">130 comments</a>
-                  </span>
-                <span class="date-type">
-                    <i class="fa fa-calendar"></i>2016-03-05 / 09:10:16
-                  </span>
-              </div>
-              <div class="blog-text">
-                <h4>
-                                        <a href="blog.html">Explicabo magnam quibusdam.</a>
-                  </h4>
-                <p>
-                  Lorem ipsum dolor sit amet conse adipis elit Assumenda repud eum veniam optio modi sit explicabo nisi magnam quibusdam.sit amet conse adipis elit Assumenda repud eum veniam optio modi sit explicabo nisi magnam quibusdam.
-                </p>
-              </div>
-              <span>
-                  <a href="blog.html" class="ready-btn">Read more</a>
-                </span>
-            </div>
-            <!-- Start single blog -->
-          </div>
-          <!-- End Left Blog-->
-          <!-- Start Right Blog-->
-          <div class="col-md-4 col-sm-4 col-xs-12">
-            <div class="single-blog">
-              <div class="single-blog-img">
-                <a href="blog.html">
-                    <img src="img/blog/3.jpg" alt="">
-                  </a>
-              </div>
-              <div class="blog-meta">
-                <span class="comments-type">
-                    <i class="fa fa-comment-o"></i>
-                    <a href="#">10 comments</a>
-                  </span>
-                <span class="date-type">
-                    <i class="fa fa-calendar"></i>2016-03-05 / 09:10:16
-                  </span>
-              </div>
-              <div class="blog-text">
-                <h4>
-                                        <a href="blog.html">Lorem ipsum dolor sit amet</a>
-                  </h4>
-                <p>
-                  Lorem ipsum dolor sit amet conse adipis elit Assumenda repud eum veniam optio modi sit explicabo nisi magnam quibusdam.sit amet conse adipis elit Assumenda repud eum veniam optio modi sit explicabo nisi magnam quibusdam.
-                </p>
-              </div>
-              <span>
-                  <a href="blog.html" class="ready-btn">Read more</a>
-                </span>
-            </div>
-          </div>
-          <!-- End Right Blog-->
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- End Blog -->
-  <!-- Start Suscrive Area -->
-  <div class="suscribe-area">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs=12">
-          <div class="suscribe-text text-center">
-            <h3>Bienvenido a nuestra web</h3>
-            <a class="sus-btn" href="#">Cotizar</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- End Suscrive Area -->
+
   <!-- Start contact Area -->
   <div id="contact" class="contact-area">
     <div class="contact-inner area-padding">

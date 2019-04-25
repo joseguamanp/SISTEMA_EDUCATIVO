@@ -11,17 +11,20 @@
 |
 */
 
+//******************* INICIO ********************
 Route::get('/', function () {
   return view('inicio');
 });
+Route::get('nosotros', function () {
+  return view('nosotros.nosotros');
+});
 
-//******************* INICIO ********************
-
+//**************** FIN DE INICIO *************
 
 Auth::routes();
 
 //usuario todos
-Route::Resource('/roles','ListarRolesController');    
+Route::Resource('/roles','ListarRolesController');
 
 Route::group(['middleware' => ['web', 'admin']], function() {
   ////////////////////////////ADMINISTRADOR
@@ -46,8 +49,8 @@ Route::group(['middleware' => ['web', 'admin']], function() {
   Route::get('/admin/datosetnia/{id}/restaurar','Generales\EtniaController@restaurar');
   Route::Resource('/admin/datosetnia','Generales\EtniaController');
   //SEXO
-  Route::Resource('admin/sexo','Generales\SexoController');
-  Route::get('/admin/sexo/{id}/restaurar','Generales\SexoController@restaurar');
+  Route::Resource('admin/sexo','GeneralController\SexoController');
+  Route::get('/admin/sexo/{id}/restaurar','GeneralController\SexoController@restaurar');
   //GENERO
   Route::Resource('admin/genero','Generales\GeneroController');
   Route::get('/admin/genero/{id}/restaurar','Generales\GeneroController@restaurar');
@@ -60,5 +63,3 @@ Route::group(['middleware' => ['web', 'admin']], function() {
   Route::get('/admin/discapacidad/{id}/restaurar','Discapacidad\DiscapacidadController@restaurar');
 
 });
-
-
