@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Http\Controllers\admin\datosidentificacion;
+namespace App\Http\Controllers\Generales;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\GeneroRequest;
-use App\genero;
+use App\Http\Requests\EtniaRequest;
+use App\Etnia;
 use Illuminate\Support\Facades\Auth;
-class generoController extends Controller
+class EtniaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -21,8 +21,8 @@ class generoController extends Controller
     }
     public function index()
     {
-        $datos = genero::withTrashed()->get();
-        return view('admin.listasenescyt.datosidentificacion.genero',['datos'=>$datos]);
+        $datos = Etnia::withTrashed()->get();
+        return view('admin.listasenescyt.datosidentificacion.createetnia',['datos'=>$datos]);
     }
 
     /**
@@ -41,25 +41,27 @@ class generoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function validarId($id,$etiqueta){
-        genero::create([
-            'id'=>$id,
-            'id_usu_cre' => Auth::user()->id,
-            'etiqueta'=>strtoupper($etiqueta),            
-            ]);
-    }
-    public function store(GeneroRequest $request)
+    public function store(EtniaRequest $request)
     {
-        $next = genero::withTrashed()->max('id');
+        $next=Etnia::withTrashed()->max('id');
         if($next == 0)
             $next = 1;
         else
             $next = $next + 1;
-        $etiqueta = $request->input('etiqueta');        
-        $this->validarId($next,$etiqueta);                 
+        $valor=strtoupper($request->input('etiqueta'));        
+        $this->validar($valor,$next);        
+        
         return $this->index();
     }
-
+    public function validar($valor,$contar)
+    {
+        //$id_user=Auth::user()->id;
+        $base=Etnia::create([
+                'id'=>$contar,
+                'id_usu_cre' => Auth::user()->id,
+                'etiqueta'=>$valor,
+            ]); 
+    }
     /**
      * Display the specified resource.
      *
@@ -79,8 +81,8 @@ class generoController extends Controller
      */
     public function edit($id)
     {
-        $datosid = genero::find($id);
-        return view('admin.listasenescyt.datosidentificacion.generoedit',['editaret'=>$datosid]);
+        $datosid = Etnia::find($id);
+        return view('admin.listasenescyt.datosidentificacion.editaretnia',['editaret'=>$datosid]);
     }
 
     /**
@@ -90,13 +92,13 @@ class generoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(GeneroRequest $request, $id)
+    public function update(EtniaRequest $request, $id)
     {
-        $datoset = genero::find($id);
+        $datoset = Etnia::find($id);
         $datoset->etiqueta = strtoupper($request->input('etiqueta'));
-        $datoset->id_usu_mod = Auth::user()->id;    
+        $datoset->id_usu_mod = Auth::user()->id;
         $datoset->save();
-        return redirect('/admin/genero/'); 
+        return redirect('/admin/datosetnia/');  
     }
 
     /**
@@ -107,18 +109,18 @@ class generoController extends Controller
      */
     public function destroy($id)
     {
-        $datoset=genero::find($id);
+        $datoset=Etnia::find($id);
         $datoset->id_usu_mod = Auth::user()->id;
         $datoset->save();
         $datoset->delete();
-        return redirect('/admin/genero/');
+        return redirect('/admin/datosetnia/');
     }
     public function restaurar($id)
     {
-        $datos=genero::onlyTrashed()->find($id)->restore();
-        $datos=genero::find($id);
-        $datos->id_usu_mod = Auth::user()->id;
-        $datos->save();
-        return redirect('/admin/genero/');
+        $datos=Etnia::onlyTrashed()->find($id)->restore();
+        $datoset=Etnia::find($id);
+        $datoset->id_usu_mod = Auth::user()->id;
+        $datoset->save();
+        return redirect('/admin/datosetnia/');
     }
 }

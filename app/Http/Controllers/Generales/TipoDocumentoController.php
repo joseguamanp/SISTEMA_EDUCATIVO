@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\admin\datosidentificacion;
+namespace App\Http\Controllers\Generales;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -8,7 +8,7 @@ use App\Http\Requests\TipodocumentoRequest;
 use App\tipodocumento;
 use Illuminate\Support\Facades\Auth;
 
-class tipodocumentoController extends Controller
+class TipoDocumentoController extends Controller
 {
     /**
      * Display a listing of the resource.

@@ -1,14 +1,19 @@
 <?php
 
-namespace App\Http\Controllers\admin\datosidentificacion;
+namespace App\Http\Controllers\Generales;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\SexoRequest;
-use App\sexo;
+use App\Http\Requests\GeneroRequest;
+use App\genero;
 use Illuminate\Support\Facades\Auth;
-class SexoController extends Controller
+class GeneroController extends Controller
 {
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function __construct()
     {
         $this->middleware('auth');
@@ -16,8 +21,8 @@ class SexoController extends Controller
     }
     public function index()
     {
-        $datos = sexo::withTrashed()->get();
-        return view('admin.listasenescyt.datosidentificacion.createsexo',['datos'=>$datos]);
+        $datos = genero::withTrashed()->get();
+        return view('admin.listasenescyt.datosidentificacion.genero',['datos'=>$datos]);
     }
 
     /**
@@ -36,26 +41,25 @@ class SexoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(SexoRequest $request)
+    public function validarId($id,$etiqueta){
+        genero::create([
+            'id'=>$id,
+            'id_usu_cre' => Auth::user()->id,
+            'etiqueta'=>strtoupper($etiqueta),            
+            ]);
+    }
+    public function store(GeneroRequest $request)
     {
-        $next=sexo::withTrashed()->max('id');
+        $next = genero::withTrashed()->max('id');
         if($next == 0)
             $next = 1;
         else
             $next = $next + 1;
-        $valor=strtoupper($request->input('etiqueta'));        
-        $this->validar($valor,$next);                
+        $etiqueta = $request->input('etiqueta');        
+        $this->validarId($next,$etiqueta);                 
         return $this->index();
     }
-    public function validar($valor,$contar)
-    {
-        //$id_user=Auth::user()->id;
-        $base=sexo::create([
-                'id'=>$contar,
-                'id_usu_cre' => Auth::user()->id,
-                'etiqueta'=>$valor,
-            ]); 
-    }
+
     /**
      * Display the specified resource.
      *
@@ -75,8 +79,8 @@ class SexoController extends Controller
      */
     public function edit($id)
     {
-        $datosid = sexo::find($id);
-        return view('admin.listasenescyt.datosidentificacion.editsexo',['editaret'=>$datosid]);
+        $datosid = genero::find($id);
+        return view('admin.listasenescyt.datosidentificacion.generoedit',['editaret'=>$datosid]);
     }
 
     /**
@@ -86,13 +90,13 @@ class SexoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(SexoRequest $request, $id)
+    public function update(GeneroRequest $request, $id)
     {
-        $datoset = sexo::find($id);
+        $datoset = genero::find($id);
         $datoset->etiqueta = strtoupper($request->input('etiqueta'));
-        $datoset->id_usu_mod = Auth::user()->id;
+        $datoset->id_usu_mod = Auth::user()->id;    
         $datoset->save();
-        return redirect('/admin/sexo/');  
+        return redirect('/admin/genero/'); 
     }
 
     /**
@@ -103,18 +107,18 @@ class SexoController extends Controller
      */
     public function destroy($id)
     {
-        $datoset=sexo::find($id);
+        $datoset=genero::find($id);
         $datoset->id_usu_mod = Auth::user()->id;
         $datoset->save();
         $datoset->delete();
-        return redirect('/admin/sexo/');
+        return redirect('/admin/genero/');
     }
     public function restaurar($id)
     {
-        $datos=sexo::onlyTrashed()->find($id)->restore();
-        $datoset=sexo::find($id);
-        $datoset->id_usu_mod = Auth::user()->id;
-        $datoset->save();
-        return redirect('/admin/sexo/');
+        $datos=genero::onlyTrashed()->find($id)->restore();
+        $datos=genero::find($id);
+        $datos->id_usu_mod = Auth::user()->id;
+        $datos->save();
+        return redirect('/admin/genero/');
     }
 }

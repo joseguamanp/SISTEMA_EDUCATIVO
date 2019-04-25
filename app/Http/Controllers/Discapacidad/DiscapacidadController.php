@@ -1,12 +1,13 @@
 <?php
 //modificado por andrea alvarado
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Discapacidad;
 
 use Illuminate\Http\Request;
-use App\tipoSangre;
+use App\discapacidad;
 use Illuminate\Support\Facades\Auth;
-use App\Http\Requests\TipoSangreRequest;
-class tipoSangreController extends Controller
+use App\Http\Requests\DiscapacidadRequest;
+use App\Http\Controllers\Controller;
+class DiscapacidadController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +16,8 @@ class tipoSangreController extends Controller
      */
     public function index()
     {
-        $data = tipoSangre::withTrashed()->get();
-        return view('admin.tipoSangre.index',['data' =>$data] );
+        $data = discapacidad::withTrashed()->get();
+        return view('admin.discapacidad.index',['data' =>$data] );
     }
 
     /**
@@ -30,7 +31,7 @@ class tipoSangreController extends Controller
     }
 
     public function getId(){
-        $id = tipoSangre::withTrashed()->get();
+        $id = discapacidad::withTrashed()->get();
         $next = count($id);
         if($next > 0){
             $next+=1;
@@ -38,18 +39,18 @@ class tipoSangreController extends Controller
             $next =1;
         return $next;
     }
-    public function store(TipoSangreRequest $request)
+    public function store(DiscapacidadRequest $request)
     {
             $id_usu_cre = Auth::user()->id;
             $id = $this->getId();
-            $dato = tipoSangre::create ([
+            discapacidad::create ([
             'id' => $id,
-            'etiqueta'=> mb_strtoupper($request->input('etiqueta'),'UTF-8'),
+    'etiqueta'=> mb_strtoupper($request->input('etiqueta'),'UTF-8'),
             'id_usu_cre' => $id_usu_cre,
-            'id_usu_mod' => $id_usu_cre,    
-            ]);
+            'id_usu_mod' => $id_usu_cre,
+        ]);
 
-        return redirect('admin/tipoSangre');
+        return $this->index();
     }
 
     /**
@@ -71,8 +72,8 @@ class tipoSangreController extends Controller
      */
     public function edit($id)
     {
-        $data = tipoSangre::find($id);
-        return view('admin.tipoSangre.edit', ["data"=>$data]);
+        $data = discapacidad::find($id);
+        return view('admin.discapacidad.edit', ["data"=>$data]);
     }
 
     /**
@@ -82,16 +83,13 @@ class tipoSangreController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(TipoSangreRequest $request, $id)
+    public function update(DiscapacidadRequest $request, $id)
     {
-        
-        
-        $data=tipoSangre::find($id);
+        $data=discapacidad::find($id);
         $data->etiqueta= mb_strtoupper($request->input('etiqueta'), 'UTF-8') ;
         $data->id_usu_mod= Auth::user()->id;
         $data->save();
-        return redirect('/admin/tipoSangre/');
-        
+        return redirect('/admin/discapacidad/');
     }
 
     /**
@@ -102,14 +100,14 @@ class tipoSangreController extends Controller
      */
     public function destroy($id)
     {
-        $vinculacionSociedad=tipoSangre::find($id);
+        $vinculacionSociedad=discapacidad::find($id);
         $vinculacionSociedad->delete();
-        return redirect('/admin/tipoSangre/');
+         return redirect('/admin/discapacidad/');
     }
-    
-     public function restaurar($id)
+
+    public function restaurar($id)
     {
-        $datos=tipoSangre::onlyTrashed()->find($id)->restore();
-        return redirect('/admin/tipoSangre/');
+        $datos=discapacidad::onlyTrashed()->find($id)->restore();
+        return redirect('/admin/discapacidad/');
     }
 }

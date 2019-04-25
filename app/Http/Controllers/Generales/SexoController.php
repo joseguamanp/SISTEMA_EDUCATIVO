@@ -1,19 +1,14 @@
 <?php
 
-namespace App\Http\Controllers\admin\datosidentificacion;
+namespace App\Http\Controllers\Generales;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\EtniaRequest;
-use App\Etnia;
+use App\Http\Requests\SexoRequest;
+use App\sexo;
 use Illuminate\Support\Facades\Auth;
-class etniaController extends Controller
+class SexoController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function __construct()
     {
         $this->middleware('auth');
@@ -21,8 +16,8 @@ class etniaController extends Controller
     }
     public function index()
     {
-        $datos = Etnia::withTrashed()->get();
-        return view('admin.listasenescyt.datosidentificacion.createetnia',['datos'=>$datos]);
+        $datos = sexo::withTrashed()->get();
+        return view('admin.listasenescyt.datosidentificacion.createsexo',['datos'=>$datos]);
     }
 
     /**
@@ -41,22 +36,21 @@ class etniaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(EtniaRequest $request)
+    public function store(SexoRequest $request)
     {
-        $next=Etnia::withTrashed()->max('id');
+        $next=sexo::withTrashed()->max('id');
         if($next == 0)
             $next = 1;
         else
             $next = $next + 1;
         $valor=strtoupper($request->input('etiqueta'));        
-        $this->validar($valor,$next);        
-        
+        $this->validar($valor,$next);                
         return $this->index();
     }
     public function validar($valor,$contar)
     {
         //$id_user=Auth::user()->id;
-        $base=Etnia::create([
+        $base=sexo::create([
                 'id'=>$contar,
                 'id_usu_cre' => Auth::user()->id,
                 'etiqueta'=>$valor,
@@ -81,8 +75,8 @@ class etniaController extends Controller
      */
     public function edit($id)
     {
-        $datosid = Etnia::find($id);
-        return view('admin.listasenescyt.datosidentificacion.editaretnia',['editaret'=>$datosid]);
+        $datosid = sexo::find($id);
+        return view('admin.listasenescyt.datosidentificacion.editsexo',['editaret'=>$datosid]);
     }
 
     /**
@@ -92,13 +86,13 @@ class etniaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(EtniaRequest $request, $id)
+    public function update(SexoRequest $request, $id)
     {
-        $datoset = Etnia::find($id);
+        $datoset = sexo::find($id);
         $datoset->etiqueta = strtoupper($request->input('etiqueta'));
         $datoset->id_usu_mod = Auth::user()->id;
         $datoset->save();
-        return redirect('/admin/datosetnia/');  
+        return redirect('/admin/sexo/');  
     }
 
     /**
@@ -109,18 +103,18 @@ class etniaController extends Controller
      */
     public function destroy($id)
     {
-        $datoset=Etnia::find($id);
+        $datoset=sexo::find($id);
         $datoset->id_usu_mod = Auth::user()->id;
         $datoset->save();
         $datoset->delete();
-        return redirect('/admin/datosetnia/');
+        return redirect('/admin/sexo/');
     }
     public function restaurar($id)
     {
-        $datos=Etnia::onlyTrashed()->find($id)->restore();
-        $datoset=Etnia::find($id);
+        $datos=sexo::onlyTrashed()->find($id)->restore();
+        $datoset=sexo::find($id);
         $datoset->id_usu_mod = Auth::user()->id;
         $datoset->save();
-        return redirect('/admin/datosetnia/');
+        return redirect('/admin/sexo/');
     }
 }
