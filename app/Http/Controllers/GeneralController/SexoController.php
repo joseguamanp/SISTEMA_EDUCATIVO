@@ -3,10 +3,11 @@
 namespace App\Http\Controllers\GeneralController;
 
 use Illuminate\Http\Request;
-use App\Http\Controllers\GeneralController;
-use App\Http\Requests\SexoRequest;
-use App\Http\Model\GeneralModel\SexoModel;
+use App\Http\Controllers\Controller;
+use App\Model\GeneralModel\SexoModel;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Requests\SexoRequest;
+
 class SexoController extends Controller
 {
     public function __construct()
@@ -15,7 +16,7 @@ class SexoController extends Controller
         $this->middleware('admin');
     }
     public function index()
-    {
+    { 
         $datos = SexoModel::withTrashed()->get();
         return view('admin.listasenescyt.datosidentificacion.createsexo',['datos'=>$datos]);
     }
