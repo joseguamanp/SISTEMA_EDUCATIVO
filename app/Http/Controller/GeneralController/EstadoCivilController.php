@@ -4,10 +4,11 @@ namespace App\Http\Controllers\Generales;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\GeneroRequest;
-use App\genero;
+use App\Http\Requests\EstadocivilRequest;
+use App\EstadoCivilModel;
 use Illuminate\Support\Facades\Auth;
-class GeneroController extends Controller
+
+class EstadoCivilController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -21,8 +22,8 @@ class GeneroController extends Controller
     }
     public function index()
     {
-        $datos = genero::withTrashed()->get();
-        return view('admin.listasenescyt.datosidentificacion.genero',['datos'=>$datos]);
+        $datos = EstadoCivilModel::withTrashed()->get();
+        return view('admin.listasenescyt.datosidentificacion.estadocivil',['datos'=>$datos]);
     }
 
     /**
@@ -42,21 +43,22 @@ class GeneroController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function validarId($id,$etiqueta){
-        genero::create([
+        EstadoCivilModel::create([
             'id'=>$id,
             'id_usu_cre' => Auth::user()->id,
             'etiqueta'=>strtoupper($etiqueta),            
             ]);
     }
-    public function store(GeneroRequest $request)
-    {
-        $next = genero::withTrashed()->max('id');
+    public function store(EstadocivilRequest $request)
+    {        
+        $next = EstadoCivilModel::withTrashed()->max('id');
         if($next == 0)
             $next = 1;
         else
             $next = $next + 1;
         $etiqueta = $request->input('etiqueta');        
-        $this->validarId($next,$etiqueta);                 
+        $this->validarId($next,$etiqueta);         
+        
         return $this->index();
     }
 
@@ -79,8 +81,8 @@ class GeneroController extends Controller
      */
     public function edit($id)
     {
-        $datosid = genero::find($id);
-        return view('admin.listasenescyt.datosidentificacion.generoedit',['editaret'=>$datosid]);
+        $datosid = EstadoCivilModel::find($id);
+        return view('admin.listasenescyt.datosidentificacion.editestadocivil',['editaret'=>$datosid]);
     }
 
     /**
@@ -90,13 +92,13 @@ class GeneroController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(GeneroRequest $request, $id)
+    public function update(EstadocivilRequest $request, $id)
     {
-        $datoset = genero::find($id);
-        $datoset->etiqueta = strtoupper($request->input('etiqueta'));
-        $datoset->id_usu_mod = Auth::user()->id;    
+        $datoset = EstadoCivilModel::find($id);
+        $datoset->etiqueta = strtoupper($request->input('etiqueta')); 
+        $datoset->id_usu_mod = Auth::user()->id;  
         $datoset->save();
-        return redirect('/admin/genero/'); 
+        return redirect('/admin/estadocivil/'); 
     }
 
     /**
@@ -107,18 +109,18 @@ class GeneroController extends Controller
      */
     public function destroy($id)
     {
-        $datoset=genero::find($id);
+        $datoset=EstadoCivilModel::find($id);
         $datoset->id_usu_mod = Auth::user()->id;
         $datoset->save();
         $datoset->delete();
-        return redirect('/admin/genero/');
+        return redirect('/admin/estadocivil/');
     }
     public function restaurar($id)
     {
-        $datos=genero::onlyTrashed()->find($id)->restore();
-        $datos=genero::find($id);
-        $datos->id_usu_mod = Auth::user()->id;
-        $datos->save();
-        return redirect('/admin/genero/');
+        $datos=EstadoCivilModel::onlyTrashed()->find($id)->restore();
+        $datoset=EstadoCivilModel::find($id);
+        $datoset->id_usu_mod = Auth::user()->id;
+        $datoset->save();
+        return redirect('/admin/estadocivil/');
     }
 }

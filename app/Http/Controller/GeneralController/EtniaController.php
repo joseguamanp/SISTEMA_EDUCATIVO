@@ -4,11 +4,10 @@ namespace App\Http\Controllers\Generales;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\EstadocivilRequest;
-use App\estadocivil;
+use App\Http\Requests\EtniaRequest;
+use App\EtniaModel;
 use Illuminate\Support\Facades\Auth;
-
-class EstadoCivilController extends Controller
+class EtniaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -22,8 +21,8 @@ class EstadoCivilController extends Controller
     }
     public function index()
     {
-        $datos = estadocivil::withTrashed()->get();
-        return view('admin.listasenescyt.datosidentificacion.estadocivil',['datos'=>$datos]);
+        $datos = EtniaModel::withTrashed()->get();
+        return view('admin.listasenescyt.datosidentificacion.createetnia',['datos'=>$datos]);
     }
 
     /**
@@ -42,26 +41,27 @@ class EstadoCivilController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function validarId($id,$etiqueta){
-        estadocivil::create([
-            'id'=>$id,
-            'id_usu_cre' => Auth::user()->id,
-            'etiqueta'=>strtoupper($etiqueta),            
-            ]);
-    }
-    public function store(EstadocivilRequest $request)
-    {        
-        $next = estadocivil::withTrashed()->max('id');
+    public function store(EtniaRequest $request)
+    {
+        $next=EtniaModel::withTrashed()->max('id');
         if($next == 0)
             $next = 1;
         else
             $next = $next + 1;
-        $etiqueta = $request->input('etiqueta');        
-        $this->validarId($next,$etiqueta);         
+        $valor=strtoupper($request->input('etiqueta'));        
+        $this->validar($valor,$next);        
         
         return $this->index();
     }
-
+    public function validar($valor,$contar)
+    {
+        //$id_user=Auth::user()->id;
+        $base=EtniaModel::create([
+                'id'=>$contar,
+                'id_usu_cre' => Auth::user()->id,
+                'etiqueta'=>$valor,
+            ]); 
+    }
     /**
      * Display the specified resource.
      *
@@ -81,8 +81,8 @@ class EstadoCivilController extends Controller
      */
     public function edit($id)
     {
-        $datosid = estadocivil::find($id);
-        return view('admin.listasenescyt.datosidentificacion.editestadocivil',['editaret'=>$datosid]);
+        $datosid = EtniaModel::find($id);
+        return view('admin.listasenescyt.datosidentificacion.editaretnia',['editaret'=>$datosid]);
     }
 
     /**
@@ -92,13 +92,13 @@ class EstadoCivilController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(EstadocivilRequest $request, $id)
+    public function update(EtniaRequest $request, $id)
     {
-        $datoset = estadocivil::find($id);
-        $datoset->etiqueta = strtoupper($request->input('etiqueta')); 
-        $datoset->id_usu_mod = Auth::user()->id;  
+        $datoset = EtniaModel::find($id);
+        $datoset->etiqueta = strtoupper($request->input('etiqueta'));
+        $datoset->id_usu_mod = Auth::user()->id;
         $datoset->save();
-        return redirect('/admin/estadocivil/'); 
+        return redirect('/admin/datosetnia/');  
     }
 
     /**
@@ -109,18 +109,18 @@ class EstadoCivilController extends Controller
      */
     public function destroy($id)
     {
-        $datoset=estadocivil::find($id);
+        $datoset=EtniaModel::find($id);
         $datoset->id_usu_mod = Auth::user()->id;
         $datoset->save();
         $datoset->delete();
-        return redirect('/admin/estadocivil/');
+        return redirect('/admin/datosetnia/');
     }
     public function restaurar($id)
     {
-        $datos=estadocivil::onlyTrashed()->find($id)->restore();
-        $datoset=estadocivil::find($id);
+        $datos=EtniaModel::onlyTrashed()->find($id)->restore();
+        $datoset=EtniaModel::find($id);
         $datoset->id_usu_mod = Auth::user()->id;
         $datoset->save();
-        return redirect('/admin/estadocivil/');
+        return redirect('/admin/datosetnia/');
     }
 }

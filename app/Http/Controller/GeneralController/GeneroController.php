@@ -4,10 +4,10 @@ namespace App\Http\Controllers\Generales;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\EtniaRequest;
-use App\Etnia;
+use App\Http\Requests\GeneroRequest;
+use App\GeneroModel;
 use Illuminate\Support\Facades\Auth;
-class EtniaController extends Controller
+class GeneroController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -21,8 +21,8 @@ class EtniaController extends Controller
     }
     public function index()
     {
-        $datos = Etnia::withTrashed()->get();
-        return view('admin.listasenescyt.datosidentificacion.createetnia',['datos'=>$datos]);
+        $datos = GeneroModel::withTrashed()->get();
+        return view('admin.listasenescyt.datosidentificacion.genero',['datos'=>$datos]);
     }
 
     /**
@@ -41,27 +41,25 @@ class EtniaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(EtniaRequest $request)
+    public function validarId($id,$etiqueta){
+        GeneroModel::create([
+            'id'=>$id,
+            'id_usu_cre' => Auth::user()->id,
+            'etiqueta'=>strtoupper($etiqueta),            
+            ]);
+    }
+    public function store(GeneroRequest $request)
     {
-        $next=Etnia::withTrashed()->max('id');
+        $next = GeneroModel::withTrashed()->max('id');
         if($next == 0)
             $next = 1;
         else
             $next = $next + 1;
-        $valor=strtoupper($request->input('etiqueta'));        
-        $this->validar($valor,$next);        
-        
+        $etiqueta = $request->input('etiqueta');        
+        $this->validarId($next,$etiqueta);                 
         return $this->index();
     }
-    public function validar($valor,$contar)
-    {
-        //$id_user=Auth::user()->id;
-        $base=Etnia::create([
-                'id'=>$contar,
-                'id_usu_cre' => Auth::user()->id,
-                'etiqueta'=>$valor,
-            ]); 
-    }
+
     /**
      * Display the specified resource.
      *
@@ -81,8 +79,8 @@ class EtniaController extends Controller
      */
     public function edit($id)
     {
-        $datosid = Etnia::find($id);
-        return view('admin.listasenescyt.datosidentificacion.editaretnia',['editaret'=>$datosid]);
+        $datosid = GeneroModel::find($id);
+        return view('admin.listasenescyt.datosidentificacion.generoedit',['editaret'=>$datosid]);
     }
 
     /**
@@ -92,13 +90,13 @@ class EtniaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(EtniaRequest $request, $id)
+    public function update(GeneroRequest $request, $id)
     {
-        $datoset = Etnia::find($id);
+        $datoset = GeneroModel::find($id);
         $datoset->etiqueta = strtoupper($request->input('etiqueta'));
-        $datoset->id_usu_mod = Auth::user()->id;
+        $datoset->id_usu_mod = Auth::user()->id;    
         $datoset->save();
-        return redirect('/admin/datosetnia/');  
+        return redirect('/admin/genero/'); 
     }
 
     /**
@@ -109,18 +107,18 @@ class EtniaController extends Controller
      */
     public function destroy($id)
     {
-        $datoset=Etnia::find($id);
+        $datoset=GeneroModel::find($id);
         $datoset->id_usu_mod = Auth::user()->id;
         $datoset->save();
         $datoset->delete();
-        return redirect('/admin/datosetnia/');
+        return redirect('/admin/genero/');
     }
     public function restaurar($id)
     {
-        $datos=Etnia::onlyTrashed()->find($id)->restore();
-        $datoset=Etnia::find($id);
-        $datoset->id_usu_mod = Auth::user()->id;
-        $datoset->save();
-        return redirect('/admin/datosetnia/');
+        $datos=GeneroModel::onlyTrashed()->find($id)->restore();
+        $datos=GeneroModel::find($id);
+        $datos->id_usu_mod = Auth::user()->id;
+        $datos->save();
+        return redirect('/admin/genero/');
     }
 }

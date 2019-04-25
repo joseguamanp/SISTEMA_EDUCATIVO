@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Generales;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\SexoRequest;
-use App\sexo;
+use App\SexoModel;
 use Illuminate\Support\Facades\Auth;
 class SexoController extends Controller
 {
@@ -16,7 +16,7 @@ class SexoController extends Controller
     }
     public function index()
     {
-        $datos = sexo::withTrashed()->get();
+        $datos = SexoModel::withTrashed()->get();
         return view('admin.listasenescyt.datosidentificacion.createsexo',['datos'=>$datos]);
     }
 
@@ -38,7 +38,7 @@ class SexoController extends Controller
      */
     public function store(SexoRequest $request)
     {
-        $next=sexo::withTrashed()->max('id');
+        $next=SexoModel::withTrashed()->max('id');
         if($next == 0)
             $next = 1;
         else
@@ -50,7 +50,7 @@ class SexoController extends Controller
     public function validar($valor,$contar)
     {
         //$id_user=Auth::user()->id;
-        $base=sexo::create([
+        $base=SexoModel::create([
                 'id'=>$contar,
                 'id_usu_cre' => Auth::user()->id,
                 'etiqueta'=>$valor,
@@ -75,7 +75,7 @@ class SexoController extends Controller
      */
     public function edit($id)
     {
-        $datosid = sexo::find($id);
+        $datosid = SexoModel::find($id);
         return view('admin.listasenescyt.datosidentificacion.editsexo',['editaret'=>$datosid]);
     }
 
@@ -88,7 +88,7 @@ class SexoController extends Controller
      */
     public function update(SexoRequest $request, $id)
     {
-        $datoset = sexo::find($id);
+        $datoset = SexoModel::find($id);
         $datoset->etiqueta = strtoupper($request->input('etiqueta'));
         $datoset->id_usu_mod = Auth::user()->id;
         $datoset->save();
@@ -103,7 +103,7 @@ class SexoController extends Controller
      */
     public function destroy($id)
     {
-        $datoset=sexo::find($id);
+        $datoset=SexoModel::find($id);
         $datoset->id_usu_mod = Auth::user()->id;
         $datoset->save();
         $datoset->delete();
@@ -111,8 +111,8 @@ class SexoController extends Controller
     }
     public function restaurar($id)
     {
-        $datos=sexo::onlyTrashed()->find($id)->restore();
-        $datoset=sexo::find($id);
+        $datos=SexoModel::onlyTrashed()->find($id)->restore();
+        $datoset=SexoModel::find($id);
         $datoset->id_usu_mod = Auth::user()->id;
         $datoset->save();
         return redirect('/admin/sexo/');

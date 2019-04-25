@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Generales;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\TipodocumentoRequest;
-use App\tipodocumento;
+use App\TipoDocumentoModel;
 use Illuminate\Support\Facades\Auth;
 
 class TipoDocumentoController extends Controller
@@ -22,7 +22,7 @@ class TipoDocumentoController extends Controller
     }
     public function index()
     {
-        $datos = tipodocumento::withTrashed()->get();
+        $datos = TipoDocumentoModel::withTrashed()->get();
         return view('admin.listasenescyt.datosidentificacion.create',['tipodoc'=>$datos]);
     }
 
@@ -44,12 +44,12 @@ class TipoDocumentoController extends Controller
      */
     public function store(TipodocumentoRequest $request)
     {        
-        $next = tipodocumento::withTrashed()->max('id');
+        $next = TipoDocumentoModel::withTrashed()->max('id');
         if($next == 0)
             $next = 1;
         else
             $next = $next + 1;
-        $dato = tipodocumento::create ([
+        $dato = TipoDocumentoModel::create ([
             'id' => $next,
             'id_usu_cre' => Auth::user()->id,
             'etiqueta'=> strtoupper($request->input('etiqueta')),
@@ -76,7 +76,7 @@ class TipoDocumentoController extends Controller
      */
     public function edit($id)
     {
-        $tipodoc = tipodocumento::find($id);
+        $tipodoc = TipoDocumentoModel::find($id);
         return view('admin.listasenescyt.datosidentificacion.editar',['editardoc'=>$tipodoc]);
     }
 
@@ -89,7 +89,7 @@ class TipoDocumentoController extends Controller
      */
     public function update(TipodocumentoRequest $request, $id)
     {
-        $tipodoc = tipodocumento::find($id);
+        $tipodoc = TipoDocumentoModel::find($id);
         $tipodoc->etiqueta = strtoupper($request->input('etiqueta'));
         $tipodoc->id_usu_mod = Auth::user()->id;
         $tipodoc->save();
@@ -104,7 +104,7 @@ class TipoDocumentoController extends Controller
      */
     public function destroy($id)
     {
-        $tipodoc=tipodocumento::find($id);
+        $tipodoc=TipoDocumentoModel::find($id);
         $tipodoc->id_usu_mod = Auth::user()->id;
         $tipodoc->save();
         $tipodoc->delete();
@@ -113,8 +113,8 @@ class TipoDocumentoController extends Controller
 
      public function restaurar($id)
     {
-        $datos=tipodocumento::onlyTrashed()->find($id)->restore();
-        $tipodoc=tipodocumento::find($id);
+        $datos=TipoDocumentoModel::onlyTrashed()->find($id)->restore();
+        $tipodoc=TipoDocumentoModel::find($id);
         $tipodoc->id_usu_mod = Auth::user()->id;
         return redirect('/admin/datostipodoc/');
     }

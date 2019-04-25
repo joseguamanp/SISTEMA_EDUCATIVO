@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Generales;
 
 use Illuminate\Http\Request;
-use App\tipoSangre;
+use App\TipoSangreModel;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\TipoSangreRequest;
 use App\Http\Controllers\Controller;
@@ -16,7 +16,7 @@ class TipoSangreController extends Controller
      */
     public function index()
     {
-        $data = tipoSangre::withTrashed()->get();
+        $data = TipoSangreModel::withTrashed()->get();
         return view('admin.tipoSangre.index',['data' =>$data] );
     }
 
@@ -31,7 +31,7 @@ class TipoSangreController extends Controller
     }
 
     public function getId(){
-        $id = tipoSangre::withTrashed()->get();
+        $id = TipoSangreModel::withTrashed()->get();
         $next = count($id);
         if($next > 0){
             $next+=1;
@@ -43,7 +43,7 @@ class TipoSangreController extends Controller
     {
             $id_usu_cre = Auth::user()->id;
             $id = $this->getId();
-            $dato = tipoSangre::create ([
+            $dato = TipoSangreModel::create ([
             'id' => $id,
             'etiqueta'=> mb_strtoupper($request->input('etiqueta'),'UTF-8'),
             'id_usu_cre' => $id_usu_cre,
@@ -72,7 +72,7 @@ class TipoSangreController extends Controller
      */
     public function edit($id)
     {
-        $data = tipoSangre::find($id);
+        $data = TipoSangreModel::find($id);
         return view('admin.tipoSangre.edit', ["data"=>$data]);
     }
 
@@ -87,7 +87,7 @@ class TipoSangreController extends Controller
     {
         
         
-        $data=tipoSangre::find($id);
+        $data=TipoSangreModel::find($id);
         $data->etiqueta= mb_strtoupper($request->input('etiqueta'), 'UTF-8') ;
         $data->id_usu_mod= Auth::user()->id;
         $data->save();
@@ -103,14 +103,14 @@ class TipoSangreController extends Controller
      */
     public function destroy($id)
     {
-        $vinculacionSociedad=tipoSangre::find($id);
+        $vinculacionSociedad=TipoSangreModel::find($id);
         $vinculacionSociedad->delete();
         return redirect('/admin/tipoSangre/');
     }
     
      public function restaurar($id)
     {
-        $datos=tipoSangre::onlyTrashed()->find($id)->restore();
+        $datos=TipoSangreModel::onlyTrashed()->find($id)->restore();
         return redirect('/admin/tipoSangre/');
     }
 }

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Discapacidad;
 
 use Illuminate\Http\Request;
-use App\discapacidad;
+use App\DiscapacidadModel;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\DiscapacidadRequest;
 use App\Http\Controllers\Controller;
@@ -16,7 +16,7 @@ class DiscapacidadController extends Controller
      */
     public function index()
     {
-        $data = discapacidad::withTrashed()->get();
+        $data = DiscapacidadModel::withTrashed()->get();
         return view('admin.discapacidad.index',['data' =>$data] );
     }
 
@@ -31,7 +31,7 @@ class DiscapacidadController extends Controller
     }
 
     public function getId(){
-        $id = discapacidad::withTrashed()->get();
+        $id = DiscapacidadModel::withTrashed()->get();
         $next = count($id);
         if($next > 0){
             $next+=1;
@@ -43,7 +43,7 @@ class DiscapacidadController extends Controller
     {
             $id_usu_cre = Auth::user()->id;
             $id = $this->getId();
-            discapacidad::create ([
+            DiscapacidadModel::create ([
             'id' => $id,
     'etiqueta'=> mb_strtoupper($request->input('etiqueta'),'UTF-8'),
             'id_usu_cre' => $id_usu_cre,
@@ -72,7 +72,7 @@ class DiscapacidadController extends Controller
      */
     public function edit($id)
     {
-        $data = discapacidad::find($id);
+        $data = DiscapacidadModel::find($id);
         return view('admin.discapacidad.edit', ["data"=>$data]);
     }
 
@@ -85,7 +85,7 @@ class DiscapacidadController extends Controller
      */
     public function update(DiscapacidadRequest $request, $id)
     {
-        $data=discapacidad::find($id);
+        $data=DiscapacidadModel::find($id);
         $data->etiqueta= mb_strtoupper($request->input('etiqueta'), 'UTF-8') ;
         $data->id_usu_mod= Auth::user()->id;
         $data->save();
@@ -100,14 +100,14 @@ class DiscapacidadController extends Controller
      */
     public function destroy($id)
     {
-        $vinculacionSociedad=discapacidad::find($id);
+        $vinculacionSociedad=DiscapacidadModel::find($id);
         $vinculacionSociedad->delete();
          return redirect('/admin/discapacidad/');
     }
 
     public function restaurar($id)
     {
-        $datos=discapacidad::onlyTrashed()->find($id)->restore();
+        $datos=DiscapacidadModel::onlyTrashed()->find($id)->restore();
         return redirect('/admin/discapacidad/');
     }
 }
