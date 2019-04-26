@@ -42,14 +42,14 @@
             </div>
             <div class="card-body">
               <div class="table-responsive small">
-                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <table class="table table-condensed table-bordered" id="dataTable" width="100%" cellspacing="0">
                   <thead>
                     <tr>
-                      <th>Etiqueta</th>
-                      <th style="width:130px;">Creado</th>
-                      <th style="width:130px;">Modificado</th>
-                      <th style="width:20px;">Editar</th>
-                      <th style="width:30px;">Estado</th>
+                      <th scope="col">Etiqueta</th>
+                      <th scope="col" style="width:150px;">Creado</th>
+                      <th scope="row" style="width:150px;">Modificado</th>
+                      <th scope="row" style="width:20px;">Editar</th>
+                      <th scope="row" style="width:30px;">Estado</th>
                     </tr>
                   </thead>
                   <tbody style="overflow:auto">
@@ -60,7 +60,7 @@
                         <td>{{$datas->fecha_mod}}</td>
                         <td>
                           @if($datas->deleted_at!='')
-                            <input type="button" value="Editar" disabled="yes" class="btn btn-default" />
+                            <input type="button" value="Editar" disabled="yes" class="btn btn-default btn-sm" />
                           @else
                             {!!link_to_route('sexo.edit', $title = 'Editar', $parameters = $datas->id, $attributes = ['class'=>'btn btn-warning btn-block btn-sm']);!!}
                           @endif
