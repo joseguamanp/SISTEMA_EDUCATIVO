@@ -38,7 +38,8 @@ Route::group(['middleware' => ['web', 'admin']], function() {
   //admin / opciones
   Route::Resource('/admin/opcion','OpcionController');
   Route::get('/admin/opcion/{id}/restaurar','OpcionController@restaurar');
-  ////////////////////////////GENERALES
+
+  /* ********************* RUTAS DE MANTENIMIENTO GENERALES **************** */
   //TIPO DE SANGRE
   Route::Resource('admin/tipoSangre','Generales\TipoSangreController');
   Route::get('/admin/tipoSangre/{id}/restaurar','Generales\tipoSangreController@restaurar');
@@ -49,7 +50,9 @@ Route::group(['middleware' => ['web', 'admin']], function() {
   Route::get('/admin/datosetnia/{id}/restaurar','Generales\EtniaController@restaurar');
   Route::Resource('/admin/datosetnia','Generales\EtniaController');
   //SEXO
-  Route::Resource('admin/sexo','GeneralController\SexoController');
+  Route::Resource('/admin/sexo','GeneralController\SexoController');
+  Route::post('/admin/sexo/show','GeneralController\SexoController@show');
+  Route::post('/admin/sexo/destroy','GeneralController\SexoController@destroy');
   Route::get('/admin/sexo/{id}/restaurar','GeneralController\SexoController@restaurar');
   //GENERO
   Route::Resource('admin/genero','Generales\GeneroController');
@@ -57,6 +60,8 @@ Route::group(['middleware' => ['web', 'admin']], function() {
   //ESTADO CIVIL
   Route::Resource('admin/estadocivil','Generales\EstadoCivilController');
   Route::get('/admin/estadocivil/{id}/restaurar','Generales\EstadoCivilController@restaurar');
+  /* ******************* FIN DE MANTENIMIENTOS GENERALES ****************** */
+
   //////////////////////////DISCAPACIDAD
   //DISCAPACIDAD
   Route::Resource('admin/discapacidad','Discapacidad\DiscapacidadController');

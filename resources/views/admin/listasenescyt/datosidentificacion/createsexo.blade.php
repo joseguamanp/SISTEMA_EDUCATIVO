@@ -1,14 +1,10 @@
 @extends('layouts.principal')
 @section('content')
   <div id="content-wrapper">
-
     <div class="container-fluid">
-
       <div class="row">
-
         <!-- INICIO DE DATOS DE SEXO -->
         <div class="col-md-12">
-          {!! Form::open(['url' => 'admin/sexo', 'method' => 'POST']) !!}
           <!-- Inicio de Card -->
           <div class="card mb-3">
             <div class="card-header">
@@ -24,13 +20,12 @@
                   @include('mensaje.mensajeerror')
                 </div>
                 <div class="col-lg-2 col-md-3">
-                  <button class="btn btn-primary btn-block">Aceptar</button>
+                  <button class="btn btn-primary btn-block" onclick="verificarInput('etiqueta','/admin/sexo');">Aceptar</button>
                 </div>
               </div>
             </div>
           </div>
           <!-- Fin de card -->
-          {!! Form::close() !!}
         </div>
         <!-- FIN DE DATOS DE SEXO -->
 
@@ -42,17 +37,17 @@
             </div>
             <div class="card-body">
               <div class="table-responsive small">
-                <table class="table table-condensed table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <table class="table" id="dataTable" width="100%" cellspacing="0">
                   <thead>
                     <tr>
-                      <th scope="col">Etiqueta</th>
-                      <th scope="col" style="width:150px;">Creado</th>
-                      <th scope="row" style="width:150px;">Modificado</th>
-                      <th scope="row" style="width:20px;">Editar</th>
-                      <th scope="row" style="width:30px;">Estado</th>
+                      <th>Etiqueta</th>
+                      <th style="width:150px;">Creado</th>
+                      <th style="width:150px;">Modificado</th>
+                      <th style="width:20px;">Editar</th>
+                      <th style="width:30px;">Estado</th>
                     </tr>
                   </thead>
-                  <tbody style="overflow:auto">
+                  <tbody id="datos">
                     @foreach($datos as $datas)
                       <tr style="height:20px">
                         <td>{{$datas->etiqueta}}</td>
@@ -82,9 +77,90 @@
                 </table>
               </div>
             </div>
-          </div>  <!--fin del card-3 -->
+          </div>  <!--fin del card-->
         </div>
       </div>
     </div>
   </div>
+@endsection
+
+@section('script')
+  <script type="text/javascript">
+
+  var ruta_global = '{{ url('') }}';
+
+  function headerAjax(){
+  	$.ajaxSetup({
+    		headers: {
+      		'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    		}
+  	});
+  }
+
+  function verificarInput(id_input, ruta){
+    var data = $('#'+id_input).val();
+    var size = data.length;
+    if(size != 0 ) ajaxInsert(data, ruta);
+  }
+
+  function ajaxInsert(data,ruta){
+    var tbody;
+    headerAjax();
+    $.ajax({
+      url: ruta_global+ruta,
+      type: 'post',
+      data: { 'etiqueta' : data },
+      dataType: 'json',
+    }).done(function (resultado){
+      ajaxMostrar(ruta+'/show');
+    }).fail(function (resultado){
+      alert('error insert');
+    });
+  }
+  function ajaxMostrar(ruta){
+    var tbody;
+    headerAjax();
+    $.ajax({
+      url: ruta_global+ruta,
+      type: 'post',
+      dataType: 'json',
+    }).done(function (resultado){
+      $('#datos').empty();
+      for(var i = 0; i < 1; i++){
+        tbody +="<tr class='small'>";
+        tbody +="<td>"+resultado[i].etiqueta+"</td>";
+        tbody +="<td>"+resultado[i].fecha_cre+"</td>";
+        tbody +="<td>"+resultado[i].fecha_mod+"</td>";
+        if(resultado[i].deleted_at != null ){
+          tbody +="<td>"+"<button class='btn btn-sm' id='btneditar'>Editar</a>"+"</button>"
+          tbody +="<td>"+"<a class='btn btn-primary btn-sm' value="+resultado[i].id+" id='btnestado'>Restaurar</a>"+"</td>"
+        } else {
+          tbody +="<td>"+"<a class='btn btn-warning btn-sm' value="+resultado[i].id+" id='btneditar'>Editar</a>"+"</td>"
+          tbody +="<td>"+"<a class='btn btn-danger btn-sm' value="+resultado[i].id+" onclick="+"ajaxDesactivar(this.value,'/admin/sexo')"+" id='btn_estado'>Desactivar</a>"+"</td>"
+        }
+        tbody +="</tr>";
+        $("#datos").html(tbody);
+      }
+    }).fail(function (resultado){
+      alert('error al mostrar');
+    });
+  }
+  function ajaxDesactivar(idd, ruta){
+    var tbody;
+    var id = $('#btn_estado').val();
+    alert(id+" "+ ruta);
+    headerAjax();
+    $.ajax({
+      url: ruta_global+ruta+'/destroy',
+      type: 'post',
+      data: { 'id' : id },
+      dataType: 'json',
+    }).done(function (resultado){
+      ajaxMostrar(ruta+'/show');
+    }).fail(function (resultado){
+      alert('error al desactivar');
+    });
+  }
+
+  </script>
 @endsection

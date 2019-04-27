@@ -16,7 +16,6 @@
   <link rel="stylesheet" type="text/css" href="{{ asset('vendor/datatables/dataTables.bootstrap4.css') }}">
   <link rel="stylesheet" type="text/css" href="{{ asset('css/sb-admin.css') }}">
   <link rel="stylesheet" type="text/css" href="{{ asset('css/dashboard.css') }}">
-  <link rel="stylesheet" type="text/css" href="{{ asset('css/inicio.css') }}">
 
   <style>
   .dropdown-submenu {
@@ -189,7 +188,7 @@
       $('a[aria-expanded=true]').attr('aria-expanded', 'false');
 
     });
-
+    
   });
 
   </script>
