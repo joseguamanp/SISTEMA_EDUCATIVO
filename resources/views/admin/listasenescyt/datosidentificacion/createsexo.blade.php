@@ -168,6 +168,7 @@ function eliminar(btn) {
           dataType:'json', 
           success:function(){
                 mostrar(ruta_local);
+                swal("Se ha eliminado el dato!","", "error");
             }
         });
 }
@@ -181,6 +182,7 @@ function restaurar(btn) {
           dataType:'json', 
           success:function(){
                 mostrar(ruta_local);
+                swal("Se ha restaurado el dato!","", "info");
             }
         });
 }
