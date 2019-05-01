@@ -89,6 +89,7 @@
 @endsection
 
 @section('script')
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <script type="text/javascript">
   var ruta_local='/admin/sexo/';
   var ruta_global = '{{ url('') }}';
@@ -143,6 +144,7 @@ function update(title){
           data:cadenas,
           success:function(){
                 mostrar(ruta_local);
+                swal("Editando!", "Se ha actualizado el dato!", "success");
           }
         });
 }
@@ -200,7 +202,7 @@ function restaurar(btn) {
           data:cadena,
           success:function(data){
                  mostrar(ruta_local);
-                // mensajes();
+                swal("Guardando!", "Se ha registrado dato!", "success");
             }
         });
   }
