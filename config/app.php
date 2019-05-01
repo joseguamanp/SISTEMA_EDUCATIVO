@@ -160,7 +160,7 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-        UxWeb\SweetAlert\SweetAlertServiceProvider::class,
+        //UxWeb\SweetAlert\SweetAlertServiceProvider::class,
     ],
 
     /*
@@ -211,7 +211,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
-        'Alert' => UxWeb\SweetAlert\SweetAlert::class,
+        //'Alert' => UxWeb\SweetAlert\SweetAlert::class,
     ],
 
 ];
