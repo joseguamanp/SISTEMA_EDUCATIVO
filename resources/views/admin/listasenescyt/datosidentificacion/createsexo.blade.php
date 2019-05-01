@@ -147,7 +147,7 @@
         dataType:'json',
         data:cadenas,
         success:function(){
-          mostrar(ruta_local);
+          mostrar();
           swal("Editando!", "Se ha actualizado el dato!", "success");
         }
       });
@@ -164,7 +164,7 @@
         $("#etiqueta1").val(res.etiqueta);
       });
     }
-    
+
     function eliminar(btn) {
       var route=ruta_global+ruta_local+btn.value+"";
       var token=$('#token').val();
@@ -174,7 +174,7 @@
         type:"DELETE",
         dataType:'json',
         success:function(){
-          mostrar(ruta_local);
+          mostrar();
           swal("Se ha eliminado el dato!","", "error");
         }
       });
@@ -188,7 +188,7 @@
         type:"GET",
         dataType:'json',
         success:function(){
-          mostrar(ruta_local);
+          mostrar();
           swal("Se ha restaurado el dato!","", "info");
         }
       });
@@ -210,7 +210,7 @@
         dataType:'json',
         data:cadena,
         success:function(data){
-          mostrar(ruta_local);
+          mostrar();
           swal("Guardando!", "Se ha registrado dato!", "success");
         }
       });
