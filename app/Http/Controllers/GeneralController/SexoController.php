@@ -19,7 +19,7 @@ class SexoController extends Controller
 
   public function index()
   {
-    $datos = SexoModel::withTrashed()->get();
+    $datos = SexoModel::withTrashed()->paginate(5);
     return view('admin.listasenescyt.datosidentificacion.createsexo',['datos'=>$datos]);
   }
 
@@ -44,14 +44,20 @@ class SexoController extends Controller
 
   public function show()
   {
-    $datos = SexoModel::withTrashed()->get();
-    return json_encode($datos);
+    //$datos = SexoModel::withTrashed()->paginate(5);
+    $datos=SexoModel::withTrashed()->get();
+    return response()->json(
+            $datos->toArray()
+            );
   }
 
   public function edit($id)
   {
     $datosid = SexoModel::find($id);
-    return view('admin.listasenescyt.datosidentificacion.editsexo',['editaret'=>$datosid]);
+     return response()->json(
+            $datosid->toArray()
+            );
+    //return view('admin.listasenescyt.datosidentificacion.editsexo',['editaret'=>$datosid]);
   }
 
   public function update(SexoRequest $request, $id)
@@ -60,14 +66,13 @@ class SexoController extends Controller
     $datoset->etiqueta = strtoupper($request->input('etiqueta'));
     $datoset->id_usu_mod = Auth::user()->id;
     $datoset->save();
-    return redirect('/admin/sexo/');
+    return response()->json(["modificado"]);
   }
 
-  public function destroy(Request $request)
+  public function destroy($id)
   {
-    $datoset=SexoModel::find($request->input('id'));
+    $datoset=SexoModel::find($id);
     $datoset->id_usu_mod = Auth::user()->id;
-    $datoset->save();
     $datoset->delete();
     return response()->json(["desactivado"]);
   }
@@ -78,6 +83,6 @@ class SexoController extends Controller
     $datoset=SexoModel::find($id);
     $datoset->id_usu_mod = Auth::user()->id;
     $datoset->save();
-    return redirect('/admin/sexo/');
+    return response()->json(["restaurado"]);
   }
 }
