@@ -117,17 +117,21 @@
   @section('script')
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script type="text/javascript">
+
     var ruta_local='/admin/sexo/';
     var ruta_global = '{{ url('') }}';
+
     $(document).ready(function(){
-      mostrar(ruta_local);
+      mostrar();
     });
-    function mostrar(ruta) {
-      var ruta=ruta_global+ruta+"show";
+
+    function mostrar() {
+      var ruta=ruta_global+ruta_local+"show";
       $.get(ruta,function(res){
         construirTabla(res);
       });
     }
+
     function update(title){
       var etiqueta=$("#"+title).val();
       var id=$("#id").val();
@@ -148,9 +152,11 @@
         }
       });
     }
+
     function limpiar() {
       $("#etiqueta1").val("");
     }
+
     function editar(btn){
       var rutas=ruta_global+ruta_local+btn.value+"/edit";
       $.get(rutas,function(res){
@@ -158,6 +164,7 @@
         $("#etiqueta1").val(res.etiqueta);
       });
     }
+    
     function eliminar(btn) {
       var route=ruta_global+ruta_local+btn.value+"";
       var token=$('#token').val();
