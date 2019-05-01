@@ -47,16 +47,22 @@ class SexoController extends Controller
     //$datos = SexoModel::withTrashed()->paginate(5);
     $datos=SexoModel::withTrashed()->get();
     return response()->json(
-            $datos->toArray()
-            );
+      $datos->toArray()
+    );
+  }
+
+  public function search(Request $request)
+  {
+    $resultado = SexoModel::withTrashed()->where('etiqueta','like','%'.$request->input('data').'%')->get();
+    return json_encode($resultado);
   }
 
   public function edit($id)
   {
     $datosid = SexoModel::find($id);
-     return response()->json(
-            $datosid->toArray()
-            );
+    return response()->json(
+      $datosid->toArray()
+    );
     //return view('admin.listasenescyt.datosidentificacion.editsexo',['editaret'=>$datosid]);
   }
 

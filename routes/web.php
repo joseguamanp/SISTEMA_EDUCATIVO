@@ -53,6 +53,7 @@ Route::group(['middleware' => ['web', 'admin']], function() {
   Route::Resource('/admin/sexo','GeneralController\SexoController');
   Route::post('/admin/sexo/show','GeneralController\SexoController@show');
   Route::post('/admin/sexo/destroy','GeneralController\SexoController@destroy');
+  Route::post('/admin/sexo/search','GeneralController\SexoController@search');
   Route::get('/admin/sexo/{id}/restaurar','GeneralController\SexoController@restaurar');
   //GENERO
   Route::Resource('admin/genero','Generales\GeneroController');
