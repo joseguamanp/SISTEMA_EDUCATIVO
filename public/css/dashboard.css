@@ -1,6 +1,38 @@
 body{
   background: #EFEFEF;
 }
+#wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+#content-wrapper {
+  padding:100px 10px 40px 10px;
+}
+#wrapper #content-wrapper {
+  overflow-x: hidden;
+  width: 100%;
+}
+body.fixed-nav #content-wrapper {
+  margin-top: 56px;
+  padding-left: 90px;
+}
+body.fixed-nav.sidebar-toggled #content-wrapper {
+  padding-left: 0;
+}
+@media (min-width: 768px) {
+  body.fixed-nav #content-wrapper {
+    padding-left: 225px;
+  }
+  body.fixed-nav.sidebar-toggled #content-wrapper {
+    padding-left: 90px;
+  }
+}
+.barra-fija{
+  z-index: 99;
+  position: fixed;
+  width: 100%;
+}
 
 #nivel-1 > li > a {
   padding: 8px 8px 5px 8px;
@@ -103,8 +135,8 @@ a > #caret{
 }
 
 #dashboard-contenido{
-  height: calc(100% - 70px);
-  margin-top: 70px;
+  height: calc(100% - 65px);
+  margin-top: 65px;
   overflow-y: scroll;
   padding-bottom: 40px;
   padding-top: 20px;

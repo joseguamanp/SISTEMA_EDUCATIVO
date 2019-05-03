@@ -20,7 +20,7 @@
     <!-- Libraries CSS Files -->
     <link rel="stylesheet" type="text/css" href="{{ asset('lib/nivo-slider/css/nivo-slider.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('lib/owlcarousel/owl.carousel.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('lib/owlcarousel/owlcarousel.transitions.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('lib/owlcarousel/owl.transitions.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('lib/font-awesome/css/font-awesome.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('lib/animate/animate.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('lib/venobox/venobox.css') }}">
@@ -33,7 +33,6 @@
 
     <!-- Responsive Stylesheet File -->
     <link rel="stylesheet" href="{{ asset('css/responsive.css') }}">
-
 
   <!-- =======================================================
     Theme Name: eBusiness

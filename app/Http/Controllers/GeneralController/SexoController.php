@@ -26,13 +26,10 @@ class SexoController extends Controller
   public function store(SexoRequest $request)
   {
     $next=SexoModel::withTrashed()->max('id');
-
     if($next == 0) $next = 1;
     else $next = $next + 1;
-
     $valor = mb_strtoupper($request->input('etiqueta'), 'UTF-8');
     $id_user = Auth::user()->id;
-
     SexoModel::create([
       'id'=> $next,
       'id_usu_cre' => $id_user,
@@ -44,11 +41,21 @@ class SexoController extends Controller
 
   public function show()
   {
-    //$datos = SexoModel::withTrashed()->paginate(5);
     $datos=SexoModel::withTrashed()->get();
     return response()->json(
       $datos->toArray()
     );
+  }
+  public function prueba(Request $request)
+  {
+    if($request->input('param1') != "dame" ){
+      $datos = SexoModel::withTrashed()->get();
+    } else {
+      $limit = $request->input('limit');
+      $offset = $request->input('offset');
+      $datos = SexoModel::withTrashed()->limit($limit)->offset($offset)->get();;
+    }
+    return json_encode($datos);
   }
 
   public function search(Request $request)
@@ -69,7 +76,7 @@ class SexoController extends Controller
   public function update(SexoRequest $request, $id)
   {
     $datoset = SexoModel::find($id);
-    $datoset->etiqueta = strtoupper($request->input('etiqueta'));
+    $datoset->etiqueta = mb_strtoupper($request->input('etiqueta'),'UTF-8');
     $datoset->id_usu_mod = Auth::user()->id;
     $datoset->save();
     return response()->json(["modificado"]);
@@ -80,7 +87,7 @@ class SexoController extends Controller
     $datoset=SexoModel::find($id);
     $datoset->id_usu_mod = Auth::user()->id;
     $datoset->delete();
-    return response()->json(["desactivado"]);
+    return json_encode($datoset);
   }
 
   public function restaurar($id)
@@ -89,6 +96,6 @@ class SexoController extends Controller
     $datoset=SexoModel::find($id);
     $datoset->id_usu_mod = Auth::user()->id;
     $datoset->save();
-    return response()->json(["restaurado"]);
+    return json_encode($datoset);
   }
 }

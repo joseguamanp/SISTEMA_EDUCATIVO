@@ -10,9 +10,8 @@
   <title>Principal</title>
   <link rel="stylesheet" type="text/css" href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}">
   <link rel="stylesheet" type="text/css" href="{{ asset('vendor/fontawesome-free/css/all.min.css') }}">
-  <link rel="stylesheet" type="text/css" href="{{ asset('vendor/datatables/dataTables.bootstrap4.css') }}">
-  <link rel="stylesheet" type="text/css" href="{{ asset('css/sb-admin.css') }}">
-  <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap-datepicker.css')}} ">
+  <<link rel="stylesheet" type="text/css" href="{{ asset('css/dashboard.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ asset('vendor/bootstrap/css/bootstrap-datepicker.css')}} ">
   <link rel="stylesheet" type="text/css" href="{{ asset('css/academico-estu.css')}} ">
   <style>
   .dropdown-submenu {
@@ -287,8 +286,8 @@
 <script type="text/javascript" src="{{ asset('js/demo/datatables-demo.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/demo/chart-area-demo.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/iniciarTroqueladora.js') }}"></script>
-<script type="text/javascript" src="{{ asset('js/bootstrap-datepicker.min.js')}}"></script>
-<script type="text/javascript" src="{{ asset('js/bootstrap-datepicker.es.min.js')}}"></script>
+<script type="text/javascript" src="{{ asset('vendor/bootstrap/js/bootstrap-datepicker.min.js')}}"></script>
+<script type="text/javascript" src="{{ asset('vendor/bootstrap/js/bootstrap-datepicker.es.min.js')}}"></script>
 <script type="text/javascript" src="{{ asset('js/academico-estu.js')}}"></script>
 <script>
 $(document).ready(function(){
