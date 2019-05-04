@@ -39,29 +39,26 @@ class SexoController extends Controller
     return response()->json(["guardado"]);
   }
 
-  public function show()
+  public function show(Request $request)
   {
-    $datos=SexoModel::withTrashed()->get();
+    $limit = $request->input('limit');
+    $offset = $request->input('offset');
+    $search = $request->input('search');
+
+    if($search == "") $datos = SexoModel::withTrashed()->limit($limit)->offset($offset)->get();
+    else $datos = SexoModel::withTrashed()->where('etiqueta','like','%'.$search.'%')->limit($limit)->offset($offset)->get();
+
     return response()->json(
       $datos->toArray()
     );
   }
-  public function prueba(Request $request)
-  {
-    if($request->input('param1') != "dame" ){
-      $datos = SexoModel::withTrashed()->get();
-    } else {
-      $limit = $request->input('limit');
-      $offset = $request->input('offset');
-      $datos = SexoModel::withTrashed()->limit($limit)->offset($offset)->get();;
-    }
-    return json_encode($datos);
-  }
 
-  public function search(Request $request)
+  function count(Request $request)
   {
-    $resultado = SexoModel::withTrashed()->where('etiqueta','like','%'.$request->input('data').'%')->get();
-    return json_encode($resultado);
+    $search = $request->input('search');
+    if($search == "") $count = SexoModel::withTrashed()->count();
+    else $count = SexoModel::withTrashed()->where('etiqueta','like','%'.$search.'%')->count();
+    return json_encode($count);
   }
 
   public function edit($id)

@@ -51,11 +51,11 @@ Route::group(['middleware' => ['web', 'admin']], function() {
   Route::Resource('/admin/datosetnia','Generales\EtniaController');
   //SEXO
   Route::Resource('/admin/sexo','GeneralController\SexoController');
+  Route::post('/admin/sexo/count','GeneralController\SexoController@count');
   Route::post('/admin/sexo/show','GeneralController\SexoController@show');
   Route::post('/admin/sexo/destroy','GeneralController\SexoController@destroy');
-  Route::post('/admin/sexo/search','GeneralController\SexoController@search');
   Route::get('/admin/sexo/{id}/restaurar','GeneralController\SexoController@restaurar');
-  Route::post('/admin/sexo/prueba','GeneralController\SexoController@prueba');
+
   //GENERO
   Route::Resource('admin/genero','Generales\GeneroController');
   Route::get('/admin/genero/{id}/restaurar','Generales\GeneroController@restaurar');

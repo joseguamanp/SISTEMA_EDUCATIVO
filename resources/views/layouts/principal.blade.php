@@ -11,6 +11,7 @@
   <link rel="stylesheet" type="text/css" href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}">
   <link rel="stylesheet" type="text/css" href="{{ asset('vendor/fontawesome-free/css/all.min.css') }}">
   <link rel="stylesheet" type="text/css" href="{{ asset('css/dashboard.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ asset('vendor/tabla/css/tabla.css') }}">
 
   <style>
   .dropdown-submenu {
@@ -156,6 +157,7 @@
   <script type="text/javascript" src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
   <script type="text/javascript" src="{{ asset('js/sweetalert.js') }}"></script>
   @yield('script')
+  <script type="text/javascript" src="{{ asset('vendor/tabla/js/tabla.js') }}"></script>
 
   <script type="text/javascript">
     $(document).ready(function(){
