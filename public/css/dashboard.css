@@ -1,10 +1,10 @@
-body{
-  background: #EFEFEF;
-}
 #wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+#wrapper{
+  -webkit-transition: all 0.5s ease-out;
 }
 #content-wrapper {
   padding:100px 10px 40px 10px;
@@ -12,6 +12,9 @@ body{
 #wrapper #content-wrapper {
   overflow-x: hidden;
   width: 100%;
+}
+body{
+  background: #EFEFEF;
 }
 body.fixed-nav #content-wrapper {
   margin-top: 56px;
@@ -42,11 +45,9 @@ body.fixed-nav.sidebar-toggled #content-wrapper {
   display: block;
   height: 40px;
 }
-
 #nivel-1 > li > a:hover {
   color: white;
 }
-
 #nivel-2 > li > a {
   padding: 8px 8px 5px 20px;
   text-decoration: none;
@@ -56,11 +57,9 @@ body.fixed-nav.sidebar-toggled #content-wrapper {
   height: 40px;
   background: #1C1C1C;
 }
-
 #nivel-2 > li > a:hover {
   color: white;
 }
-
 #nivel-3 > li > a {
   padding: 8px 0px 5px 40px;
   text-decoration: none;
@@ -70,12 +69,10 @@ body.fixed-nav.sidebar-toggled #content-wrapper {
   color: #BFBFBF;
   transition: all 0.2s;
 }
-
 #nivel-3 > li > a:hover{
   background: #393F46;
   color: white;
 }
-
 #nivel-2-select > a{
   text-decoration: none;
   font-size: 14px;
@@ -84,12 +81,10 @@ body.fixed-nav.sidebar-toggled #content-wrapper {
   color: #8E8E8E;
   transition: all 0.2s;
 }
-
 #nivel-2-select > a:hover{
   background: #393F46;
   color: #FFFF;
 }
-
 a > #caret{
   float: right;
   margin-top: 5px;
@@ -103,18 +98,12 @@ a > #caret{
   padding: 11px 10px;
   transition: all 0.3s;
 }
-
 .btn-menu:hover{
   cursor: pointer;
   background: #595959;
 }
 
 /* ****************************************************** */
-
-#wrapper{
-  -webkit-transition: all 0.5s ease-out;
-}
-
 #dashboard{
   background-color: #212529;
   border-right: 1px solid rgb(200, 207, 204);
@@ -133,7 +122,6 @@ a > #caret{
 #dashboard.active {
   margin-left: 0;
 }
-
 #dashboard-contenido{
   height: calc(100% - 65px);
   margin-top: 65px;
@@ -141,7 +129,6 @@ a > #caret{
   padding-bottom: 40px;
   padding-top: 20px;
 }
-
 
 /* ---------------------------------------------------
 CONTENT STYLE
@@ -154,23 +141,36 @@ CONTENT STYLE
   position: absolute;
   right: 0;
 }
-
 #content.active {
   width: calc(100% - 250px);
 }
 
+/* ---------------------------------------------------
+CARD-ICON
+----------------------------------------------------- */
+.card-body-icon {
+  position: absolute;
+  z-index: 0;
+  top: -1.25rem;
+  right: -1rem;
+  opacity: 0.4;
+  font-size: 5rem;
+  -webkit-transform: rotate(15deg);
+  transform: rotate(15deg);
+}
+.o-hidden {
+  overflow: hidden !important;
+}
 
 /* ---------------------------------------------------
 MEDIAQUERIES
 ----------------------------------------------------- */
 
 @media (max-width: 768px) {
-
   #content.active {
     width: 100%;
   }
   #sidebarCollapse span {
     display: none;
   }
-
 }
