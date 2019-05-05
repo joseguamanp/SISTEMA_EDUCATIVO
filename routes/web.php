@@ -23,8 +23,13 @@ Route::get('nosotros', function () {
 
 Auth::routes();
 
+// registro personal
+Route::Resource('/registro','Principal\PersonalController');
+
+
 //usuario todos
 Route::Resource('/roles','ListarRolesController');
+
 
 Route::group(['middleware' => ['web', 'admin']], function() {
   ////////////////////////////ADMINISTRADOR
@@ -70,3 +75,5 @@ Route::group(['middleware' => ['web', 'admin']], function() {
   Route::get('/admin/discapacidad/{id}/restaurar','Discapacidad\DiscapacidadController@restaurar');
 
 });
+
+
