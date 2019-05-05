@@ -14,7 +14,7 @@
   width: 100%;
 }
 body{
-  background: #EFEFEF;
+  background: #F9F9F9;
 }
 body.fixed-nav #content-wrapper {
   margin-top: 56px;
@@ -84,9 +84,9 @@ body.fixed-nav.sidebar-toggled #content-wrapper {
   background-color: #242930;
   border-right: 1px solid rgb(200, 207, 204);
   height: 100%;
-  margin-left: -290px;
+  margin-left: -280px;
   position: fixed;
-  width: 290px;
+  width: 280px;
   z-index: 10;
 }
 #dashboard {
@@ -111,12 +111,12 @@ CONTENT STYLE
 #content {
   width: 100%;
   min-height: 100vh;
-  transition: all 0.3s;
+  transition: all 0.2s;
   position: absolute;
   right: 0;
 }
 #content.active {
-  width: calc(100% - 290px);
+  width: calc(100% - 280px);
 }
 /* ---------------------------------------------------
 COLOR Y ANIMACION DE LA LISTA DE OPCIONES

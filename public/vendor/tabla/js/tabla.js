@@ -5,6 +5,21 @@ var numerosPorPagina = 3;
 var cantIni;
 var cantFin;
 var filtro = "";
+var ordenar = false;
+
+function ordenarRegistros(elemento){
+  if(ordenar == false){
+    ordenar = !ordenar;
+    $(elemento).removeClass("btn-default");
+    $(elemento).addClass("btn-primary");
+    obtenerTotalRegistros();
+  }else{
+    ordenar = !ordenar;
+    $(elemento).removeClass("btn-primary");
+    $(elemento).addClass("btn-default");
+    obtenerTotalRegistros();
+  }
+}
 
 $(document).ready(function(){
   obtenerTotalRegistros();
@@ -148,7 +163,7 @@ function mostrarRegistros(pagina){
   var token=$('#token').val();
   $.ajax({
     headers:{'X-CSRF-TOKEN':token},
-    data:{"search":filtro,"limit":itemsPorPagina, "offset":desde},
+    data:{"search":filtro,"limit":itemsPorPagina, "offset":desde, "order": ordenar},
     type:"post",
     dataType:"json",
     url:ruta_global+ruta_local+"show"

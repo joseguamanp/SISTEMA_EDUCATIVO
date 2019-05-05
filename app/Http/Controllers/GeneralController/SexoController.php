@@ -44,9 +44,14 @@ class SexoController extends Controller
     $limit = $request->input('limit');
     $offset = $request->input('offset');
     $search = $request->input('search');
-
-    if($search == "") $datos = SexoModel::withTrashed()->limit($limit)->offset($offset)->get();
-    else $datos = SexoModel::withTrashed()->where('etiqueta','like','%'.$search.'%')->limit($limit)->offset($offset)->get();
+    $order = $request->input('order');
+    if($order == "true"){
+      if($search == "") $datos = SexoModel::withTrashed()->limit($limit)->offset($offset)->orderBy('etiqueta', 'ASC')->get();
+      else $datos = SexoModel::withTrashed()->where('etiqueta','like','%'.$search.'%')->limit($limit)->offset($offset)->orderBy('etiqueta', 'ASC')->get();
+    }else{
+      if($search == "") $datos = SexoModel::withTrashed()->limit($limit)->offset($offset)->get();
+      else $datos = SexoModel::withTrashed()->where('etiqueta','like','%'.$search.'%')->limit($limit)->offset($offset)->get();
+    }
 
     return response()->json(
       $datos->toArray()
