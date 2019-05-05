@@ -49,9 +49,9 @@
     @else
       <ul class="navbar-nav ml-auto ml-md-8">
         <li class="nav-item dropdown no-arrow">
-          <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><label>Bienvenido: </label>
-            {!!Auth::user()->nombre!!} {!!Auth::user()->apellido!!}
+          <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <i class="fas fa-user-circle fa-fw"></i>
+            {!!Auth::user()->nombre!!} {!!Auth::user()->apellido!!}
           </a>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
             <a class="dropdown-item" href="#" data-toggle="modal" data-target="#clave">Restaurar Clave</a>
@@ -69,49 +69,53 @@
       @if(Session::has('ADMINISTRADOR'))
         <div id="dashboard">
 
-        <div id="dashboard-contenido">
+          <div id="dashboard-contenido">
 
-          <nav class="navbar-nav">
-            <ul id="nivel-1" class="nav navbar-nav mt-3">
-              @foreach($lista as $lis)
-                <li class="panel panel-default">
-                  @if($lis->escalon>0)
-                    @if($lis->escalon==$lis->id)
-                      <?php $valor=$lis->id ?>
-                      <a data-toggle="collapse" href="#senescyt{{$valor}}"><i class="fas fa-fw fa-folder"></i>
-                        <span>{{$lis->nombre}}</span><i id="caret" class="fas fa-caret-down"></i>
-                      </a>
-                    @else
-                      <div id="senescyt{{$valor}}" class="panel-collapse collapse">
-                        <div class="panel-body">
-                          <ul class="nav navbar-nav" id="nivel-2">
-                            <li class="panel panel-default" id="nivel-2">
-                              @if($lis->escalon==$valor && $lis->escalon!=$lis->id)
-                                <?php $etiqueta=$lis->nombre ?>
-                                <a data-toggle="collapse" href="#op-{{$etiqueta}}">{{$lis->nombre}}
-                                  <i id="caret" class="fas fa-caret-down text-right"></i>
-                                </a>
-                              @else
-                                <div id="op-{{$etiqueta}}" class="panel-collapse collapse">
-                                  <div class="panel-body">
-                                    <ul class="nav navbar-nav" id="nivel-3">
-                                      <li>
-                                        <a tabindex="-1" href="{{$lis->rutas}}">{{$lis->nombre}}</a>
-                                      </li>
-                                    </ul>
+            <nav class="navbar-nav">
+              <ul class="nav navbar-nav mt-3" id="nivel-1">
+                @foreach($lista as $lis)
+                  <li class="panel panel-default option-folder">
+                    @if($lis->escalon>0)
+                      @if($lis->escalon==$lis->id)
+                        <?php $valor=$lis->id ?>
+                        <a data-toggle="collapse" href="#senescyt{{$valor}}">
+                          <i class="fas fa-angle-right rotate" id="caret"></i>
+                          <i class="fas fa-fw fa-folder"></i>
+                          <span>{{$lis->nombre}}</span>
+                        </a>
+                      @else
+                        <div id="senescyt{{$valor}}" class="panel-collapse collapse">
+                          <div class="panel-body">
+                            <ul class="nav navbar-nav" id="nivel-2">
+                              <li class="panel panel-default option-folder">
+                                @if($lis->escalon==$valor && $lis->escalon!=$lis->id)
+                                  <?php $etiqueta=$lis->nombre ?>
+                                  <a data-toggle="collapse" href="#op-{{$etiqueta}}">
+                                    <i class="fas fa-angle-right rotate" id="caret"></i>
+                                    <i class="fas fa-fw fa-folder"></i>
+                                    {{$lis->nombre}}
+                                  </a>
+                                @else
+                                  <div id="op-{{$etiqueta}}" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                      <ul class="nav navbar-nav" id="nivel-3">
+                                        <li>
+                                          <a tabindex="-1" href="{{$lis->rutas}}">{{$lis->nombre}}</a>
+                                        </li>
+                                      </ul>
+                                    </div>
                                   </div>
-                                </div>
-                              @endif
-                            </li>
-                          </ul>
+                                @endif
+                              </li>
+                            </ul>
+                          </div>
                         </div>
-                      </div>
+                      @endif
                     @endif
-                  @endif
-                </li>
-              @endforeach
-            </ul>
-          </nav>
+                  </li>
+                @endforeach
+              </ul>
+            </nav>
           </div>
         </div>
       @endif
@@ -156,18 +160,10 @@
   <script type="text/javascript" src="{{ asset('vendor/jquery/jquery.min.js') }}"></script>
   <script type="text/javascript" src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
   <script type="text/javascript" src="{{ asset('js/sweetalert.js') }}"></script>
+  <script type="text/javascript" src="{{ asset('js/dashboard.js') }}"></script>
   @yield('script')
   <script type="text/javascript" src="{{ asset('vendor/tabla/js/tabla.js') }}"></script>
 
-  <script type="text/javascript">
-    $(document).ready(function(){
-      $('#btn-menu').on('click' , function (){
-        $('#dashboard, #content').toggleClass('active');
-        $('.collapse.in').toggleClass('in');
-        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
-      });
-    });
-  </script>
 
 </body>
 

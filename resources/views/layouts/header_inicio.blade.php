@@ -80,16 +80,10 @@
                     <a class="page-scroll"  href="{!!URL::to('nosotros');!!}">Nosotros</a>
                   </li>
                   <li>
-                    <a class="page-scroll" href="#services">Servicios</a>
-                  </li>
-                  <li>
                     <a class="page-scroll" href="#team">Equipo</a>
                   </li>
                   <li>
-                    <a class="page-scroll" href="#portfolio">Galería</a>
-                  </li>
-                  <li>
-                    <a class="page-scroll" href="#blog">Blog</a>
+                    <a class="page-scroll" href="#blog">Noticias</a>
                   </li>
                   <li>
                     <a class="page-scroll" href="#contact">Contáctanos</a>
@@ -100,12 +94,16 @@
                   </li>
                   @else
                   <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                    Bienvenido:  {!!Auth::user()->nombre!!} {!!Auth::user()->apellido!!}<span class="caret"></span></a>
+                    <i class="fa fa-user-circle"></i>
+                    Usuario<span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
-                      <li><a href="#">Restaurar Clave</a></li>
-                      <li><a href="#" data-toggle="modal" data-target="#logoutModal">
+                      <li><a href="{!!URL::to('/roles');!!}">Cuenta</a></li>
+                      <li>
+                        <a href="#" data-toggle="modal" data-target="#logoutModal">
                           <i class="fa fa-window-close" aria-hidden="true"></i>
-                          Salir</a></li>
+                          Salir
+                        </a>
+                      </li>
                     </ul>
                   </li>
                   @endguest
@@ -139,29 +137,12 @@
                 <div class="footer-logo">
                   <h2>Colegio</h2>
                 </div>
-
                 <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis.</p>
-                <div class="footer-icons">
-                  <ul>
-                    <li>
-                      <a href="#"><i class="fa fa-facebook"></i></a>
-                    </li>
-                    <li>
-                      <a href="#"><i class="fa fa-twitter"></i></a>
-                    </li>
-                    <li>
-                      <a href="#"><i class="fa fa-google"></i></a>
-                    </li>
-                    <li>
-                      <a href="#"><i class="fa fa-pinterest"></i></a>
-                    </li>
-                  </ul>
-                </div>
               </div>
             </div>
           </div>
           <!-- end single footer -->
-          <div class="col-md-4 col-sm-4 col-xs-12">
+          <div class="col-md-5 col-sm-5 col-xs-12">
             <div class="footer-content">
               <div class="footer-head">
                 <h4>información</h4>
@@ -177,17 +158,22 @@
             </div>
           </div>
           <!-- end single footer -->
-          <div class="col-md-4 col-sm-4 col-xs-12">
+          <div class="col-md-3 col-sm-3 col-xs-12">
             <div class="footer-content">
               <div class="footer-head">
-                <h4>Instagram</h4>
-                <div class="flicker-img">
-                  <a href="#"><img src="img/portfolio/1.jpg" alt=""></a>
-                  <a href="#"><img src="img/portfolio/2.jpg" alt=""></a>
-                  <a href="#"><img src="img/portfolio/3.jpg" alt=""></a>
-                  <a href="#"><img src="img/portfolio/4.jpg" alt=""></a>
-                  <a href="#"><img src="img/portfolio/5.jpg" alt=""></a>
-                  <a href="#"><img src="img/portfolio/6.jpg" alt=""></a>
+                <h4>Redes Sociales</h4>
+                <div class="footer-icons">
+                  <ul>
+                    <li>
+                      <a href="#"><i class="fa fa-facebook"></i></a>
+                    </li>
+                    <li>
+                      <a href="#"><i class="fa fa-twitter"></i></a>
+                    </li>
+                    <li>
+                      <a href="#"><i class="fa fa-instagram"></i></a>
+                    </li>
+                  </ul>
                 </div>
               </div>
             </div>
@@ -205,12 +191,6 @@
               </p>
             </div>
             <div class="credits">
-              <!--
-                All the links in the footer should remain intact.
-                You can delete the links only if you purchased the pro version.
-                Licensing information: https://bootstrapmade.com/license/
-                Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=eBusiness
-              -->
               Designed by <a href="#">Team-Mijin</a>
             </div>
           </div>

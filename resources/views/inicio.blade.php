@@ -88,185 +88,7 @@
   </div>
   <!-- End Slider Area -->
 
-  <!-- Start About area -->
-<!--  <div id="about" class="about-area area-padding">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12 col-sm-12 col-xs-12">
-          <div class="section-headline text-center">
-            <h2>Sobre Nosotros</h2>
-          </div>
-        </div>
-      </div>
-      <div class="row"> -->
-        <!-- single-well start-->
-<!--        <div class="col-md-6 col-sm-6 col-xs-12">
-          <div class="well-left">
-            <div class="single-well">
-              <a href="#">
-                <img src="img/about/1.jpg" alt="">
-              </a>
-            </div>
-          </div>
-        </div> -->
-        <!-- single-well end-->
-<!--        <div class="col-md-6 col-sm-6 col-xs-12">
-          <div class="well-middle">
-            <div class="single-well">
-              <a href="#">
-                <h4 class="sec-head">project Maintenance</h4>
-              </a>
-              <p>
-                Redug Lagre dolor sit amet, consectetur adipisicing elit. Itaque quas officiis iure aspernatur sit adipisci quaerat unde at nequeRedug Lagre dolor sit amet, consectetur adipisicing elit. Itaque quas officiis iure
-              </p>
-              <ul>
-                <li>
-                  <i class="fa fa-check"></i> Interior design Package
-                </li>
-                <li>
-                  <i class="fa fa-check"></i> Building House
-                </li>
-                <li>
-                  <i class="fa fa-check"></i> Reparing of Residentail Roof
-                </li>
-                <li>
-                  <i class="fa fa-check"></i> Renovaion of Commercial Office
-                </li>
-                <li>
-                  <i class="fa fa-check"></i> Make Quality Products
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div> -->
-        <!-- End col-->
-<!--      </div>
-    </div>
-  </div> -->
-  <!-- End About area -->
-
-  <!-- Start Service area -->
-  <div id="services" class="services-area area-padding">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12 col-sm-12 col-xs-12">
-          <div class="section-headline services-head text-center">
-            <h2>Nuestros Servicios</h2>
-          </div>
-        </div>
-      </div>
-      <div class="row text-center">
-        <div class="services-contents">
-          <!-- Start Left services -->
-          <div class="col-md-4 col-sm-4 col-xs-12">
-            <div class="about-move">
-              <div class="services-details">
-                <div class="single-services">
-                  <a class="services-icon" href="#">
-                    <i class="fa fa-code"></i>
-                  </a>
-                  <h4>Expert Coder</h4>
-                  <p>
-                    will have to make sure the prototype looks finished by inserting text or photo.make sure the prototype looks finished by.
-                  </p>
-                </div>
-              </div>
-              <!-- end about-details -->
-            </div>
-          </div>
-          <div class="col-md-4 col-sm-4 col-xs-12">
-            <div class="about-move">
-              <div class="services-details">
-                <div class="single-services">
-                  <a class="services-icon" href="#">
-                    <i class="fa fa-camera-retro"></i>
-                  </a>
-                  <h4>Creative Designer</h4>
-                  <p>
-                    will have to make sure the prototype looks finished by inserting text or photo.make sure the prototype looks finished by.
-                  </p>
-                </div>
-              </div>
-              <!-- end about-details -->
-            </div>
-          </div>
-          <div class="col-md-4 col-sm-4 col-xs-12">
-            <!-- end col-md-4 -->
-            <div class=" about-move">
-              <div class="services-details">
-                <div class="single-services">
-                  <a class="services-icon" href="#">
-                    <i class="fa fa-wordpress"></i>
-                  </a>
-                  <h4>Wordpress Developer</h4>
-                  <p>
-                    will have to make sure the prototype looks finished by inserting text or photo.make sure the prototype looks finished by.
-                  </p>
-                </div>
-              </div>
-              <!-- end about-details -->
-            </div>
-          </div>
-          <div class="col-md-4 col-sm-4 col-xs-12">
-            <!-- end col-md-4 -->
-            <div class=" about-move">
-              <div class="services-details">
-                <div class="single-services">
-                  <a class="services-icon" href="#">
-                    <i class="fa fa-camera-retro"></i>
-                  </a>
-                  <h4>Social Marketer </h4>
-                  <p>
-                    will have to make sure the prototype looks finished by inserting text or photo.make sure the prototype looks finished by.
-                  </p>
-                </div>
-              </div>
-              <!-- end about-details -->
-            </div>
-          </div>
-          <!-- End Left services -->
-          <div class="col-md-4 col-sm-4 col-xs-12">
-            <!-- end col-md-4 -->
-            <div class=" about-move">
-              <div class="services-details">
-                <div class="single-services">
-                  <a class="services-icon" href="#">
-                    <i class="fa fa-bar-chart"></i>
-                  </a>
-                  <h4>Seo Expart</h4>
-                  <p>
-                    will have to make sure the prototype looks finished by inserting text or photo.make sure the prototype looks finished by.
-                  </p>
-                </div>
-              </div>
-              <!-- end about-details -->
-            </div>
-          </div>
-          <!-- End Left services -->
-          <div class="col-md-4 col-sm-4 col-xs-12">
-            <!-- end col-md-4 -->
-            <div class=" about-move">
-              <div class="services-details">
-                <div class="single-services">
-                  <a class="services-icon" href="#">
-                    <i class="fa fa-ticket"></i>
-                  </a>
-                  <h4>24/7 Support</h4>
-                  <p>
-                    will have to make sure the prototype looks finished by inserting text or photo.make sure the prototype looks finished by.
-                  </p>
-                </div>
-              </div>
-              <!-- end about-details -->
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- End Service area -->
-
-  <!-- Start Blog Area -->
+  <!-- Inicio Area Noticia -->
   <div id="blog" class="blog-area">
     <div class="blog-inner area-padding">
       <div class="blog-overly"></div>
@@ -279,7 +101,7 @@
           </div>
         </div>
         <div class="row">
-          <!-- Start Left Blog -->
+          <!-- Start Left News -->
           <div class="col-md-4 col-sm-4 col-xs-12">
             <div class="single-blog">
               <div class="single-blog-img">
@@ -305,13 +127,14 @@
                 </p>
               </div>
               <span>
-                <a href="blog.html" class="ready-btn">Read more</a>
+                <a href="blog.html" class="ready-btn">Leer más</a>
               </span>
             </div>
-            <!-- Start single blog -->
+            <!-- Start single News -->
           </div>
-          <!-- End Left Blog-->
-          <!-- Start Left Blog -->
+          <!-- End Left News-->
+
+          <!-- Start Left News -->
           <div class="col-md-4 col-sm-4 col-xs-12">
             <div class="single-blog">
               <div class="single-blog-img">
@@ -337,7 +160,7 @@
                 </p>
               </div>
               <span>
-                <a href="blog.html" class="ready-btn">Read more</a>
+                <a href="blog.html" class="ready-btn">Leer más</a>
               </span>
             </div>
             <!-- Start single blog -->
@@ -369,16 +192,16 @@
                 </p>
               </div>
               <span>
-                <a href="blog.html" class="ready-btn">Read more</a>
+                <a href="blog.html" class="ready-btn">Leer más</a>
               </span>
             </div>
           </div>
-          <!-- End Right Blog-->
+          <!-- End Right News-->
         </div>
       </div>
     </div>
   </div>
-  <!-- End Blog -->
+  <!-- Fin Area Noticia -->
 
   <!-- Faq area start -->
   <div class="faq-area area-padding">
@@ -532,42 +355,13 @@
   </div>
   <!-- End Faq Area -->
 
-  <!-- Inicio del area Suscribirse-->
-  <!--<div class="wellcome-area">
-    <div class="well-bg">
-      <div class="test-overly"></div>
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12 col-sm-12 col-xs-12">
-            <div class="wellcome-text">
-              <div class="well-text text-center">
-                <h2>Bienvenidos a nuestra web</h2>
-                <p>
-                  Busuness Lorem ipsum dolor sit amet, consectetur adipiscing elit.luctus est eget congue.
-                </p>
-                <div class="subs-feilds">
-                  <div class="suscribe-input">
-                    <input type="email" class="email form-control width-80" id="sus_email" placeholder="Email">
-                    <button type="submit" id="sus_submit" class="add-btn width-20">Suscribirse</button>
-                    <div id="msg_Submit" class="h3 text-center hidden"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>-->
-  <!-- Fin del area Suscribirse-->
-
   <!-- Start team Area -->
   <div id="team" class="our-team-area area-padding">
     <div class="container">
       <div class="row">
         <div class="col-md-12 col-sm-12 col-xs-12">
           <div class="section-headline text-center">
-            <h2>Nuestro Equipo de Trabajo</h2>
+            <h2>Autoridades Académicas</h2>
           </div>
         </div>
       </div>
@@ -600,8 +394,8 @@
                 </div>
               </div>
               <div class="team-content text-center">
-                <h4>Jhon Mickel</h4>
-                <p>Seo</p>
+                <h4>Pepito</h4>
+                <p>Rector</p>
               </div>
             </div>
           </div>
@@ -634,7 +428,7 @@
               </div>
               <div class="team-content text-center">
                 <h4>Andrew Arnold</h4>
-                <p>Web Developer</p>
+                <p>Vicerector</p>
               </div>
             </div>
           </div>
@@ -667,7 +461,7 @@
               </div>
               <div class="team-content text-center">
                 <h4>Lellien Linda</h4>
-                <p>Web Design</p>
+                <p>Coordinadora</p>
               </div>
             </div>
           </div>
@@ -700,7 +494,7 @@
               </div>
               <div class="team-content text-center">
                 <h4>Jhon Powel</h4>
-                <p>Seo Expert</p>
+                <p>Conserje</p>
               </div>
             </div>
           </div>
@@ -710,214 +504,6 @@
     </div>
   </div>
   <!-- End Team Area -->
-
-  <!-- Start reviews Area -->
-  <div class="reviews-area hidden-xs">
-    <div class="work-us">
-      <div class="work-left-text">
-        <a href="#">
-          <img src="img/about/2.jpg" alt="">
-        </a>
-      </div>
-      <div class="work-right-text text-center">
-        <h2>Trabaja con nosotros</h2>
-        <h5>Web Design, Ready Home, Construction and Co-operate Outstanding Buildings.</h5>
-        <a href="#contact" class="ready-btn">Contáctanos</a>
-      </div>
-    </div>
-  </div>
-  <!-- End reviews Area -->
-
-  <!-- Start portfolio Area -->
-  <div id="portfolio" class="portfolio-area area-padding fix">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-          <div class="section-headline text-center">
-            <h2>Galería</h2>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <!-- Start Portfolio -page -->
-        <div class="awesome-project-1 fix">
-          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-            <div class="awesome-menu ">
-              <ul class="project-menu">
-                <li>
-                  <a href="#" class="active" data-filter="*">All</a>
-                </li>
-                <li>
-                  <a href="#" data-filter=".development">Development</a>
-                </li>
-                <li>
-                  <a href="#" data-filter=".design">Design</a>
-                </li>
-                <li>
-                  <a href="#" data-filter=".photo">Photoshop</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div class="awesome-project-content">
-          <!-- single-awesome-project start -->
-          <div class="col-md-4 col-sm-4 col-xs-12 design development">
-            <div class="single-awesome-project">
-              <div class="awesome-img">
-                <a href="#"><img src="img/portfolio/1.jpg" alt="" /></a>
-                <div class="add-actions text-center">
-                  <div class="project-dec">
-                    <a class="venobox" data-gall="myGallery" href="img/portfolio/1.jpg">
-                      <h4>Business City</h4>
-                      <span>Web Development</span>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- single-awesome-project end -->
-          <!-- single-awesome-project start -->
-          <div class="col-md-4 col-sm-4 col-xs-12 photo">
-            <div class="single-awesome-project">
-              <div class="awesome-img">
-                <a href="#"><img src="img/portfolio/2.jpg" alt="" /></a>
-                <div class="add-actions text-center">
-                  <div class="project-dec">
-                    <a class="venobox" data-gall="myGallery" href="img/portfolio/2.jpg">
-                      <h4>Blue Sea</h4>
-                      <span>Photosho</span>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- single-awesome-project end -->
-          <!-- single-awesome-project start -->
-          <div class="col-md-4 col-sm-4 col-xs-12 design">
-            <div class="single-awesome-project">
-              <div class="awesome-img">
-                <a href="#"><img src="img/portfolio/3.jpg" alt="" /></a>
-                <div class="add-actions text-center">
-                  <div class="project-dec">
-                    <a class="venobox" data-gall="myGallery" href="img/portfolio/3.jpg">
-                      <h4>Beautiful Nature</h4>
-                      <span>Web Design</span>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- single-awesome-project end -->
-          <!-- single-awesome-project start -->
-          <div class="col-md-4 col-sm-4 col-xs-12 photo development">
-            <div class="single-awesome-project">
-              <div class="awesome-img">
-                <a href="#"><img src="img/portfolio/4.jpg" alt="" /></a>
-                <div class="add-actions text-center">
-                  <div class="project-dec">
-                    <a class="venobox" data-gall="myGallery" href="img/portfolio/4.jpg">
-                      <h4>Creative Team</h4>
-                      <span>Web design</span>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- single-awesome-project end -->
-          <!-- single-awesome-project start -->
-          <div class="col-md-4 col-sm-4 col-xs-12 development">
-            <div class="single-awesome-project">
-              <div class="awesome-img">
-                <a href="#"><img src="img/portfolio/5.jpg" alt="" /></a>
-                <div class="add-actions text-center text-center">
-                  <div class="project-dec">
-                    <a class="venobox" data-gall="myGallery" href="img/portfolio/5.jpg">
-                      <h4>Beautiful Flower</h4>
-                      <span>Web Development</span>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- single-awesome-project end -->
-          <!-- single-awesome-project start -->
-          <div class="col-md-4 col-sm-4 col-xs-12 design photo">
-            <div class="single-awesome-project">
-              <div class="awesome-img">
-                <a href="#"><img src="img/portfolio/6.jpg" alt="" /></a>
-                <div class="add-actions text-center">
-                  <div class="project-dec">
-                    <a class="venobox" data-gall="myGallery" href="img/portfolio/6.jpg">
-                      <h4>Night Hill</h4>
-                      <span>Photoshop</span>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- single-awesome-project end -->
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- awesome-portfolio end -->
-
-  <!-- Start Testimonials -->
-  <div class="testimonials-area">
-    <div class="testi-inner area-padding">
-      <div class="testi-overly"></div>
-      <div class="container ">
-        <div class="row">
-          <div class="col-md-12 col-sm-12 col-xs-12">
-            <!-- Start testimonials Start -->
-            <div class="testimonial-content text-center">
-              <a class="quate" href="#"><i class="fa fa-quote-right"></i></a>
-              <!-- start testimonial carousel -->
-              <div class="testimonial-carousel">
-                <div class="single-testi">
-                  <div class="testi-text">
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pulvinar luctus est eget congue.<br>consectetur adipiscing elit. Sed pulvinar luctus est eget congue.
-                    </p>
-                    <h6>Boby</h6>
-                  </div>
-                </div>
-                <!-- End single item -->
-                <div class="single-testi">
-                  <div class="testi-text">
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pulvinar luctus est eget congue.<br>consectetur adipiscing elit. Sed pulvinar luctus est eget congue.
-                    </p>
-                    <h6>Jhon</h6>
-                  </div>
-                </div>
-                <!-- End single item -->
-                <div class="single-testi">
-                  <div class="testi-text">
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pulvinar luctus est eget congue.<br>consectetur adipiscing elit. Sed pulvinar luctus est eget congue.
-                    </p>
-                    <h6>Fleming</h6>
-                  </div>
-                </div>
-                <!-- End single item -->
-              </div>
-            </div>
-            <!-- End testimonials end -->
-          </div>
-          <!-- End Right Feature -->
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- End Testimonials -->
 
   <!-- Start contact Area -->
   <div id="contact" class="contact-area">
@@ -969,8 +555,8 @@
             </div>
           </div>
         </div>
-        <div class="row">
 
+        <div class="row">
           <!-- Start Google Map -->
           <div class="col-md-6 col-sm-6 col-xs-12">
             <!-- Start Map -->
