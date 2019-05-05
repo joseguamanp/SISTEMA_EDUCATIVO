@@ -13,9 +13,34 @@ class PersonalController extends Controller
     }
     public function index()
     {
-      	return view('admin.mante_principal.registro.index');
+    	$fecha=$this->fecha();
+      	return view('admin.mante_principal.registro.index',['fecha'=>$fecha]);
     }
-
+    public function data()
+    {
+    	$data = array('cargo' => 'Rector' );
+    }
+    public function fecha()
+    {
+    	$anios=array();
+	    for($i = date("Y"); $i >= date("Y") - 100; $i--){
+	        array_push($anios,$i);
+	    }
+	    $dias=array();
+	    for($j= 1; $j <= 31; $j++){
+	        array_push($dias,$j);
+	    }
+	    $meses=array(1=>'Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre');
+	    $numes=array();
+	    for($x= 1; $x <= 12; $x++){
+	        array_push($numes,$x);
+	    }
+    	$fecha = array('dia' => $dias,
+    	 					'mes' =>$meses,
+    	 					'anio'=>$anios);
+    	//dd($fecha);
+    	return $fecha;
+    }
     /**
      * Show the form for creating a new resource.
      *
