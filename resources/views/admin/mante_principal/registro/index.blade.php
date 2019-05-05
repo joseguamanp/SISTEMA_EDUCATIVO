@@ -83,9 +83,8 @@
                         <div class="col-xs-4 col-sm-4 col-md-4">
                           <select class="form-control" name="mes">
                             <option>Mes</option>
-                            @foreach($fecha['mes'] as $fe => $feche)
-                              <?php $valor=array_search($feche, $fe) ?>
-                              <option>{{$valor}}</option>
+                            @foreach($fecha['mes'] as $fe)
+                              <option>{{$fe}}</option>
                           @endforeach
                           </select>
                         </div>
@@ -109,6 +108,11 @@
                 </div>
                 </div>
               </div> 
+            </div>
+            <div class="card-footer">
+               <div class="text-center">
+                    <button class="btn btn-primary">Guardar<i class="fa fa-chevron-right" aria-hidden="true"></i></button>
+              </div>
             </div>
           </div>
           <!-- Fin de card -->

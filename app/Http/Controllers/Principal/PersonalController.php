@@ -31,10 +31,6 @@ class PersonalController extends Controller
 	        array_push($dias,$j);
 	    }
 	    $meses=array(1=>'Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre');
-	    $numes=array();
-	    for($x= 1; $x <= 12; $x++){
-	        array_push($numes,$x);
-	    }
     	$fecha = array('dia' => $dias,
     	 					'mes' =>$meses,
     	 					'anio'=>$anios);
