@@ -1,0 +1,32 @@
+.barra-fija{
+  z-index: 99;
+  position: fixed;
+  width: 100%;
+}
+/* ********** BOTON PARA ACTIVAR EL MENU LATERAL******** */
+.btn-menu{
+  border-radius: 30px;
+  color: #fff;
+  padding: 11px 10px;
+  transition: all 0.3s;
+}
+.btn-menu:hover{
+  cursor: pointer;
+  background: #595959;
+}
+.btn-menu:active{
+  background: #7e7e7e;
+}
+/* ****************************************************** */
+.content-user-dropdown{
+  display:none;
+}
+
+@media (max-width: 540px) {
+  .user-bar{
+    display:none;
+  }
+  .content-user-dropdown{
+    display:block;
+  }
+}

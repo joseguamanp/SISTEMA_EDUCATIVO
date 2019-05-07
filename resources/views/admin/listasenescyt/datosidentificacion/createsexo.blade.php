@@ -37,7 +37,7 @@
               <div class="">
                 <label for="numeroItems" class="col-form-label text-right mr-1">Mostrar</label>
               </div>
-              <div class="ml-2 mr-2">
+              <div class="ml-3 mr-3">
                 <select class="form-control" id="numeroItems" onchange="cambiarNumeroItems(this.value);">
                   <option value="10">10</option>
                   <option value="25">25</option>
@@ -51,9 +51,9 @@
           </div><!-- FIN MOSTRAR -->
 
           <!-- INICIO BUSCAR -->
-          <div class="col-lg-4 col-sm-12 mb-3">
+          <div class="col-lg-4 col-sm-12 mb-4">
             <div class="row">
-              <div class="ml-3 mr-1">
+              <div class="ml-3 mr-2">
                 <label for="buscar" class="col-form-label text-lg-right" >Buscar</label>
               </div>
               <div class="col">
@@ -96,10 +96,8 @@
         </div>
       </div>
       <!-- **** FIN AREA CONTADOR Y PAGINADOR ****-->
-
     </div>
   </div>
-
 
   <!-- **** INICIO DE MODAL ****-->
   <div class="modal fade" id="editar" aria-hidden="true">

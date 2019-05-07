@@ -15,30 +15,30 @@
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700|Raleway:300,400,400i,500,500i,700,800,900" rel="stylesheet">
 
   <!-- Bootstrap CSS File -->
-    <link rel="stylesheet" type="text/css" href="{{ asset('lib/bootstrap/css/bootstrap.min.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ asset('lib/bootstrap/css/bootstrap.min.css') }}">
 
-    <!-- Libraries CSS Files -->
-    <link rel="stylesheet" type="text/css" href="{{ asset('lib/nivo-slider/css/nivo-slider.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('lib/owlcarousel/owl.carousel.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('lib/owlcarousel/owl.transitions.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('lib/font-awesome/css/font-awesome.min.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('lib/animate/animate.min.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('lib/venobox/venobox.css') }}">
+  <!-- Libraries CSS Files -->
+  <link rel="stylesheet" type="text/css" href="{{ asset('lib/nivo-slider/css/nivo-slider.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ asset('lib/owlcarousel/owl.carousel.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ asset('lib/owlcarousel/owl.transitions.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ asset('lib/font-awesome/css/font-awesome.min.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ asset('lib/animate/animate.min.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ asset('lib/venobox/venobox.css') }}">
 
-    <!-- Nivo Slider Theme -->
-    <link rel="stylesheet" href="{{ asset('css/nivo-slider-theme.css') }}">
+  <!-- Nivo Slider Theme -->
+  <link rel="stylesheet" href="{{ asset('css/nivo-slider-theme.css') }}">
 
-    <!-- Main Stylesheet File -->
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+  <!-- Main Stylesheet File -->
+  <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 
-    <!-- Responsive Stylesheet File -->
-    <link rel="stylesheet" href="{{ asset('css/responsive.css') }}">
+  <!-- Responsive Stylesheet File -->
+  <link rel="stylesheet" href="{{ asset('css/responsive.css') }}">
 
   <!-- =======================================================
-    Theme Name: eBusiness
-    Theme URL: https://bootstrapmade.com/ebusiness-bootstrap-corporate-template/
-    Author: BootstrapMade.com
-    License: https://bootstrapmade.com/license/
+  Theme Name: eBusiness
+  Theme URL: https://bootstrapmade.com/ebusiness-bootstrap-corporate-template/
+  Author: BootstrapMade.com
+  License: https://bootstrapmade.com/license/
   ======================================================= -->
 </head>
 
@@ -58,17 +58,17 @@
               <!-- Brand and toggle get grouped for better mobile display -->
               <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".bs-example-navbar-collapse-1" aria-expanded="false">
-										<span class="sr-only">Toggle navigation</span>
-										<span class="icon-bar"></span>
-										<span class="icon-bar"></span>
-										<span class="icon-bar"></span>
-									</button>
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
                 <!-- Brand -->
                 <a class="navbar-brand page-scroll sticky-logo" href="{!!URL::to('');!!}">
                   <h1>Colegio</h1>
                   <!-- Uncomment below if you prefer to use an image logo -->
                   <!-- <img src="img/logo.png" alt="" title=""> -->
-								</a>
+                </a>
               </div>
               <!-- Collect the nav links, forms, and other content for toggling -->
               <div class="collapse navbar-collapse main-menu bs-example-navbar-collapse-1" id="navbar-example">
@@ -88,24 +88,24 @@
                   <li>
                     <a class="page-scroll" href="#contact">Contáctanos</a>
                   </li>
-                   @guest
-                  <li>
-                    <a class="page-scroll" href="{{ route('login') }}">Login</a>
-                  </li>
+                  @guest
+                    <li>
+                      <a class="page-scroll" href="{{ route('login') }}">Login</a>
+                    </li>
                   @else
-                  <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                    <i class="fa fa-user-circle"></i>
-                    Usuario<span class="caret"></span></a>
-                    <ul class="dropdown-menu" role="menu">
-                      <li><a href="{!!URL::to('/roles');!!}">Cuenta</a></li>
-                      <li>
-                        <a href="#" data-toggle="modal" data-target="#logoutModal">
-                          <i class="fa fa-window-close" aria-hidden="true"></i>
-                          Salir
-                        </a>
-                      </li>
-                    </ul>
-                  </li>
+                    <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                      <i class="fa fa-user-circle"></i>
+                      Usuario<span class="caret"></span></a>
+                      <ul class="dropdown-menu" role="menu">
+                        <li><a href="{!!URL::to('/roles');!!}">Cuenta</a></li>
+                        <li>
+                          <a href="#" data-toggle="modal" data-target="#logoutModal">
+                            <i class="fa fa-window-close" aria-hidden="true"></i>
+                            Salir
+                          </a>
+                        </li>
+                      </ul>
+                    </li>
                   @endguest
                 </ul>
               </div>
@@ -199,28 +199,28 @@
     </div>
   </footer>
   <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Esta seguro que desea salir?</h5>
-            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">×</span>
-            </button>
-          </div>
-          <div class="modal-body">Esta seguro que desea cerrar session</div>
-          <div class="modal-footer">
-            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
-            <a class="btn btn-success" href="{{ route('logout') }}"
-            onclick="event.preventDefault();
-            document.getElementById('logout-form').submit();">
-            {{ __('Salir') }}
-          </a>
-          <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-            @csrf
-          </form>
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Esta seguro que desea salir?</h5>
+          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
         </div>
+        <div class="modal-body">Esta seguro que desea cerrar session</div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
+          <a class="btn btn-success" href="{{ route('logout') }}"
+          onclick="event.preventDefault();
+          document.getElementById('logout-form').submit();">
+          {{ __('Salir') }}
+        </a>
+        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+          @csrf
+        </form>
       </div>
     </div>
+  </div>
   <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
 
   <!-- JavaScript Libraries -->

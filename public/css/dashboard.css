@@ -13,9 +13,18 @@
   overflow-x: hidden;
   width: 100%;
 }
+
 body{
-  background: #F9F9F9;
+    font-family: Open Sans, sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    margin: 0;
+    text-align: left;
+    color: #525f7f;
+    background-color: #f8f9fe;
 }
+
 body.fixed-nav #content-wrapper {
   margin-top: 56px;
   padding-left: 90px;
@@ -30,11 +39,6 @@ body.fixed-nav.sidebar-toggled #content-wrapper {
   body.fixed-nav.sidebar-toggled #content-wrapper {
     padding-left: 90px;
   }
-}
-.barra-fija{
-  z-index: 99;
-  position: fixed;
-  width: 100%;
 }
 #nivel-1 > li > a {
   padding: 5px 8px 8px 12px;
@@ -65,21 +69,7 @@ body.fixed-nav.sidebar-toggled #content-wrapper {
   background: #2d3136;
   color: white;
 }*/
-/* ********** BOTON PARA ACTIVAR EL MENU LATERAL******** */
-.btn-menu{
-  border-radius: 30px;
-  color: #fff;
-  padding: 11px 10px;
-  transition: all 0.3s;
-}
-.btn-menu:hover{
-  cursor: pointer;
-  background: #595959;
-}
-.btn-menu:active{
-  background: #7e7e7e;
-}
-/* ****************************************************** */
+
 #dashboard{
   background-color: #242930;
   border-right: 1px solid rgb(200, 207, 204);
