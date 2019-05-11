@@ -1,6 +1,30 @@
+
+/*--------------------------
+tema-login
+---------------------------- */
+function themeLogin(){
+  $('#mainNav').addClass('theme-login');
+  $('.footer-area').hide();
+}
+function activeOption(op){
+  switch (op) {
+    case 'op-nosotros':
+    $('#'+op).children('.nav-link').addClass('op-active');
+    break;
+    case 'op-noticias':
+    $('#'+op).addClass('active');
+    break;
+    case 'op-equipo':
+    $('#'+op).addClass('active');
+    break;
+    case 'op-contactanos':
+    $('#'+op).addClass('active');
+    break;
+  }
+}
+
 (function($) {
   "use strict";
-
   /*--------------------------
   preloader
   ---------------------------- */
@@ -12,21 +36,18 @@
   });
 
   /*---------------------
-   TOP Menu Stick
+  TOP Menu Stick
   --------------------- */
-  var s = $("#sticker");
-  var pos = s.position();
   $(window).on('scroll', function() {
-    var windowpos = $(window).scrollTop() > 300;
-    if (windowpos > pos.top) {
-      s.addClass("stick");
+    if ($("#mainNav").offset().top > 100) {
+      $("#mainNav").addClass("navbar-shrink");
     } else {
-      s.removeClass("stick");
+      $("#mainNav").removeClass("navbar-shrink");
     }
   });
 
   /*----------------------------
-   Navbar nav
+  Navbar nav
   ------------------------------ */
   var main_menu = $(".main-menu ul.navbar-nav li ");
   main_menu.on('click', function() {
@@ -35,7 +56,7 @@
   });
 
   /*----------------------------
-   wow js active
+  wow js active
   ------------------------------ */
   new WOW().init();
 
@@ -61,7 +82,7 @@
   });
 
   /*----------------------------
-   Scrollspy js
+  Scrollspy js
   ------------------------------ */
   var Body = $('body');
   Body.scrollspy({
@@ -70,7 +91,7 @@
   });
 
   /*---------------------
-    Venobox
+  Venobox
   --------------------- */
   var veno_box = $('.venobox');
   veno_box.venobox();
@@ -88,13 +109,18 @@
   });
 
   /*--------------------------
-    Back to top button
+  Back to top button
   ---------------------------- */
   $(window).scroll(function() {
     if ($(this).scrollTop() > 100) {
       $('.back-to-top').fadeIn('slow');
     } else {
       $('.back-to-top').fadeOut('slow');
+    }
+    if ($("#mainNav").offset().top > 100) {
+      $("#mainNav").addClass("navbar-shrink");
+    } else {
+      $("#mainNav").removeClass("navbar-shrink");
     }
   });
 
@@ -104,7 +130,7 @@
   });
 
   /*----------------------------
-   Parallax
+  Parallax
   ------------------------------ */
   var well_lax = $('.wellcome-area');
   well_lax.parallax("50%", 0.4);
@@ -112,7 +138,7 @@
   well_text.parallax("50%", 0.6);
 
   /*--------------------------
-   collapse
+  collapse
   ---------------------------- */
   var panel_test = $('.panel-heading a');
   panel_test.on('click', function() {
@@ -121,7 +147,7 @@
   });
 
   /*---------------------
-   Testimonial carousel
+  Testimonial carousel
   ---------------------*/
   var test_carousel = $('.testimonial-carousel');
   test_carousel.owlCarousel({
@@ -142,7 +168,7 @@
     }
   });
   /*----------------------------
-   isotope active
+  isotope active
   ------------------------------ */
   // portfolio start
   $(window).on("load", function() {
@@ -176,13 +202,13 @@
   //portfolio end
 
   /*---------------------
-   Circular Bars - Knob
---------------------- */
+  Circular Bars - Knob
+  --------------------- */
   if (typeof($.fn.knob) != 'undefined') {
     var knob_tex = $('.knob');
     knob_tex.each(function() {
       var $this = $(this),
-        knobVal = $this.attr('data-rel');
+      knobVal = $this.attr('data-rel');
 
       $this.knob({
         'draw': function() {

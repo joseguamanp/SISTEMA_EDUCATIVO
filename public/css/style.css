@@ -11,7 +11,7 @@
 
   1. Theme Default CSS (body, link color, section etc)
   2. Header Area
-   2.1 Stick menu Area
+   2.1 mainNAv
   3. About Area
   4.Services Area
   5.Skill Area
@@ -35,9 +35,13 @@
 /*----------------------------------------*/
 /*  1.  Theme default CSS
 /*----------------------------------------*/
-
+/*
 html, body {
   height: 100%;
+}*/
+html {
+  min-height: 100%;
+  position: relative;
 }
 
 .floatleft {
@@ -133,15 +137,24 @@ a:hover {
 a:active, a:hover {
   outline: 0 none;
 }
-
 body {
   background: #fff none repeat scroll 0 0;
   color: #444;
-  font-family: 'Open Sans', sans-serif;
+  /*font-family: 'Open Sans', sans-serif;*/
   font-size: 14px;
   text-align: left;
   overflow-x: hidden;
   line-height: 22px;
+  margin: 0;/*footer*/
+  margin-bottom: 40px;/*footer*/
+}
+footer {
+  background-color: black;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 40px;
+  color: white;
 }
 
 /* Back to top button */
@@ -253,222 +266,99 @@ div#preloader {
   transition: all 0.4s ease 0s;
 }
 
-/*--------------------------------*/
-
-/*  2. Header top Area
-/*--------------------------------*/
-
-.header-area {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: auto;
-  background: rgba(0, 0, 0, 0.40);
-  z-index: 9;
+/*------------------------------
+  2.1. mainNav
+--------------------------------*/
+#mainNav {
+  border-bottom: none;
+  background:rgba(74, 80, 87, 0.95);
+  -webkit-transition: background-color 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
+  z-index: 99;
 }
-
-.navbar-header a.navbar-brand {
-  display: inline-block;
-  height: 70px;
-  padding: 15px 0;
+#mainNav.nav-transparent{
+  background: transparent;
 }
-
-.main-menu ul.navbar-nav li {
-  display: inline-block;
-  padding: 0px 13px;
-}
-
-.main-menu ul.navbar-nav li a {
-  background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
-  color: #fff;
-  font-size: 15px;
-  font-weight: 500;
-  padding: 24px 0px;
-  text-transform: capitalize;
-  letter-spacing: 1px;
-}
-
-.main-menu ul.navbar-nav li.active > a::after {
-  border: 1px solid #fff;
-  bottom: 0px;
-  content: "";
-  left: 0;
-  position: absolute;
-  width: 100%;
-}
-
-.main-menu ul.navbar-nav li.active a:hover {
-  background: none;
-  color: #fff;
-}
-
-.main-menu ul.navbar-nav li.active a:focus {
-  color: #fff;
-}
-
-.main-menu ul.navbar-nav li.active a {
-  background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
-  color: #fff;
-  position: relative;
-}
-
-.main-menu ul.navbar-nav li a:hover {
-  color: #3EC1D5;
-}
-
-.navbar {
-  border: medium none;
-  margin-bottom: 0;
-}
-
-.navbar-default {
-  background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
-}
-
-.main-menu ul.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus {
-  background: none;
-  color: #333;
-}
-
-.navbar-default .navbar-toggle {
-  background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
-  border: medium none;
-  border-radius: 0;
-  padding: 25px 0px;
-}
-
-.navbar-default .navbar-nav>li>a:hover, .navbar-default .navbar-nav>li>a:focus {
-  background-color: transparent;
-  color: #fff;
-}
-
-.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
-  background: none;
-}
-
-.navbar-default .navbar-toggle .icon-bar {
-  background-color: #fff;
-  width: 30px;
-  height: 2px;
-}
-
-.top-right.text-right {
-  float: right;
-  position: relative;
-  top: 24px;
-  margin-left: 20px;
-}
-
-.top-right.text-right>li {
-  float: right;
-  margin: 0px 8px;
-}
-
-.top-right.text-right li a {
-  color: #fff;
-}
-
-.main-menu .dropdown ul {
-  background: #000;
-}
-
-.main-menu .dropdown ul li {
-  display: block;
-}
-
-/*--------------------------------*/
-
-/* 2.1. Stick menu
-/*--------------------------------*/
-
-.header-area.stick {
-  background-color: rgba(0, 0, 0, 1);
-  height: 70px;
+#mainNav.barra-fija{
+  top:0;
   position: fixed;
-  top: 0;
   width: 100%;
-  z-index: 1000;
+  z-index: 99;
+}
+#mainNav .navbar-brand {
+  color: rgba(255, 255, 255, 0.81);
+  padding-bottom:10px;
+}
+#mainNav .navbar-toggler i{
+  color: white;
+}
+#mainNav .nav-link {
+  font-size: 16px;
+  padding: 10px 10px 10px;
+  color: #d9dbde;
+}
+#mainNav .nav-link:hover {
+  color: white;
+}
+#mainNav .nav-link:active {
+  color: #66b5f0;
+}
+#mainNav .nav-link.op-active{
+  color: #66b5f0;
 }
 
-.stick .navbar-header a.navbar-brand {
-  display: inline-block;
-  height: 90px;
+#mainNav.navbar-shrink{
+  background:rgba(74, 80, 87, 0.95);
+}
+.navbar-shrink .navbar-brand {
+  color: rgba(255, 255, 255, 0.81);
+}
+.navbar-shrink .nav-link {
+  color: rgba(255, 255, 255, 0.81);
+}
+.navbar-shrink .nav-link:hover {
+  color: #66b5f0;
+}
+.navbar-shrink .nav-link:active {
+  color: #66b5f0;
+}
+.navbar-shrink .nav-link.active {
+  color: #66b5f0;
+  outline: none;
 }
 
-.stick .navbar-brand>img {
-  display: none;
-}
 
-.stick .navbar-brand.sticky-logo>img {
-  display: block;
-}
-
-.sticky-logo h1 {
-  color: #fff;
-  padding: 0;
-  margin: 0;
-  font-size: 36px;
-  font-weight: bold;
-  line-height: 1;
-}
-
-.sticky-logo h1 span {
-  color: #3ec1d5;
-}
-.stick .main-menu ul.navbar-nav li.active > a::after {
-  border: 1px solid #fff;
-  bottom: 0px;
-  content: "";
-  left: 0;
-  position: absolute;
-  width: 100%;
-}
-
-.stick .main-menu ul.nav>li>a:hover {
-  color: #fff;
-}
-
-.stick .main-menu ul.navbar-nav li.active a {
-  background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
-  color: #fff;
+#mainNav.theme-login{
+  background-color: transparent;
+  color: #d9dbde;
+  top:0;
   position: relative;
+  width: 100%;
+  z-index: 99;
 }
-
-.stick .mainmenu ul#nav>li:hover>a, .stick .mainmenu ul#nav li .mega-menu, .stick .mainmenu ul#nav li ul.sub-menu {
-  background-color: #f5f5f5;
-  color: #fff;
-  outline: medium none;
+#mainNav.theme-login .navbar-brand {
+  color: rgba(84, 81, 81, 0.95);
 }
-
-.stick .mainmenu ul#nav li:hover ul.sub-menu li a:hover, .mainmenu ul#nav li .mega-menu span>a:hover, .stick .mainmenu ul#nav li .mega-menu-shop a.mega-menu-title:hover {
-  color: #fff;
+#mainNav.theme-login .navbar-toggler i{
+  color: black;
 }
-
-.stick .logo {
-  height: 20px;
+#mainNav.theme-login .nav-link {
+  color: rgba(84, 81, 81, 0.81);
 }
-
-.stick .logo a {
-  margin-top: 0px;
+#mainNav.theme-login .nav-link:hover {
+  color: black;
 }
-
-.stick .main-menu ul.nav>li>a {
-  color: #fff;
-  line-height: 22px;
-  padding: 24px 0px;
-  text-transform: capitalize;
-  letter-spacing: 1px;
+#login-header{
+  margin-top: 0;
 }
-
-.stick .navbar-default .navbar-toggle .icon-bar {
-  background-color: #fff;
-  width: 30px;
-  height: 2px;
+.has-feedback .form-control-feedback {
+  position: absolute;
+  padding: 10px;
+  pointer-events: none;
+  color: #adb5bd;
 }
-
-.stick .navbar-default .navbar-toggle {
-  padding: 10px 0px;
+.has-feedback .form-control {
+  padding-left: 30px!important;
 }
 
 /*------------------------------
@@ -669,10 +559,7 @@ div#preloader {
   display: inline-block;
 }
 
-.tab-content {
-  border: 1px solid #ccc;
-  padding: 0 15px 15px;
-}
+
 
 .tab-menu ul.nav li a {
   background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
@@ -1566,7 +1453,6 @@ div#preloader {
   margin-top: 10px;
   padding: 10px 20px;
   text-align: center;
-  text-transform: uppercase;
   transition: all 0.4s ease 0s;
 }
 
@@ -2013,7 +1899,6 @@ div#preloader {
   margin-top: 30px;
   padding: 12px 40px;
   text-align: center;
-  text-transform: uppercase;
   transition: all 0.4s ease 0s;
   z-index: 222;
 }

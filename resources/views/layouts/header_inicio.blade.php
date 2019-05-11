@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="utf-8">
   <title>Plataforma Académica</title>
@@ -11,17 +11,14 @@
   <link href="img/favicon.png" rel="icon">
   <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700|Raleway:300,400,400i,500,500i,700,800,900" rel="stylesheet">
-
   <!-- Bootstrap CSS File -->
-  <link rel="stylesheet" type="text/css" href="{{ asset('lib/bootstrap/css/bootstrap.min.css') }}">
-
+  <link rel="stylesheet" type="text/css" href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}">
   <!-- Libraries CSS Files -->
   <link rel="stylesheet" type="text/css" href="{{ asset('lib/nivo-slider/css/nivo-slider.css') }}">
   <link rel="stylesheet" type="text/css" href="{{ asset('lib/owlcarousel/owl.carousel.css') }}">
   <link rel="stylesheet" type="text/css" href="{{ asset('lib/owlcarousel/owl.transitions.css') }}">
   <link rel="stylesheet" type="text/css" href="{{ asset('lib/font-awesome/css/font-awesome.min.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ asset('vendor/fontawesome-free/css/all.min.css') }}">
   <link rel="stylesheet" type="text/css" href="{{ asset('lib/animate/animate.min.css') }}">
   <link rel="stylesheet" type="text/css" href="{{ asset('lib/venobox/venobox.css') }}">
 
@@ -34,96 +31,63 @@
   <!-- Responsive Stylesheet File -->
   <link rel="stylesheet" href="{{ asset('css/responsive.css') }}">
 
-  <!-- =======================================================
-  Theme Name: eBusiness
-  Theme URL: https://bootstrapmade.com/ebusiness-bootstrap-corporate-template/
-  Author: BootstrapMade.com
-  License: https://bootstrapmade.com/license/
-  ======================================================= -->
 </head>
 
 <body data-spy="scroll" data-target="#navbar-example">
-
   <div id="preloader"></div>
-
   <header>
-    <!-- header-area start -->
-    <div id="sticker" class="header-area">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12 col-sm-12">
-
-            <!-- Navigation -->
-            <nav class="navbar navbar-default">
-              <!-- Brand and toggle get grouped for better mobile display -->
-              <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".bs-example-navbar-collapse-1" aria-expanded="false">
-                  <span class="sr-only">Toggle navigation</span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-                </button>
-                <!-- Brand -->
-                <a class="navbar-brand page-scroll sticky-logo" href="{!!URL::to('');!!}">
-                  <h1>Colegio</h1>
-                  <!-- Uncomment below if you prefer to use an image logo -->
-                  <!-- <img src="img/logo.png" alt="" title=""> -->
-                </a>
-              </div>
-              <!-- Collect the nav links, forms, and other content for toggling -->
-              <div class="collapse navbar-collapse main-menu bs-example-navbar-collapse-1" id="navbar-example">
-                <ul class="nav navbar-nav navbar-right">
-                  <li class="active">
-                    <a class="page-scroll" href="{!!URL::to('');!!}">Inicio</a>
-                  </li>
-                  <li>
-                    <a class="page-scroll"  href="{!!URL::to('nosotros');!!}">Nosotros</a>
-                  </li>
-                  <li>
-                    <a class="page-scroll" href="#team">Equipo</a>
-                  </li>
-                  <li>
-                    <a class="page-scroll" href="#blog">Noticias</a>
-                  </li>
-                  <li>
-                    <a class="page-scroll" href="#contact">Contáctanos</a>
-                  </li>
-                  @guest
-                    <li>
-                      <a class="page-scroll" href="{{ route('login') }}">Login</a>
-                    </li>
-                  @else
-                    <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                      <i class="fa fa-user-circle"></i>
-                      Usuario<span class="caret"></span></a>
-                      <ul class="dropdown-menu" role="menu">
-                        <li><a href="{!!URL::to('/roles');!!}">Cuenta</a></li>
-                        <li>
-                          <a href="#" data-toggle="modal" data-target="#logoutModal">
-                            <i class="fa fa-window-close" aria-hidden="true"></i>
-                            Salir
-                          </a>
-                        </li>
-                      </ul>
-                    </li>
-                  @endguest
-                </ul>
-              </div>
-              <!-- navbar-collapse -->
-            </nav>
-            <!-- END: Navigation -->
+    <!-- Navigation -->
+    <div class="navbar-area">
+      <nav class="navbar navbar-expand-lg barra-fija" id="mainNav">
+        <div class="container">
+          <a class="navbar-brand js-scroll-trigger" href="{!!URL::to('');!!}" id="logo" style="font-size:32px">Colegio</a>
+          <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fas fa-bars"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="{!!URL::to('');!!}" id="op-inicio">Inicio</a>
+              </li>
+              <li class="nav-item" id="op-nosotros">
+                <a class="nav-link"  href="{!!URL::to('nosotros');!!}" >Nosotros</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#blog" id="op-noticias">Noticias</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#team" id="op-equipo">Equipo</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#contact" id="op-contactanos">Contáctanos</a>
+              </li>
+              @guest
+                <li class="nav-item">
+                  <a class="nav-link" href="{{ route('login') }}">Login</a>
+                </li>
+              @else
+                <li class="nav-item dropdown ">
+                  <a href="#" class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fa fa-user-circle"></i>
+                    Usuario
+                    <span class="caret"></span>
+                  </a>
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item" href="{!! URL::to('/roles'); !!}">Cuenta</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">Salir</a>
+                  </div>
+                </li>
+              @endguest
+            </ul>
           </div>
         </div>
-      </div>
+      </nav>
     </div>
-    <!-- header-area end -->
   </header>
-  <!-- header end -->
 
   <div id="content">
-
     @yield('content')
-
   </div>
 
   <!-- Start Footer bottom Area -->
@@ -165,13 +129,13 @@
                 <div class="footer-icons">
                   <ul>
                     <li>
-                      <a href="#"><i class="fa fa-facebook"></i></a>
+                      <a href="#"><i class="fab fa-facebook-f"></i></a>
                     </li>
                     <li>
-                      <a href="#"><i class="fa fa-twitter"></i></a>
+                      <a href="#"><i class="fab fa-twitter"></i></a>
                     </li>
                     <li>
-                      <a href="#"><i class="fa fa-instagram"></i></a>
+                      <a href="#"><i class="fab fa-instagram"></i></a>
                     </li>
                   </ul>
                 </div>
@@ -190,42 +154,43 @@
                 &copy; Copyright <strong>Hardcore</strong>. All Rights Reserved
               </p>
             </div>
-            <div class="credits">
-              Designed by <a href="#">Team-Mijin</a>
+            <div class="text-center">
+              <span class="text-muted">Designed by</span> <a href="#">Team-Mijin</a>
             </div>
           </div>
         </div>
       </div>
     </div>
   </footer>
+  <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+
+  <!-- Logout Modal-->
   <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Esta seguro que desea salir?</h5>
+          <h5 class="modal-title" id="exampleModalLabel">Aviso</h5>
           <button class="close" type="button" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">×</span>
           </button>
         </div>
-        <div class="modal-body">Esta seguro que desea cerrar session</div>
+        <div class="modal-body">¿Está seguro que desea cerrar sesión?</div>
         <div class="modal-footer">
           <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
-          <a class="btn btn-success" href="{{ route('logout') }}"
-          onclick="event.preventDefault();
-          document.getElementById('logout-form').submit();">
-          {{ __('Salir') }}
-        </a>
-        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-          @csrf
-        </form>
+          <a class="btn btn-primary" href="{{ route('logout') }}"onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+            {{ __('Aceptar') }}
+          </a>
+          <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+            @csrf
+          </form>
+        </div>
       </div>
     </div>
   </div>
-  <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
 
   <!-- JavaScript Libraries -->
   <script type="text/javascript" src="{{ asset('lib/jquery/jquery.min.js') }}"></script>
-  <script type="text/javascript" src="{{ asset('lib/bootstrap/js/bootstrap.min.js') }}"></script>
+  <script type="text/javascript" src="{{ asset('vendor/bootstrap/js/bootstrap.min.js') }}"></script>
   <script type="text/javascript" src="{{ asset('lib/owlcarousel/owl.carousel.min.js') }}"></script>
   <script type="text/javascript" src="{{ asset('lib/venobox/venobox.min.js') }}"></script>
   <script type="text/javascript" src="{{ asset('lib/knob/jquery.knob.js') }}"></script>
@@ -236,11 +201,10 @@
   <script type="text/javascript" src="{{ asset('lib/appear/jquery.appear.js') }}"></script>
   <script type="text/javascript" src="{{ asset('lib/isotope/isotope.pkgd.min.js') }}"></script>
 
-
   <!-- Contact Form JavaScript File -->
   <script src="{{ asset('contactform/contactform.js') }}"></script>
-
   <script src="{{ asset('js/main.js') }}"></script>
+  @yield('script')
 </body>
 
 </html>

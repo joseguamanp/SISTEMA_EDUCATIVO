@@ -111,7 +111,7 @@
               </div>
               <div class="blog-meta">
                 <span class="comments-type">
-                  <i class="fa fa-comment-o"></i>
+                  <i class="fas fa-comment"></i>
                   <a href="#">13 comments</a>
                 </span>
                 <span class="date-type">
@@ -144,7 +144,7 @@
               </div>
               <div class="blog-meta">
                 <span class="comments-type">
-                  <i class="fa fa-comment-o"></i>
+                  <i class="fas fa-comment"></i>
                   <a href="#">130 comments</a>
                 </span>
                 <span class="date-type">
@@ -176,7 +176,7 @@
               </div>
               <div class="blog-meta">
                 <span class="comments-type">
-                  <i class="fa fa-comment-o"></i>
+                  <i class="fas fa-comment"></i>
                   <a href="#">10 comments</a>
                 </span>
                 <span class="date-type">
@@ -293,59 +293,36 @@
           </div>
         </div>
         <div class="col-md-6 col-sm-6 col-xs-12">
-          <div class="tab-menu">
-            <!-- Nav tabs -->
-            <ul class="nav nav-tabs" role="tablist">
-              <li class="active">
-                <a href="#p-view-1" role="tab" data-toggle="tab">Project</a>
-              </li>
-              <li>
-                <a href="#p-view-2" role="tab" data-toggle="tab">Planning</a>
-              </li>
-              <li>
-                <a href="#p-view-3" role="tab" data-toggle="tab">Success</a>
-              </li>
-            </ul>
-          </div>
+          <!-- Nav tabs -->
+          <ul class="nav nav-tabs" role="tablist">
+            <li class="nav-item">
+              <a class="nav-link active" href="#p-view-1" role="tab" data-toggle="tab" aria-selected="true">Project</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#p-view-2" role="tab" data-toggle="tab" aria-selected="false">Planning</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#p-view-3" role="tab" data-toggle="tab" aria-selected="false">Success</a>
+            </li>
+          </ul>
           <div class="tab-content">
-            <div class="tab-pane active" id="p-view-1">
-              <div class="tab-inner">
-                <div class="event-content head-team">
-                  <h4>Project</h4>
-                  <p>
-                    Redug Lares dolor sit amet, consectetur adipisicing elit. Animi vero excepturi magnam ducimus adipisci voluptas, praesentium maxime necessitatibus in dolor dolores unde ab, libero quo. Aut, laborum sequi.
-                  </p>
-                  <p>
-                    voluptas, praesentium maxime cum fugiat,magnam ducimus adipisci voluptas, praesentium architecto ducimus, doloribus fuga itaque omnis placeat.
-                  </p>
-                </div>
-              </div>
+            <div class="tab-pane fade show active mt-4" id="p-view-1" role="tabpanel">
+              <h4>Project</h4>
+              <p>
+                Redug Lares dolor sit amet, consectetur adipisicing elit. Animi vero excepturi magnam ducimus adipisci voluptas, praesentium maxime necessitatibus in dolor dolores unde ab, libero quo. Aut, laborum sequi.
+              </p>
             </div>
-            <div class="tab-pane" id="p-view-2">
-              <div class="tab-inner">
-                <div class="event-content head-team">
-                  <h4>Planning</h4>
-                  <p>
-                    voluptas, praesentium maxime cum fugiat,magnam ducimus adipisci voluptas, praesentium architecto ducimus, doloribus fuga itaque omnis.
-                  </p>
-                  <p>
-                    Redug Lares dolor sit amet, consectetur adipisicing elit. Animi vero excepturi magnam ducimus adipisci voluptas, praesentium maxime necessitatibus in dolor dolores unde ab, libero quo. Aut.
-                  </p>
-                </div>
-              </div>
+            <div class="tab-pane fade mt-4" id="p-view-2" role="tabpanel">
+              <h4>Planning</h4>
+              <p>
+                voluptas, praesentium maxime cum fugiat,magnam ducimus adipisci voluptas, praesentium architecto ducimus, doloribus fuga itaque omnis.
+              </p>
             </div>
-            <div class="tab-pane" id="p-view-3">
-              <div class="tab-inner">
-                <div class="event-content head-team">
-                  <h4>Success</h4>
-                  <p>
-                    voluptas, praesentium maxime cum fugiat,magnam ducimus adipisci voluptas, praesentium architecto ducimus, doloribus fuga itaque omnis placeat.
-                  </p>
-                  <p>
-                    voluptas, praesentium maxime cum fugiat,magnam ducimus adipisci voluptas, praesentium architecto ducimus, doloribus fuga itaque omnis.
-                  </p>
-                </div>
-              </div>
+            <div class="tab-pane fade mt-4" id="p-view-3" role="tabpanel">
+              <h4>Success</h4>
+              <p>
+                voluptas, praesentium maxime cum fugiat,magnam ducimus adipisci voluptas, praesentium architecto ducimus, doloribus fuga itaque omnis placeat.
+              </p>
             </div>
           </div>
         </div>
@@ -366,140 +343,94 @@
         </div>
       </div>
       <div class="row">
-        <div class="team-top">
-          <div class="col-md-3 col-sm-3 col-xs-12">
-            <div class="single-team-member">
-              <div class="team-img">
-                <a href="#">
-                  <img src="img/team/1.jpg" alt="">
-                </a>
-                <div class="team-social-icon text-center">
-                  <ul>
-                    <li>
-                      <a href="#">
-                        <i class="fa fa-facebook"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <i class="fa fa-twitter"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <i class="fa fa-instagram"></i>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div class="team-content text-center">
-                <h4>Pepito</h4>
-                <p>Rector</p>
+        <!-- inicio de columna -->
+        <div class="col-lg-3 team-top">
+          <div class="single-team-member">
+            <div class="team-img">
+              <a href="#">
+                <img src="img/team/1.jpg" alt="">
+              </a>
+              <div class="team-social-icon text-center">
+                <ul>
+                  <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                  <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                  <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                </ul>
               </div>
             </div>
-          </div>
-          <!-- End column -->
-          <div class="col-md-3 col-sm-3 col-xs-12">
-            <div class="single-team-member">
-              <div class="team-img">
-                <a href="#">
-                  <img src="img/team/2.jpg" alt="">
-                </a>
-                <div class="team-social-icon text-center">
-                  <ul>
-                    <li>
-                      <a href="#">
-                        <i class="fa fa-facebook"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <i class="fa fa-twitter"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <i class="fa fa-instagram"></i>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div class="team-content text-center">
-                <h4>Andrew Arnold</h4>
-                <p>Vicerector</p>
-              </div>
+            <div class="team-content text-center">
+              <h4>Jhon Mickel</h4>
+              <p>Seo</p>
             </div>
           </div>
-          <!-- End column -->
-          <div class="col-md-3 col-sm-3 col-xs-12">
-            <div class="single-team-member">
-              <div class="team-img">
-                <a href="#">
-                  <img src="img/team/3.jpg" alt="">
-                </a>
-                <div class="team-social-icon text-center">
-                  <ul>
-                    <li>
-                      <a href="#">
-                        <i class="fa fa-facebook"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <i class="fa fa-twitter"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <i class="fa fa-instagram"></i>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div class="team-content text-center">
-                <h4>Lellien Linda</h4>
-                <p>Coordinadora</p>
-              </div>
-            </div>
-          </div>
-          <!-- End column -->
-          <div class="col-md-3 col-sm-3 col-xs-12">
-            <div class="single-team-member">
-              <div class="team-img">
-                <a href="#">
-                  <img src="img/team/4.jpg" alt="">
-                </a>
-                <div class="team-social-icon text-center">
-                  <ul>
-                    <li>
-                      <a href="#">
-                        <i class="fa fa-facebook"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <i class="fa fa-twitter"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <i class="fa fa-instagram"></i>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div class="team-content text-center">
-                <h4>Jhon Powel</h4>
-                <p>Conserje</p>
-              </div>
-            </div>
-          </div>
-          <!-- End column -->
         </div>
+        <!-- fin de columna -->
+        <!-- inicio de columna -->
+        <div class="col-lg-3 team-top">
+          <div class="single-team-member">
+            <div class="team-img">
+              <a href="#">
+                <img src="img/team/2.jpg" alt="">
+              </a>
+              <div class="team-social-icon text-center">
+                <ul>
+                  <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                  <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                  <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="team-content text-center">
+              <h4>Jhon Mickel</h4>
+              <p>Seo</p>
+            </div>
+          </div>
+        </div>
+        <!-- fin de columna -->
+        <!-- inicio de columna -->
+        <div class="col-lg-3 team-top">
+          <div class="single-team-member">
+            <div class="team-img">
+              <a href="#">
+                <img src="img/team/3.jpg" alt="">
+              </a>
+              <div class="team-social-icon text-center">
+                <ul>
+                  <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                  <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                  <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="team-content text-center">
+              <h4>Jhon Mickel</h4>
+              <p>Seo</p>
+            </div>
+          </div>
+        </div>
+        <!-- fin de columna -->
+        <!-- inicio de columna -->
+        <div class="col-lg-3 team-top">
+          <div class="single-team-member">
+            <div class="team-img">
+              <a href="#">
+                <img src="img/team/4.jpg" alt="">
+              </a>
+              <div class="team-social-icon text-center">
+                <ul>
+                  <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                  <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                  <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="team-content text-center">
+              <h4>Jhon Mickel</h4>
+              <p>Seo</p>
+            </div>
+          </div>
+        </div>
+        <!-- fin de columna -->
       </div>
     </div>
   </div>
@@ -522,7 +453,7 @@
           <div class="col-md-4 col-sm-4 col-xs-12">
             <div class="contact-icon text-center">
               <div class="single-icon">
-                <i class="fa fa-mobile"></i>
+                <i class="fas fa-mobile-alt"></i>
                 <p>
                   Call: +1 5589 55488 55<br>
                   <span>Monday-Friday (9am-5pm)</span>
@@ -534,7 +465,7 @@
           <div class="col-md-4 col-sm-4 col-xs-12">
             <div class="contact-icon text-center">
               <div class="single-icon">
-                <i class="fa fa-envelope-o"></i>
+                <i class="far fa-envelope"></i>
                 <p>
                   Email: info@example.com<br>
                   <span>Web: www.example.com</span>
@@ -546,7 +477,7 @@
           <div class="col-md-4 col-sm-4 col-xs-12">
             <div class="contact-icon text-center">
               <div class="single-icon">
-                <i class="fa fa-map-marker"></i>
+                <i class="fas fa-map-marker-alt"></i>
                 <p>
                   Location: A108 Adam Street<br>
                   <span>NY 535022, USA</span>
@@ -597,5 +528,9 @@
     </div>
   </div>
   <!-- End Contact Area -->
-
+@endsection
+@section('script')
+  <script type="text/javascript">
+    $('#mainNav').addClass("nav-transparent");
+  </script>
 @endsection
