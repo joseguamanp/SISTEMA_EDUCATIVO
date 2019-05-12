@@ -12,19 +12,11 @@
   <link rel="stylesheet" type="text/css" href="{{ asset('vendor/fontawesome-free/css/all.min.css') }}">
   <link rel="stylesheet" type="text/css" href="{{ asset('css/dashboard.css') }}">
   <link rel="stylesheet" type="text/css" href="{{ asset('css/barranav.css') }}">
-  <style>
-  .dropdown-submenu {
-    position: relative;
-  }
-  .dropdown-submenu .dropdown-menu {
-    top: 0;
-    left: 100%;
-    margin-top: -1px;
-  }
   </style>
 </head>
-<body id="page-top" >
-  <nav id="mainNav" class="navbar navbar-expand navbar-dark bg-dark static-top barra-fija">
+<body id="page-top">
+
+  <nav id="mainNav" class="navbar navbar-expand navbar-dark bg-dark fixed-top">
     @if(Session::has('ADMINISTRADOR'))
       <div>
         <label id="btn-menu" class="mt-2 mr-2"><i class="fas fa-bars fa-lg btn-menu"></i></label>
@@ -66,7 +58,6 @@
     @endguest
   </nav>
 
-  <div id="wrapper">
     @if(Session::has('ADMINISTRADOR'))
       <div id="dashboard">
         <div id="dashboard-contenido">
@@ -119,11 +110,10 @@
       </div>
     @endif
 
-    <div id="content">
+    <div id="main-panel">
       @yield('content')
     </div>
 
-  </div><!-- FIN DEL WRAPPER -->
 
   <!-- Logout Modal-->
   <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

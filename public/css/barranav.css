@@ -1,8 +1,4 @@
-.barra-fija{
-  z-index: 99;
-  position: fixed;
-  width: 100%;
-}
+
 /* ********** BOTON PARA ACTIVAR EL MENU LATERAL******** */
 .btn-menu{
   border-radius: 30px;

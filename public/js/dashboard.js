@@ -1,7 +1,7 @@
 $(document).ready(function(){
-  
+
   $('#btn-menu').on('click' , function (){
-    $('#dashboard, #content').toggleClass('active');
+    $('#dashboard, #main-panel').toggleClass('active');
     $('.collapse.in').toggleClass('in');
     $('a[aria-expanded=true]').attr('aria-expanded', 'false');
   });

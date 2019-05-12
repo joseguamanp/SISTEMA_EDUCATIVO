@@ -1,25 +1,23 @@
 @extends('layouts.principal')
 @section('content')
-  <div id="content-wrapper">
-    <div class="container-fluid small">
 
-       <!-- ********** INICIO AREA INSERT *******-->
-      <div class="">
-        <div class="mb-4">
-          <h4>Mantenimiento</h4>
+  <div class="small main-card">
+    <!-- ********** INICIO AREA INSERT *******-->
+    <div class="container">
+      <div class="mb-4">
+        <h4>Mantenimiento</h4>
+      </div>
+      <div class="row">
+        <div class="ml-3">
+          <label class="col-form-label" for="etiqueta">Etiqueta</label>
         </div>
-        <div class="row">
-          <div class="ml-3">
-            <label class="col-form-label" for="etiqueta">Etiqueta</label>
-          </div>
-          <div class="col-lg-8 justify-content-center" >
-            {!! Form::text('etiqueta',null,['class'=>'form-control mb-2', 'id' => 'etiqueta', 'required' => 'required'])!!}
-            <input type="hidden" name="_token" value="{{ csrf_token() }}" id="token">
-            @include('mensaje.mensajeerror')
-          </div>
-          <div class="col-lg-2">
-            <button class="btn btn-primary btn-block" onclick="verificarInput('etiqueta');" style="width:100%">Guardar</button>
-          </div>
+        <div class="col-lg-8 justify-content-center" >
+          {!! Form::text('etiqueta',null,['class'=>'form-control mb-2', 'id' => 'etiqueta', 'required' => 'required'])!!}
+          <input type="hidden" name="_token" value="{{ csrf_token() }}" id="token">
+          @include('mensaje.mensajeerror')
+        </div>
+        <div class="col-lg-2">
+          <button class="btn btn-primary btn-block" onclick="verificarInput('etiqueta');" style="width:100%">Guardar</button>
         </div>
       </div>
       <!-- ********** FIN AREA INSERT *******-->
@@ -66,20 +64,20 @@
       <!-- ******* FIN AREA MOSTRAR Y BUSCAR ********* -->
 
       <!-- *********** INICIO AREA TABLA ********* -->
-        <div class="table-responsive">
-          <table class="table" id="tabla" width="100%" cellspacing="0">
-            <thead>
-              <tr>
-                <th style="width:300px;">Etiqueta</th>
-                <th style="width:160px;">Creado</th>
-                <th style="width:160px;">Modificado</th>
-                <th style="width:20px;">Editar</th>
-                <th style="width:20px;">Estado</th>
-              </tr>
-            </thead>
-            <tbody id="datos"> </tbody>
-          </table>
-        </div>
+      <div class="table-responsive">
+        <table class="table" id="tabla" width="100%" cellspacing="0">
+          <thead>
+            <tr>
+              <th style="width:300px;">Etiqueta</th>
+              <th style="width:160px;">Creado</th>
+              <th style="width:160px;">Modificado</th>
+              <th style="width:20px;">Editar</th>
+              <th style="width:20px;">Estado</th>
+            </tr>
+          </thead>
+          <tbody id="datos"> </tbody>
+        </table>
+      </div>
       <!-- ********** FIN AREA TABLA *************-->
 
       <!-- **** INICIO AREA CONTADOR Y PAGINADOR ****-->
@@ -98,6 +96,7 @@
       <!-- **** FIN AREA CONTADOR Y PAGINADOR ****-->
     </div>
   </div>
+
 
   <!-- **** INICIO DE MODAL ****-->
   <div class="modal fade" id="editar" aria-hidden="true">

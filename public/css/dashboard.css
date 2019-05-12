@@ -1,45 +1,7 @@
-#wrapper {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-#wrapper{
-  -webkit-transition: all 0.5s ease-out;
-}
-#content-wrapper {
-  padding:100px 10px 40px 10px;
-}
-#wrapper #content-wrapper {
-  overflow-x: hidden;
-  width: 100%;
-}
-
 body{
-    font-family: Open Sans, sans-serif;
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1.5;
-    margin: 0;
-    text-align: left;
-    color: #525f7f;
-    background-color: #f8f9fe;
+  background-color: #E5E7E9;
 }
 
-body.fixed-nav #content-wrapper {
-  margin-top: 56px;
-  padding-left: 90px;
-}
-body.fixed-nav.sidebar-toggled #content-wrapper {
-  padding-left: 0;
-}
-@media (min-width: 768px) {
-  body.fixed-nav #content-wrapper {
-    padding-left: 225px;
-  }
-  body.fixed-nav.sidebar-toggled #content-wrapper {
-    padding-left: 90px;
-  }
-}
 #nivel-1 > li > a {
   padding: 5px 8px 8px 12px;
   text-decoration: none;
@@ -65,11 +27,6 @@ body.fixed-nav.sidebar-toggled #content-wrapper {
   color: #abadb6;
   transition: all 0.2s;
 }
-/*#nivel-3 > li > a:hover{
-  background: #2d3136;
-  color: white;
-}*/
-
 #dashboard{
   background-color: #242930;
   border-right: 1px solid rgb(200, 207, 204);
@@ -83,7 +40,7 @@ body.fixed-nav.sidebar-toggled #content-wrapper {
   -webkit-transition: all 0.5s ease-out;
 }
 #dashboard {
-    transition: all 0.3s;
+  transition: all 0.3s;
 }
 #dashboard.active {
   margin-left: 0;
@@ -98,16 +55,18 @@ body.fixed-nav.sidebar-toggled #content-wrapper {
 /* ---------------------------------------------------
 CONTENT STYLE
 ----------------------------------------------------- */
-#content {
+#main-panel{
+  margin-top: 65px;
   width: 100%;
   min-height: 100vh;
   transition: all 0.2s;
   position: absolute;
   right: 0;
 }
-#content.active {
+#main-panel.active {
   width: calc(100% - 280px);
 }
+
 /* ---------------------------------------------------
 COLOR Y ANIMACION DE LA LISTA DE OPCIONES
 ----------------------------------------------------- */
@@ -115,22 +74,54 @@ a > #caret{
   padding: 0 5px 0 5px;
 }
 .rotate{
-	-moz-transition: all 0.5 linear;
-	-webkit-transition: all 0.5 linear;
-	transition: all 0.5 linear;
+  -moz-transition: all 0.5 linear;
+  -webkit-transition: all 0.5 linear;
+  transition: all 0.5 linear;
 }
 .rotate.down{
-	-ms-transform: rotate(90deg);
-	-moz-transform: rotate(90deg);
-	-webkit-transform: rotate(90deg);
-	transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
 }
 .color-select{
   background: rgb(45, 109, 149);
 }
+
 /* ---------------------------------------------------
-CARD-ICON
+CARD
 ----------------------------------------------------- */
+.main-card{
+  background-color: #fff;
+  border:none;
+  border-radius: 10px;
+  margin: 40px 25px;
+  min-height: 500px;
+  padding: 20px 10px;
+}
+
+.card-rol {
+  cursor: pointer;
+  background-color: #fff;
+  color: #32325d;
+  border:0;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  min-height: 150px;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.card-rol:hover {
+  -webkit-box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.2);
+}
+.card-rol .rol-title {
+  font-weight: 600;
+  font-size: 12px;
+  color: #2b353a;
+}
 .card-body-icon {
   position: absolute;
   z-index: 0;
@@ -148,7 +139,7 @@ CARD-ICON
 MEDIAQUERIES
 ----------------------------------------------------- */
 @media (max-width: 768px) {
-  #content.active {
+  #main-panel.active {
     width: 100%;
   }
   #sidebarCollapse span {

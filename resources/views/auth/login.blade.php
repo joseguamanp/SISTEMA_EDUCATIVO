@@ -27,7 +27,7 @@
               @csrf
               <div class="form-group has-feedback mb-3" id="gruop-input-login">
                 <i class="fas fa-user form-control-feedback"></i>
-                <input type="number" class="form-control{{ $errors->has('cedula') ? 'is-invalid' : '' }}" name="cedula" id="cedula" value="{{ old('cedula') }}" placeholder="Cédula" required autofocus>
+                <input type="number" class="form-control {{ $errors->has('cedula') ? 'is-invalid' : '' }}" name="cedula" id="cedula" value="{{ old('cedula') }}" placeholder="Cédula" min="0" required autofocus>
                 @if ($errors->has('cedula'))
                   <span class="invalid-feedback" role="alert">
                     <strong>{{ $errors->first('cedula') }}</strong>
@@ -36,7 +36,7 @@
               </div>
               <div class="form-group has-feedback" id="grup-input-login">
                 <i class="fas fa-lock form-control-feedback"></i>
-                <input type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" id="password" placeholder="Contraseña" required>
+                <input type="password" class="form-control {{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" id="password" placeholder="Contraseña" required>
                 @if ($errors->has('password'))
                   <span class="invalid-feedback" role="alert">
                     <strong>{{ $errors->first('password') }}</strong>
