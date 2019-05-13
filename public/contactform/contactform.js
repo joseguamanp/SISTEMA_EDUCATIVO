@@ -99,17 +99,12 @@ jQuery(document).ready(function($) {
       url: action,
       data: str,
       success: function(msg) {
-        // alert(msg);
-        if (msg == 'OK') {
+        //console.log(msg);              
+        setTimeout(function(){
           $("#sendmessage").addClass("show");
           $("#errormessage").removeClass("show");
           $('.contactForm').find("input, textarea").val("");
-        } else {
-          $("#sendmessage").removeClass("show");
-          $("#errormessage").addClass("show");
-          $('#errormessage').html(msg);
-        }
-
+        }, 3000);        
       }
     });
     return false;

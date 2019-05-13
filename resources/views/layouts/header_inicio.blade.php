@@ -202,7 +202,7 @@
   <script type="text/javascript" src="{{ asset('lib/isotope/isotope.pkgd.min.js') }}"></script>
 
   <!-- Contact Form JavaScript File -->
-  <script src="{{ asset('contactform/contactform.js') }}"></script>
+  <script type="text/javascript" src="{{ asset('contactform/contactform.js') }}"></script>
   <script src="{{ asset('js/main.js') }}"></script>
   @yield('script')
 </body>
