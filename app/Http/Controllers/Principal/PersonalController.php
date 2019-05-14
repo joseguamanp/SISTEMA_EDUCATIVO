@@ -53,7 +53,7 @@ class PersonalController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(OpcionRequest $request)
+    public function store(Request $request)
     {
 
     }
