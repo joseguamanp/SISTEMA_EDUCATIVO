@@ -76,7 +76,7 @@
                         <select class="form-control" name="dias">
                           <option>Días</option>
                           @foreach($fecha['dia'] as $fe)
-                              <option>{{$fe}}</option>
+                              <option value="{{$fe}}">{{$fe}}</option>
                           @endforeach
                         </select>
                         </div>
@@ -84,7 +84,7 @@
                           <select class="form-control" name="mes">
                             <option>Mes</option>
                             @foreach($fecha['mes'] as $fe)
-                              <option>{{$fe}}</option>
+                              <option value="{{$fe}}">{{$fe}}</option>
                           @endforeach
                           </select>
                         </div>
@@ -93,7 +93,7 @@
                           <option>Año</option>
 
                           @foreach($fecha['anio'] as $fe)
-                              <option>{{$fe}}</option>
+                              <option value="{{$fe}}">{{$fe}}</option>
                           @endforeach
                         </select>
                       </div>
@@ -103,6 +103,9 @@
                   <div class="col-lg-4">
                       <select class="form-control" name="idcargo">
                         <option>Seleccionar cargo</option>
+                         @foreach($cargo as $ca)
+                              <option value="{{$ca->etiqueta}}">{{$ca->etiqueta}}</option>
+                          @endforeach
                       </select>
                   </div>
                 </div>

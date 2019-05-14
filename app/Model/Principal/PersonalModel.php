@@ -14,7 +14,7 @@ class PersonalModel extends Model
     protected $table = 'personal';
 
     protected $fillable = [
-        'id',
+      'id',
       'nombre_primero',
       'nombre_segundo',   
       'apellido_primero',

@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Principal;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Model\Principal\PersonalModel;
+use App\Model\CargoModel;
+
 class PersonalController extends Controller
 {
     public function __construct()
@@ -14,7 +16,8 @@ class PersonalController extends Controller
     public function index()
     {
     	$fecha=$this->fecha();
-      	return view('admin.mante_principal.registro.index',['fecha'=>$fecha]);
+        $cargo=CargoModel::all();
+      	return view('admin.mante_principal.registro.index',['fecha'=>$fecha,'cargo'=>$cargo]);
     }
     public function data()
     {
@@ -55,7 +58,15 @@ class PersonalController extends Controller
      */
     public function store(Request $request)
     {
-
+        $pri_nombre=$request->input("pri_nombre");
+        $seg_nombre=$request->input("seg_nombre");
+        $pri_apellido=$request->input("pri_apellido");
+        $seg_apellido=$request->input("seg_apellido");
+        $cedula=$request->input("cedula");
+        $email=$request->input("email");
+        $dias=$request->input("dias");
+        $mes=$request->input("mes");
+        $anio=$request->input("anio");
     }
 
     /**
