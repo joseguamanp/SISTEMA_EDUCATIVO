@@ -215,7 +215,7 @@
       </div>
       <div class="row">
         <div class="col-md-6 col-sm-6 col-xs-12">
-          <div class="faq-details">
+          <div class="faq-details mb-5">
             <div class="panel-group" id="accordion">
               <!-- Panel Default -->
               <div class="panel panel-default">
@@ -344,7 +344,7 @@
       </div>
       <div class="row">
         <!-- inicio de columna -->
-        <div class="col-lg-3 team-top">
+        <div class="col-sm-6 col-md-3 team-top">
           <div class="single-team-member">
             <div class="team-img">
               <a href="#">
@@ -366,7 +366,7 @@
         </div>
         <!-- fin de columna -->
         <!-- inicio de columna -->
-        <div class="col-lg-3 team-top">
+        <div class="col-sm-6 col-md-3 team-top">
           <div class="single-team-member">
             <div class="team-img">
               <a href="#">
@@ -388,7 +388,7 @@
         </div>
         <!-- fin de columna -->
         <!-- inicio de columna -->
-        <div class="col-lg-3 team-top">
+        <div class="col-sm-6 col-md-3 team-top">
           <div class="single-team-member">
             <div class="team-img">
               <a href="#">
@@ -410,7 +410,7 @@
         </div>
         <!-- fin de columna -->
         <!-- inicio de columna -->
-        <div class="col-lg-3 team-top">
+        <div class="col-sm-6 col-md-3 team-top">
           <div class="single-team-member">
             <div class="team-img">
               <a href="#">
@@ -530,7 +530,19 @@
   <!-- End Contact Area -->
 @endsection
 @section('script')
+  <script type="text/javascript" src="{{ asset('lib/owlcarousel/owl.carousel.min.js') }}"></script>
+  <script type="text/javascript" src="{{ asset('lib/wow/wow.min.js') }}"></script>
+  <script type="text/javascript" src="{{ asset('lib/venobox/venobox.min.js') }}"></script>
+  <script type="text/javascript" src="{{ asset('lib/knob/jquery.knob.js') }}"></script>
+  <script type="text/javascript" src="{{ asset('lib/parallax/parallax.js') }}"></script>
+  <script type="text/javascript" src="{{ asset('lib/nivo-slider/js/jquery.nivo.slider.js') }}"></script>
+  <script type="text/javascript" src="{{ asset('lib/appear/jquery.appear.js') }}"></script>
+  <script type="text/javascript" src="{{ asset('lib/isotope/isotope.pkgd.min.js') }}"></script>
+  <!-- Contact Form JavaScript File -->
+  <script type="text/javascript" src="{{ asset('contactform/contactform.js') }}"></script>
+  <script src="{{ asset('js/inicio.js') }}"></script>
+
   <script type="text/javascript">
-    $('#mainNav').addClass("nav-transparent");
+    $('#mainNav').addClass('nav-transparent');
   </script>
 @endsection

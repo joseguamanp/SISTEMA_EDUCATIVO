@@ -72,7 +72,6 @@ class SexoController extends Controller
     return response()->json(
       $datosid->toArray()
     );
-    //return view('admin.listasenescyt.datosidentificacion.editsexo',['editaret'=>$datosid]);
   }
 
   public function update(SexoRequest $request, $id)

@@ -144,7 +144,7 @@
   <script type="text/javascript" src="{{ asset('js/sweetalert.js') }}"></script>
   <script type="text/javascript" src="{{ asset('js/dashboard.js') }}"></script>
   @yield('script')
-  <script type="text/javascript" src="{{ asset('vendor/tabla/js/tabla.js') }}"></script>
+  
 
 </body>
 </html>

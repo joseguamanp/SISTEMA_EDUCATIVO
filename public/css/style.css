@@ -225,7 +225,7 @@ div#preloader {
 }
 
 .area-padding {
-  padding: 70px 0px 80px;
+  padding: 70px 0px 30px;
 }
 
 .area-padding-2 {
@@ -269,15 +269,11 @@ div#preloader {
 /*------------------------------
   2.1. mainNav
 --------------------------------*/
-#mainNav {
-  border-bottom: none;
-  background:rgba(74, 80, 87, 0.95);
-  -webkit-transition: background-color 0.3s ease-in-out;
-  transition: background-color 0.3s ease-in-out;
+#mainNav{
+  background: white;
+  -webkit-transition: background-color 0.05s ease-in-out;
+  transition: background-color 0.05s ease-in-out;
   z-index: 99;
-}
-#mainNav.nav-transparent{
-  background: transparent;
 }
 #mainNav.barra-fija{
   top:0;
@@ -285,68 +281,108 @@ div#preloader {
   width: 100%;
   z-index: 99;
 }
-#mainNav .navbar-brand {
-  color: rgba(255, 255, 255, 0.81);
-  padding-bottom:10px;
-}
-#mainNav .navbar-toggler i{
-  color: white;
-}
-#mainNav .nav-link {
-  font-size: 16px;
-  padding: 10px 10px 10px;
-  color: #d9dbde;
-}
-#mainNav .nav-link:hover {
-  color: white;
-}
-#mainNav .nav-link:active {
-  color: #66b5f0;
-}
-#mainNav .nav-link.op-active{
-  color: #66b5f0;
-}
-
-#mainNav.navbar-shrink{
-  background:rgba(74, 80, 87, 0.95);
-}
-.navbar-shrink .navbar-brand {
-  color: rgba(255, 255, 255, 0.81);
-}
-.navbar-shrink .nav-link {
-  color: rgba(255, 255, 255, 0.81);
-}
-.navbar-shrink .nav-link:hover {
-  color: #66b5f0;
-}
-.navbar-shrink .nav-link:active {
-  color: #66b5f0;
-}
-.navbar-shrink .nav-link.active {
-  color: #66b5f0;
-  outline: none;
-}
-
-
-#mainNav.theme-login{
-  background-color: transparent;
-  color: #d9dbde;
+#mainNav.barra-fija{
   top:0;
-  position: relative;
+  position: fixed;
   width: 100%;
   z-index: 99;
 }
-#mainNav.theme-login .navbar-brand {
-  color: rgba(84, 81, 81, 0.95);
+#mainNav .btn-menu{
+  display: none;
 }
-#mainNav.theme-login .navbar-toggler i{
+#mainNav .btn-menu i{
+  color: black;
+}
+#mainNav .navbar-brand {
+  color: black;
+  font-size: 24px;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding-bottom:10px;
+}
+/*------------------------------
+  2.1.1 mainNav transparent
+--------------------------------*/
+#mainNav.nav-transparent{
+  border-bottom: none;
+  background: transparent;
+}
+#mainNav.nav-transparent .btn-menu i{
+  color: white;
+}
+#mainNav.nav-transparent .content-brand{
+  text-align: left;
+}
+#mainNav.nav-transparent .navbar-brand {
+  color: white;
+}
+#mainNav.nav-transparent .nav-link {
+  font-size: 16px;
+  padding: 10px 10px 10px;
+  color: #e9ebf0;
+}
+#mainNav.nav-transparent .nav-link:hover {
+  color: white;
+}
+#mainNav.nav-transparent .nav-link:active {
+  color: #66b5f0;
+}
+#mainNav.nav-transparent .nav-link.op-active{
+  color: #66b5f0;
+}
+/*------------------------------
+  2.1.2 mainNav Shrink
+--------------------------------*/
+#mainNav.navbar-shrink{
+  background:white;
+  -webkit-box-shadow: 0px 1px 4px 0px rgba(196,194,196,1);
+  -moz-box-shadow: 0px 1px 4px 0px rgba(196,194,196,1);
+  box-shadow: 0px 1px 4px 0px rgba(196,194,196,1);
+}
+#mainNav.navbar-shrink .btn-menu i{
+  color: black;
+}
+#mainNav.navbar-shrink .navbar-brand {
+  color: black;
+}
+#mainNav.navbar-shrink .nav-link {
+  color: #323233;
+}
+#mainNav.navbar-shrink .nav-link:hover {
+  color: #66b5f0;
+}
+#mainNav.navbar-shrink .nav-link:active {
+  color: #66b5f0;
+}
+#mainNav.navbar-shrink .nav-link.active {
+  color: #66b5f0;
+  outline: none;
+}
+/*------------------------------
+  2.1.3 mainNav Theme-Login
+--------------------------------*/
+#mainNav.theme-login{
+  background-color: transparent;
+  color: #d9dbde;
+  position: relative;
+  top:0;
+  width: 100%;
+  z-index: 99;
+  -webkit-box-shadow: 0px 1px 4px 0px rgba(196,194,196,1);
+  -moz-box-shadow: 0px 1px 4px 0px rgba(196,194,196,1);
+  box-shadow: 0px 1px 4px 0px rgba(196,194,196,1);
+}
+#mainNav.theme-login .navbar-brand {
+  color: black;
+}
+#mainNav.theme-login .btn-menu i{
   color: black;
 }
 #mainNav.theme-login .nav-link {
-  color: rgba(84, 81, 81, 0.81);
+  color: #323233;
 }
 #mainNav.theme-login .nav-link:hover {
-  color: black;
+  color: #66b5f0;
 }
 #login-header{
   margin-top: 0;
@@ -359,6 +395,32 @@ div#preloader {
 }
 .has-feedback .form-control {
   padding-left: 30px!important;
+}
+/*------------------------------
+  2.1.4 mainNav Theme-Normal
+--------------------------------*/
+#mainNav.theme-normal{
+  background-color: white;
+  color: #d9dbde;
+  position: fixed;
+  top:0;
+  width: 100%;
+  z-index: 99;
+  -webkit-box-shadow: 0px 1px 4px 0px rgba(196,194,196,1);
+  -moz-box-shadow: 0px 1px 4px 0px rgba(196,194,196,1);
+  box-shadow: 0px 1px 4px 0px rgba(196,194,196,1);
+}
+#mainNav.theme-normal .navbar-brand {
+  color: black;
+}
+#mainNav.theme-normal .btn-menu i{
+  color: black;
+}
+#mainNav.theme-normal .nav-link {
+  color: #323233;
+}
+#mainNav.theme-normal .nav-link:hover {
+  color: #66b5f0;
 }
 
 /*------------------------------

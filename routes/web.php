@@ -23,10 +23,21 @@ Route::get('nosotros', function () {
 
 Auth::routes();
 
+
+
 // registro personal
 Route::Resource('/registro','Principal\PersonalController');
 
 
+//******************* INICIO MANTENIMIENTOS PRINCIPALES ********************
+
+//nosotros
+Route::Resource('/admin/prin/nosotros','Principal\NosotrosController');
+Route::post('/admin/prin/nosotros/show','Principal\NosotrosController@show');
+Route::get('/admin/prin/nosotros/{id}/restaurar','Principal\NosotrosController@restaurar');
+
+
+//**************** FIN DE MANTENIMIENTOS PRINCIPALES *************
 //usuario todos
 Route::Resource('/roles','ListarRolesController');
 
@@ -75,5 +86,3 @@ Route::group(['middleware' => ['web', 'admin']], function() {
   Route::get('/admin/discapacidad/{id}/restaurar','Discapacidad\DiscapacidadController@restaurar');
 
 });
-
-

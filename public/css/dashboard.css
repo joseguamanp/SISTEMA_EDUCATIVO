@@ -40,7 +40,7 @@ body{
   -webkit-transition: all 0.5s ease-out;
 }
 #dashboard {
-  transition: all 0.3s;
+  transition: all 0.2s;
 }
 #dashboard.active {
   margin-left: 0;
@@ -88,18 +88,37 @@ a > #caret{
   background: rgb(45, 109, 149);
 }
 
+.p-left{
+    text-align:left;
+}
+.p-right{
+    text-align:right;
+}
+.p-center{
+    text-align:center;
+}
+.p-justify{
+    text-align:justify;
+}
+
 /* ---------------------------------------------------
 CARD
 ----------------------------------------------------- */
+.main-panel{
+  background-color: #fff;
+  min-height: 100vh;
+  height: 100%;
+  padding: 20px 25px;
+}
+
 .main-card{
   background-color: #fff;
   border:none;
   border-radius: 10px;
-  margin: 40px 25px;
+  margin: 25px 25px;
   min-height: 500px;
-  padding: 20px 10px;
+  padding: 30px 20px;
 }
-
 .card-rol {
   cursor: pointer;
   background-color: #fff;
@@ -135,6 +154,59 @@ CARD
 .o-hidden {
   overflow: hidden !important;
 }
+.table th{
+    font-weight: 600;
+}
+.deshabilitar-color td{
+  color:rgb(190, 189, 196);
+}
+.habilitar-color td{
+  color: black;
+}
+.elip{
+  margin:0;
+  padding:0;
+}
+.elip .dropdown{
+  text-align: center;
+  padding:0;
+  margin:0;
+  margin-bottom: 10px;
+}
+.elip a{
+  top:0;
+  color: #6f6d6d;
+}
+.elip a:hover{
+  color: black;
+}
+.table td,
+.table th{
+    font-size: .8125rem;
+    white-space: nowrap;
+    padding: 1rem 1rem 0 1rem;
+    vertical-align: top;
+    border-top: 1px solid #e9ecef;
+}
+.table thead th{
+    background: #eff2f2;
+    padding-top: .75rem;
+    padding-bottom: .75rem;
+    border-bottom: 1px solid #e9ecef;
+}
+.card{
+  border-radius: 10;
+}
+.card-header{
+  background-color: #fff;
+}
+.card-footer{
+  background-color: #fff;
+}
+.card .row{
+  padding: 0 18px;
+}
+
 /* ---------------------------------------------------
 MEDIAQUERIES
 ----------------------------------------------------- */
@@ -144,5 +216,9 @@ MEDIAQUERIES
   }
   #sidebarCollapse span {
     display: none;
+  }
+  .main-card{
+    margin: 25px 7px;
+    min-height: 500px;
   }
 }

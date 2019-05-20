@@ -2,7 +2,7 @@
 
 @section('content')
   <!-- Page content -->
-
+<div>
   <div class="pb-5 pt-5" id="login-header">
     <div class="container">
       <div class="header-body text-center">
@@ -64,6 +64,8 @@
     </div>
   </div>
 </div>
+</div>
+
 @endsection
 
 @section('script')

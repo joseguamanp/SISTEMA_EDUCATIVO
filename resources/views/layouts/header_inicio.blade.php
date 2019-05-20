@@ -31,21 +31,25 @@
   <!-- Responsive Stylesheet File -->
   <link rel="stylesheet" href="{{ asset('css/responsive.css') }}">
 
+  <link rel="stylesheet" href="{{ asset('css/sidebar.css') }}">
+
 </head>
 
 <body data-spy="scroll" data-target="#navbar-example">
   <div id="preloader"></div>
   <header>
-    <!-- Navigation -->
     <div class="navbar-area">
       <nav class="navbar navbar-expand-lg barra-fija" id="mainNav">
         <div class="container">
-          <a class="navbar-brand js-scroll-trigger" href="{!!URL::to('');!!}" id="logo" style="font-size:32px">Colegio</a>
-          <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-            <i class="fas fa-bars"></i>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav ml-auto">
+          <div class="btn-menu" id="sidebarCollapse">
+            <i class="fas fa-bars fa-lg "></i>
+          </div>
+          <div class="content-brand">
+            <a class="navbar-brand" href="{!!URL::to('');!!}" id="logo">Colegio</a>
+          </div>
+
+          <div class="">
+            <ul class="navbar-nav">
               <li class="nav-item">
                 <a class="nav-link" href="{!!URL::to('');!!}" id="op-inicio">Inicio</a>
               </li>
@@ -66,7 +70,7 @@
                   <a class="nav-link" href="{{ route('login') }}">Login</a>
                 </li>
               @else
-                <li class="nav-item dropdown ">
+                <li class="nav-item dropdown">
                   <a href="#" class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <i class="fa fa-user-circle"></i>
                     Usuario
@@ -81,9 +85,49 @@
               @endguest
             </ul>
           </div>
+
         </div>
       </nav>
     </div>
+
+    <!-- Sidebar  -->
+    <nav id="sidebar">
+      <div class="sidebar-header">
+        @guest
+          <a href="{{ route('login') }}"><i class="fa fa-user-circle"></i> Cuenta</a>
+        @else
+          <div class="dropdown show">
+            <a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown" id="dropdownSideMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <i class="fa fa-user-circle"></i>
+              Usuario
+            </a>
+            <div class="dropdown-menu" aria-labelledby="dropdownSideMenu">
+              <a class="dropdown-item" href="{!! URL::to('/roles'); !!}">Cuenta</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">Salir</a>
+            </div>
+          </div>
+        @endguest
+      </div>
+      <ul class="list-unstyled components">
+        <li>
+          <a href="{!!URL::to('');!!}" id="op-inicio">Inicio</a>
+        </li>
+        <li id="op-nosotros">
+          <a href="{!!URL::to('nosotros');!!}" >Nosotros</a>
+        </li>
+        <li>
+          <a href="#blog" id="op-noticias">Noticias</a>
+        </li>
+        <li>
+          <a href="#team" id="op-equipo">Equipo</a>
+        </li>
+        <li>
+          <a href="#contact" id="op-contactanos">Contáctanos</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="overlay"></div>
   </header>
 
   <div id="content">
@@ -163,7 +207,6 @@
     </div>
   </footer>
   <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
-
   <!-- Logout Modal-->
   <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -190,20 +233,10 @@
 
   <!-- JavaScript Libraries -->
   <script type="text/javascript" src="{{ asset('lib/jquery/jquery.min.js') }}"></script>
-  <script type="text/javascript" src="{{ asset('vendor/bootstrap/js/bootstrap.min.js') }}"></script>
-  <script type="text/javascript" src="{{ asset('lib/owlcarousel/owl.carousel.min.js') }}"></script>
-  <script type="text/javascript" src="{{ asset('lib/venobox/venobox.min.js') }}"></script>
-  <script type="text/javascript" src="{{ asset('lib/knob/jquery.knob.js') }}"></script>
-  <script type="text/javascript" src="{{ asset('lib/wow/wow.min.js') }}"></script>
-  <script type="text/javascript" src="{{ asset('lib/parallax/parallax.js') }}"></script>
+  <script type="text/javascript" src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
   <script type="text/javascript" src="{{ asset('lib/easing/easing.min.js') }}"></script>
-  <script type="text/javascript" src="{{ asset('lib/nivo-slider/js/jquery.nivo.slider.js') }}"></script>
-  <script type="text/javascript" src="{{ asset('lib/appear/jquery.appear.js') }}"></script>
-  <script type="text/javascript" src="{{ asset('lib/isotope/isotope.pkgd.min.js') }}"></script>
-
-  <!-- Contact Form JavaScript File -->
-  <script type="text/javascript" src="{{ asset('contactform/contactform.js') }}"></script>
-  <script src="{{ asset('js/main.js') }}"></script>
+  <script type="text/javascript" src="{{ asset('js/main.js') }}"></script>
+  <script type="text/javascript" src="{{ asset('js/sidebar.js') }}"></script>
   @yield('script')
 </body>
 

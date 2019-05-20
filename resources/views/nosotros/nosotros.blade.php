@@ -43,5 +43,6 @@
 @section('script')
 <script type="text/javascript">
   activeOption("op-nosotros");
+  themeNormal();
 </script>
 @endsection

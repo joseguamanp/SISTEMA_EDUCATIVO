@@ -1,4 +1,3 @@
-
 var paginador;
 var totalPaginas=0;
 var numerosPorPagina = 3;
@@ -265,21 +264,29 @@ function construirTabla(data){
   $("#datos").empty();
   $(data).each(function(key,value){
     if (value.deleted_at==null) {
-      var clase="btn-danger btn-sm";
-      var funcion="eliminarRegistro(this);";
-      var deshabilitar="";
+      var clase2="habilitar-color";
+      var btn ="<button class='dropdown-item' href='#' id='btneditar' value='"+value.id+"' onclick='editarRegistro(this);' data-toggle='modal' data-target='#editar'>Editar</button>";
+      btn += "<button class='dropdown-item' href='#' value='"+value.id+"' onclick='eliminarRegistro(this)'>Eliminar</button>";
     }else{
-      var clase="btn-info btn-sm";
-      var funcion="restaurarRegistro(this);";
-      var deshabilitar="disabled='yes'";
+      var clase2="deshabilitar-color";
+      var btn = "<button class='dropdown-item' href='#' value='"+value.id+"' onclick='restaurarRegistro(this)'>Restaurar</button>";
     }
-    datos+="<tr>";
+    datos+="<tr class='"+clase2+"'>";
     datos+="<td>"+value.etiqueta+"</td>";
     datos+="<td>"+value.fecha_cre+"</td>";
     datos+="<td>"+value.fecha_mod+"</td>";
-    datos+="</td><td><button id='btneditar' value="+value.id+" "+deshabilitar+" OnClick='editarRegistro(this);' class='btn btn-success btn-sm' data-toggle='modal' data-target='#editar'>Editar</button>";
-    datos+="</td><td><button value="+value.id+" OnClick='"+funcion+"' class='btn "+clase+"'><i class='fa fa-window-close' aria-hidden='true'></i></button></td></tr>";
+    datos+="<td class='text-right elip'>"+
+    "<div class='dropdown'>"+
+    "<a class='btn btn-sm btn-icon-only elip' href='#' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>"+
+    "<i class='fas fa-ellipsis-v'></i>"+
+    "</a>"+
+    "<div class='dropdown-menu dropdown-menu-right dropdown-menu-arrow'>"+
+    btn+
+    "</div>"+
+    "</div>"+
+    "</td>";
     datos+="</tr>";
+
     $("#datos").html(datos);
   });
 }
@@ -292,20 +299,18 @@ function actualizarFila(elemento, data){
       case 1: $(this).html(data.fecha_cre);break;
       case 2: $(this).html(data.fecha_mod);break;
       case 3:
+      var menu = $(this).find('.dropdown-menu');
       if(data.deleted_at==null){
-        var btn = "<button class='btn btn-success btn-sm' value="+data.id+" onclick='editarRegistro(this);' data-toggle='modal' data-target='#editar'>Editar</button>";
+        $(this).parent('tr').removeClass('deshabilitar-color');
+        $(this).parent('tr').addClass('habilitar-color');
+        var btn ="<button class='dropdown-item' href='#' id='btneditar' value='"+data.id+"' onclick='editarRegistro(this);' data-toggle='modal' data-target='#editar'>Editar</button>";
+        btn += "<button class='dropdown-item' href='#' value='"+data.id+"' onclick='eliminarRegistro(this)'>Eliminar</button>";
       }else{
-        var btn = "<button class='btn btn-success btn-sm' value="+data.id+" disabled='yes' onclick='editarRegistro(this);' data-toggle='modal' data-target='#editar'>Editar</button>";
+        $(this).parent('tr').removeClass('habilitar-color');
+        $(this).parent('tr').addClass('deshabilitar-color');
+        var btn = "<button class='dropdown-item' href='#' value='"+data.id+"' onclick='restaurarRegistro(this)'>Restaurar</button>";
       }
-      $(this).html(btn);
-      break;
-      case 4:
-      if (data.deleted_at == null ) {
-        var btn = "<button class='btn btn-danger btn-sm' value="+data.id+" onclick='eliminarRegistro(this)'><i class='fa fa-window-close' aria-hidden='true'></i></button>";
-      }else{
-        var btn = "<button class='btn btn-info btn-sm' value="+data.id+" onclick='restaurarRegistro(this)'><i class='fa fa-window-close' aria-hidden='true'></i></button>";
-      }
-      $(this).html(btn);
+      menu.html(btn);
       break;
     }
     cont++;
