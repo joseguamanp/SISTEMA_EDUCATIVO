@@ -9,11 +9,11 @@
       </div>
     </div>
 
-    <ul class="nav nav-tabs mt-2" role="tablist">
-      <li class="nav-item">
+    <ul class="nav nav-tabs vertical-align-middle scroll mt-2" role="tablist">
+      <li class="nav-item tab-col-mo-6">
         <a class="nav-link active" href="#p-view-1" role="tab" data-toggle="tab" aria-selected="true">Nuevo</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item tab-col-mo-6">
         <a class="nav-link" href="#p-view-2" role="tab" data-toggle="tab" aria-selected="false">Agregados</a>
       </li>
     </ul>

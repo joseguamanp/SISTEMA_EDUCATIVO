@@ -140,7 +140,6 @@ a:active, a:hover {
 body {
   background: #fff none repeat scroll 0 0;
   color: #444;
-  /*font-family: 'Open Sans', sans-serif;*/
   font-size: 14px;
   text-align: left;
   overflow-x: hidden;
@@ -225,11 +224,7 @@ div#preloader {
 }
 
 .area-padding {
-  padding: 70px 0px 30px;
-}
-
-.area-padding-2 {
-  padding: 70px 0px 50px;
+  padding: 50px 0px 20px;
 }
 
 .padding-2 {

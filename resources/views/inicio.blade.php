@@ -9,12 +9,12 @@
         <img src="img/portada/imagen2.jpg" alt="" title="#slider-direction-2" />
         <img src="img/portada/imagen3.jpg" alt="" title="#slider-direction-3" />
       </div>
-
       <!-- direction 1 -->
+
       <div id="slider-direction-1" class="slider-direction slider-one">
-        <div class="container">
+        <div>
           <div class="row">
-            <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="col">
               <div class="slider-content">
                 <!-- layer 1 -->
                 <div class="layer-1-1 hidden-xs wow slideInDown" data-wow-duration="2s" data-wow-delay=".2s">
@@ -37,9 +37,9 @@
 
       <!-- direction 2 -->
       <div id="slider-direction-2" class="slider-direction slider-two">
-        <div class="container">
+        <div>
           <div class="row">
-            <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="col">
               <div class="slider-content text-center">
                 <!-- layer 1 -->
                 <div class="layer-1-1 hidden-xs wow slideInUp" data-wow-duration="2s" data-wow-delay=".2s">
@@ -62,9 +62,9 @@
 
       <!-- direction 3 -->
       <div id="slider-direction-3" class="slider-direction slider-two">
-        <div class="container">
+        <div>
           <div class="row">
-            <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="col">
               <div class="slider-content">
                 <!-- layer 1 -->
                 <div class="layer-1-1 hidden-xs wow slideInUp" data-wow-duration="2s" data-wow-delay=".2s">

@@ -89,16 +89,16 @@ a > #caret{
 }
 
 .p-left{
-    text-align:left;
+  text-align:left;
 }
 .p-right{
-    text-align:right;
+  text-align:right;
 }
 .p-center{
-    text-align:center;
+  text-align:center;
 }
 .p-justify{
-    text-align:justify;
+  text-align:justify;
 }
 
 /* ---------------------------------------------------
@@ -155,7 +155,7 @@ CARD
   overflow: hidden !important;
 }
 .table th{
-    font-weight: 600;
+  font-weight: 600;
 }
 .deshabilitar-color td{
   color:rgb(190, 189, 196);
@@ -182,17 +182,17 @@ CARD
 }
 .table td,
 .table th{
-    font-size: .8125rem;
-    white-space: nowrap;
-    padding: 1rem 1rem 0 1rem;
-    vertical-align: top;
-    border-top: 1px solid #e9ecef;
+  font-size: .8125rem;
+  white-space: nowrap;
+  padding: 1rem 1rem 0 1rem;
+  vertical-align: top;
+  border-top: 1px solid #e9ecef;
 }
 .table thead th{
-    background: #eff2f2;
-    padding-top: .75rem;
-    padding-bottom: .75rem;
-    border-bottom: 1px solid #e9ecef;
+  background: #eff2f2;
+  padding-top: .75rem;
+  padding-bottom: .75rem;
+  border-bottom: 1px solid #e9ecef;
 }
 .card{
   border-radius: 10;
@@ -205,6 +205,79 @@ CARD
 }
 .card .row{
   padding: 0 18px;
+}
+/* ---------------------------------------------------
+Tab
+----------------------------------------------------- */
+.scroll{
+  white-space: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling:touch;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+.scroll::-webkit-scrollbar {
+  display: none;
+}
+.nav-tabs{
+  width: 100%;
+  overflow-x: scroll;
+  -webkit-overflow-scrolling:touch;
+}
+.nav-tabs .nav-link{
+  text-align: center;
+  border:none;
+  color:grey;
+}
+.nav-tabs .nav-link.active{
+  color: black;
+  border-bottom: 2px solid black;
+}
+@media (max-width:768px){
+
+  .nav-tabs{
+    white-space: nowrap;
+  }
+  .nav-item,
+  .vertical-align-middle {
+    display: inline-block; 
+  }
+  .tab-col-mo-1{
+    width: 0.84%;
+  }
+  .tab-col-mo-2{
+    width: 16.7%;
+  }
+  .tab-col-mo-3{
+    width: 25%;
+  }
+  .tab-col-mo-4{
+    width: 33.4%;
+  }
+  .tab-col-mo-5{
+    width: 41.67%;
+  }
+  .tab-col-mo-6{
+    width: 50%;
+  }
+  .tab-col-mo-7{
+    width: 58.34%;
+  }
+  .tab-col-mo-8{
+    width: 66.67%;
+  }
+  .tab-col-mo-9{
+    width: 75%;
+  }
+  .tab-col-mo-10{
+    width: 83.34%;
+  }
+  .tab-col-mo-11{
+    width: 91.67%;
+  }
+  .tab-col-mo-12{
+    width: 100%;
+  }
 }
 
 /* ---------------------------------------------------
