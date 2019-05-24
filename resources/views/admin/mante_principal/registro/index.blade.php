@@ -10,7 +10,7 @@
             <div class="card-header">
               Ingreso de Datos
             </div>
-            <form action="{{url('IngresoTicket')}}" method="POST" accept-charset="UTF-8" enctype="multipart/form-data"  files='true'>
+            <form action="{{url('registro')}}" method="POST" accept-charset="UTF-8" enctype="multipart/form-data"  files='true'>
            {{csrf_field()}}
               <div class="card-body">
                 <div class="row">
@@ -21,7 +21,7 @@
                       </div>
                       <div class="col-md-6">
                         <div class="custom-file">
-                          <input type="file" class="custom-file-input" id="customFile">
+                          <input type="file" class="custom-file-input" id="customFile" name="imagen">
                           <label class="custom-file-label" for="customFile">Subir foto</label>
                         </div>
                       </div>
