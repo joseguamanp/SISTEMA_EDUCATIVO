@@ -63,10 +63,27 @@ class PersonalController extends Controller
         $pri_apellido=$request->input("pri_apellido");
         $seg_apellido=$request->input("seg_apellido");
         $cedula=$request->input("cedula");
+        $telefono=$request->input("telefono");
         $email=$request->input("email");
         $dias=$request->input("dias");
         $mes=$request->input("mes");
         $anio=$request->input("anio");
+        $cargo=$request->input("idcargo");
+        $imagen=$request->file('imagen'); 
+        $nombre=$imagen->getClientOriginalName();
+        $data=PersonalModel::create([
+              'nombre_primero'=>mb_strtoupper($pri_nombre, 'UTF-8'),
+              'nombre_segundo'=>mb_strtoupper($seg_nombre, 'UTF-8'),   
+              'apellido_primero'=>mb_strtoupper($pri_apellido, 'UTF-8'),
+              'apellido_segundo'=>mb_strtoupper($seg_apellido, 'UTF-8'), 
+              'foto'=>$nombre,
+              'cedula'=>$cedula,
+              //'telefono'=>,
+              'email'=>$email,
+              'cargo_id'=>$cargo
+              //'fecha_nacimiento'=>
+        ]);
+        \Storage::disk('local')->put($nombre,\File::get($imagen));
     }
 
     /**

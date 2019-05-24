@@ -10,113 +10,116 @@
             <div class="card-header">
               Ingreso de Datos
             </div>
-            <div class="card-body">
-              <div class="row">
-                <div class="col-sm-4 col-md-4 col-lg-4">
-                  <div class="row">
-                    <div class="col-md-6">
-                      <img src="img/team/3.jpg" class="img-thumbnail">
-                    </div>
-                    <div class="col-md-6">
-                      <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="customFile">
-                        <label class="custom-file-label" for="customFile">Subir foto</label>
+            <form action="{{url('IngresoTicket')}}" method="POST" accept-charset="UTF-8" enctype="multipart/form-data"  files='true'>
+           {{csrf_field()}}
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-sm-4 col-md-4 col-lg-4">
+                    <div class="row">
+                      <div class="col-md-6">
+                        <img src="img/team/3.jpg" class="img-thumbnail">
                       </div>
-                    </div>
-                  </div>  
-                </div> 
-                <div class="col-sm-8 col-md-8 col-lg-8"><br>
-                  <div class="row">
+                      <div class="col-md-6">
+                        <div class="custom-file">
+                          <input type="file" class="custom-file-input" id="customFile">
+                          <label class="custom-file-label" for="customFile">Subir foto</label>
+                        </div>
+                      </div>
+                    </div>  
+                  </div> 
+                  <div class="col-sm-8 col-md-8 col-lg-8"><br>
+                    <div class="row">
+                          <div class="col-sm-2 col-md-2 col-lg-2">
+                          <label>Primer Nombre:</label>
+                          </div>
+                          <div class="col-sm-4 col-md-4 col-lg-4">
+                            <input class="form-control" type="text" name="pri_nombre">
+                          </div>
+                          <div class="col-sm-2 col-md-2 col-lg-2">
+                             <label>Segundo Nombre:</label>           
+                          </div>
+                          <div class="col-sm-4 col-md-4 col-lg-4">
+                            <input class="form-control" type="text" name="seg_nombre">
+                          </div>
+                    </div> <br>
+                    <div class="row">
                         <div class="col-sm-2 col-md-2 col-lg-2">
-                        <label>Primer Nombre:</label>
+                           <label>Primer Apellido:</label>
                         </div>
                         <div class="col-sm-4 col-md-4 col-lg-4">
-                          <input class="form-control" type="text" name="pri_nombre">
+                          <input class="form-control" type="text" name="pri_apellido">
                         </div>
                         <div class="col-sm-2 col-md-2 col-lg-2">
-                           <label>Segundo Nombre:</label>           
+                           <label>Segundo Apellido:</label>           
                         </div>
                         <div class="col-sm-4 col-md-4 col-lg-4">
-                          <input class="form-control" type="text" name="seg_nombre">
+                          <input class="form-control" type="text" name="seg_apellido">
                         </div>
+                    </div><br>
+                    <div class="row">
+                      <div class="col-sm-2 col-md-2 col-lg-2">
+                         <label>Cedula:</label>
+                      </div>
+                      <div class="col-sm-4 col-md-4 col-lg-4">
+                        <input class="form-control" type="number" name="cedula">
+                      </div>
+                      <div class="col-sm-2 col-md-2 col-lg-2">
+                         <label>Email:</label>           
+                      </div>
+                      <div class="col-sm-4 col-md-4 col-lg-4">
+                        <input class="form-control" type="email" name="email">
+                      </div>
                   </div> <br>
-                  <div class="row">
-                      <div class="col-sm-2 col-md-2 col-lg-2">
-                         <label>Primer Apellido:</label>
-                      </div>
-                      <div class="col-sm-4 col-md-4 col-lg-4">
-                        <input class="form-control" type="text" name="pri_apellido">
-                      </div>
-                      <div class="col-sm-2 col-md-2 col-lg-2">
-                         <label>Segundo Apellido:</label>           
-                      </div>
-                      <div class="col-sm-4 col-md-4 col-lg-4">
-                        <input class="form-control" type="text" name="seg_apellido">
-                      </div>
-                  </div><br>
-                  <div class="row">
-                    <div class="col-sm-2 col-md-2 col-lg-2">
-                       <label>Cedula:</label>
-                    </div>
-                    <div class="col-sm-4 col-md-4 col-lg-4">
-                      <input class="form-control" type="number" name="cedula">
-                    </div>
-                    <div class="col-sm-2 col-md-2 col-lg-2">
-                       <label>Email:</label>           
-                    </div>
-                    <div class="col-sm-4 col-md-4 col-lg-4">
-                      <input class="form-control" type="email" name="email">
-                    </div>
-                </div> <br>
-                  <div class="row">
-                  <div class="col-md-6 col-lg-6">
-                    <p class="text-center">Fecha de nacimiento</p>
-                    <div class="row">            
-                      <div class="col-xs-4 col-sm-4 col-md-4">
-                        <select class="form-control" name="dias">
-                          <option>Días</option>
-                          @foreach($fecha['dia'] as $fe)
-                              <option value="{{$fe}}">{{$fe}}</option>
-                          @endforeach
-                        </select>
-                        </div>
+                    <div class="row">
+                    <div class="col-md-6 col-lg-6">
+                      <p class="text-center">Fecha de nacimiento</p>
+                      <div class="row">            
                         <div class="col-xs-4 col-sm-4 col-md-4">
-                          <select class="form-control" name="mes">
-                            <option>Mes</option>
-                            @foreach($fecha['mes'] as $fe)
-                              <option value="{{$fe}}">{{$fe}}</option>
-                          @endforeach
+                          <select class="form-control" name="dias">
+                            <option>Días</option>
+                            @foreach($fecha['dia'] as $fe)
+                                <option value="{{$fe}}">{{$fe}}</option>
+                            @endforeach
+                          </select>
+                          </div>
+                          <div class="col-xs-4 col-sm-4 col-md-4">
+                            <select class="form-control" name="mes">
+                              <option>Mes</option>
+                              @foreach($fecha['mes'] as $fe)
+                                <option value="{{$fe}}">{{$fe}}</option>
+                            @endforeach
+                            </select>
+                          </div>
+                          <div class="col-xs-4 col-sm-4 col-md-4">
+                          <select class="form-control" name="anio">
+                            <option>Año</option>
+
+                            @foreach($fecha['anio'] as $fe)
+                                <option value="{{$fe}}">{{$fe}}</option>
+                            @endforeach
                           </select>
                         </div>
-                        <div class="col-xs-4 col-sm-4 col-md-4">
-                        <select class="form-control" name="anio">
-                          <option>Año</option>
-
-                          @foreach($fecha['anio'] as $fe)
-                              <option value="{{$fe}}">{{$fe}}</option>
-                          @endforeach
-                        </select>
                       </div>
-                    </div>
-                </div>
-                  <p class="col-lg-2">Cargo:</p>
-                  <div class="col-lg-4">
-                      <select class="form-control" name="idcargo">
-                        <option>Seleccionar cargo</option>
-                         @foreach($cargo as $ca)
-                              <option value="{{$ca->etiqueta}}">{{$ca->etiqueta}}</option>
-                          @endforeach
-                      </select>
                   </div>
-                </div>
-                </div>
-              </div> 
-            </div>
-            <div class="card-footer">
-               <div class="text-center">
-                    <button class="btn btn-primary">Guardar<i class="fa fa-chevron-right" aria-hidden="true"></i></button>
+                    <p class="col-lg-2">Cargo:</p>
+                    <div class="col-lg-4">
+                        <select class="form-control" name="idcargo">
+                          <option>Seleccionar cargo</option>
+                           @foreach($cargo as $ca)
+                                <option value="{{$ca->id}}">{{$ca->etiqueta}}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                  </div>
+                  </div>
+                </div> 
               </div>
-            </div>
+              <div class="card-footer">
+                 <div class="text-center">
+                      <button class="btn btn-primary">Guardar<i class="fa fa-chevron-right" aria-hidden="true"></i></button>
+                </div>
+              </div>
+          </form>
           </div>
           <!-- Fin de card -->
         </div>
